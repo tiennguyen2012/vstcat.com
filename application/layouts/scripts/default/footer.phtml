@@ -1,0 +1,39 @@
+<div id="footer">
+    <div class="line1">
+        <div class="container">
+            <ul>
+                <li><a class="<?php echo Vts_App::isActive('default', 'page', 'detail', array('code' => 'about-us')) ? 'active' : '' ?>"
+                       href="<?php echo $this->url(array('controller' => 'page', 'action' => 'detail', 'code' => 'about-us'), null, true) ?>">
+                    <?php echo $this->lang('About Us') ?>
+                </a></li>
+                <li><a class="<?php echo Vts_App::isActive('default', 'contact') ? 'active' : '' ?>"
+                        href="<?php echo $this->url(array('controller' => 'contact'), null, true) ?>">
+                    <?php echo $this->lang('Contact Us') ?>
+                </a></li>
+                <li><a class="<?php echo Vts_App::isActive('default', 'page', 'detail', array('code' => 'affiliates')) ? 'active' : '' ?>"
+                        href="<?php echo $this->url(array('controller' => 'page', 'action' => 'detail',  'code' => 'affiliates'), null, true) ?>">
+                    <?php echo $this->lang('Affiliates') ?>
+                </a></li>
+                <li><a class="<?php echo Vts_App::isActive('default', 'page', 'detail', array('code' => 'licensing-information')) ? 'active' : '' ?>"
+                        href="<?php echo $this->url(array('controller' => 'page', 'action' => 'detail',  'code' => 'licensing-information'), null, true) ?>">
+                    <?php echo $this->lang('Licensing Information') ?>
+                </a></li>
+                <li><a class="<?php echo Vts_App::isActive('default', 'page', 'detail', array('code' => 'pravicy-information')) ? 'active' : '' ?>"
+                        href="<?php echo $this->url(array('controller' => 'page', 'action' => 'detail',  'code' => 'pravicy-information'), null, true) ?>">
+                    <?php echo $this->lang('Pravicy Information') ?>
+                </a></li>
+                <li><a class="<?php echo Vts_App::isActive('default', 'page', 'detail', array('code' => 'terms-of-use')) ? 'active' : '' ?>"
+                        href="<?php echo $this->url(array('controller' => 'page', 'action' => 'detail',  'code' => 'terms-of-use'), null, true) ?>">
+                    <?php echo $this->lang('Terms of Use') ?>
+                </a></li>
+                <li><a class="<?php echo Vts_App::isActive('default', 'page', 'detail', array('code' => 'sitemap')) ? 'active' : '' ?>"
+                        href="<?php echo $this->url(array('controller' => 'page', 'action' => 'detail', 'code' => 'sitemap'), null, true) ?>">
+                    <?php echo $this->lang('Sitemap') ?>
+                </a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="line2">
+    </div>
+</div>

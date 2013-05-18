@@ -1,0 +1,27 @@
+<?php $orderDetails = Coco_NotORM::getInstance()->OrderDetails()->where('OrderId', $this->order['OrderId']) ?>
+<?php if ($orderDetails): ?>
+<form action="<?php echo PAYPAL_URL ?>" method="post">
+    <!-- <input type="hidden" name="cmd" value="_xclick"> -->
+    <input type="hidden" name="cmd" value="_ext-enter">
+    <input type="hidden" name="redirect_cmd" value="_xclick">
+    <input type="hidden" name="business" value="<?php echo PAYPAL_ACOUNT ?>">
+    <?php $indexItem = 0 ?>
+    <?php foreach ($orderDetails as $item): ?>
+        <?php $numberOfName = ($indexItem == 0) ? '' : $indexItem ?>
+        <input type="hidden" name="item_name<?php echo $numberOfName ?>" value="<?php echo $item['ItemCode'].' - '. $item['ItemName'] ?>">
+        <input type="hidden" name="amount<?php echo $numberOfName ?>" value="<?php echo $item['Price'] ?>">
+        <?php $indexItem++; ?>
+    <?php endforeach; ?>
+    <input type="hidden" name="currency_code" value="USD">
+    <input type="hidden" name="notify_url"
+           value="<?php echo BASE_URL . $this->url(array('controller' => 'payment', 'action' => 'notify', 'type' => 'paypal', 'user-id' => Vts_App::getUserLogin()->UserId), null, true) ?>">
+    <input type="hidden" name="return"
+           value="<?php echo BASE_URL . $this->url(array('controller' => 'order', 'action' => 'success', 'type' => 'paypal'), null, true) ?>">
+    <input type="hidden" name="cancel_return"
+           value="<?php echo BASE_URL . $this->url(array('controller' => 'order', 'action' => 'detail', 'order-id' => $this->order['OrderId']), null, true) ?>">
+    <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" name="submit"
+           alt="Make payments with PayPal - it's fast, free and secure!">
+</form>
+<?php else: ?>
+<div><?php echo $this->lang('Current your order do not have item. You can not payment. We will re-check help you.') ?></div>
+<?php endif; ?>

@@ -1,0 +1,8 @@
+<div id="ppage-detai">
+    <?php $language = Vts_Session::get('language'); ?>
+    <?php $pageLang = $this->page->PageLangs()->where('Lang',  $language)->fetch() ?>
+    <h4><?php echo $pageLang['PageTitle'] ?></h4>
+    <div class="content">
+        <?php echo $pageLang['PageContent'] ?>
+    </div>
+</div>

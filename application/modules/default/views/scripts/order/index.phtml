@@ -1,0 +1,51 @@
+<div id="porder-index">
+    <h4><?php echo $this->lang('My Orders') ?></h4>
+
+    <div class="content">
+        <?php echo $this->lang('Orders were order by with created date.') ?>
+        <?php if (count($this->orders)): ?>
+        <?php echo $this->paginationControl($this->orders, 'Elastic', 'pagination.phtml'); ?>
+        <table width="100%" class="table table-striped">
+            <tr>
+                <th><?php echo $this->lang('#') ?></th>
+                <th><?php echo $this->lang('Item Name') ?></th>
+                <th><?php echo $this->lang('Created Date') ?></th>
+                <th><?php echo $this->lang('Website') ?></th>
+                <th><?php echo $this->lang('Status') ?></th>
+                <th><?php echo $this->lang('Total Price') ?></th>
+                <th><?php echo $this->lang('Action') ?></th>
+            </tr>
+            <?php $index = 0 ?>
+            <?php foreach ($this->orders as $order): ?>
+            <?php $index++ ?>
+            <tr>
+                <td><?php echo $index ?></td>
+                <td>
+                    <?php foreach (Coco_NotORM::getInstance()->OrderDetails()->where('OrderId', $order['OrderId']) as $item): ?>
+                    <div><?php echo $item['ItemCode'] . ' - ' . $item['ItemName'] ?></div>
+                    <?php endforeach; ?>
+                </td>
+                <td><?php echo Vts_App::formatDate($order['CreatedDate'], DATE_FORMAT_VIEW) ?></td>
+                <td><?php echo Coco_NotORM::getInstance()->Websites[$order['WebsiteId']]['Domain'] ?></td>
+                <td>
+                    <?php if ($order['OrderStatus'] == 'PURCHASED'): ?>
+                        <span class="label label-success"><?php echo $order['OrderStatus'] ?><span>
+                    <?php elseif ($order['OrderStatus'] == 'PENDING'): ?>
+                        <span class="label label-important"><?php echo $order['OrderStatus'] ?><span>
+                    <?php else: ?>
+                            <span class="label"><?php echo $order['OrderStatus'] ?><span>
+                     <?php endif; ?>
+                </td>
+                <td class="money"><?php echo Vts_App::formatMoney($order['TotalPrice']) ?></td>
+                <td>
+                    <a href="<?php echo $this->rurl(array('controller' => 'order', 'action' => 'detail', 'order-id' => $order['OrderId'])) ?>"><?php echo $this->lang('View') ?></a>
+                </td>
+            </tr>
+            <?php endforeach ?>
+        </table>
+        <?php echo $this->paginationControl($this->orders, 'Elastic', 'pagination.phtml'); ?>
+        <?php else: ?>
+        <div><?php echo $this->lang('You do not have any orders.') ?></div>
+        <?php endif; ?>
+    </div>
+</div>

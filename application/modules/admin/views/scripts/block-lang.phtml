@@ -1,0 +1,18 @@
+<div class="block-lang">
+    <?php $languages = Coco_NotORM::getInstance()->Languages() ?>
+    <?php $lang = isset($this->params['lang']) ? $this->params['lang'] : LANGUAGE_DEFAULT  ?>
+    <?php foreach ($languages as $language): ?>
+    <?php if ($language['LanguageCode'] == $lang): ?>
+        <a href="<?php echo $this->url(array('lang' => $language['LanguageCode'])) ?>">
+            <img class="active" width="30px" height="20px"
+                 src="<?php echo BASE_URL ?>/images/flags/<?php echo $language['LanguageCode'] ?>.gif"/>
+        </a>
+        <?php else: ?>
+        <a href="<?php echo $this->url(array('lang' => $language['LanguageCode'])) ?>">
+            <img width="30px" height="20px"
+                 src="<?php echo BASE_URL ?>/images/flags/<?php echo $language['LanguageCode'] ?>.gif"/>
+        </a>
+        <?php endif; ?>
+    <?php endforeach ?>
+    <input type="hidden" name="language" id="language" value="<?php echo $lang ?>"/>
+</div>

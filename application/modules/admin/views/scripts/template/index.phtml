@@ -1,0 +1,66 @@
+<div id="ppage-index" class="list">
+    <h4><?php echo $this->lang('Templates') ?></h4>
+
+    <div class="button-set">
+        <input type="button" id="btnAdd" class="btn btn-primary" value="<?php echo $this->lang('Add') ?>"/>
+    </div>
+
+    <div class="content">
+        <table class="table">
+            <tr>
+                <th>#</th>
+                <th><?php echo $this->lang('Code') ?></th>
+                <th><?php echo $this->lang('Name') ?></th>
+                <th><?php echo $this->lang('Description') ?></th>
+                <th><?php echo $this->lang('Category') ?></th>
+                <th><?php echo $this->lang('Price Member') ?></th>
+                <th><?php echo $this->lang('Price Unit') ?></th>
+                <th><?php echo $this->lang('Price Normal') ?></th>
+                <th><?php echo $this->lang('Status') ?></th>
+                <th><?php echo $this->lang('Action') ?></th>
+            </tr>
+            <?php $index = 0 ?>
+            <?php foreach ($this->templates as $template): ?>
+            <?php $index++ ?>
+            <?php $templateLang = $template->TemplateLangs()->where('Lang', LANGUAGE_DEFAULT)->fetch() ?>
+            <tr>
+                <td><?php echo $index ?></td>
+                <td><?php echo $template['TemplateCode'] ?></td>
+                <td><?php echo $templateLang['TemplateName'] ?></td>
+                <td><?php echo $templateLang['TemplateDescription'] ?></td>
+                <td><?php echo Coco_NotORM::getInstance()->Categorys[$template['CategoryId']]['CategoryName'] ?></td>
+                <td align="center">
+                    <?php if ($template['IsFreeMember'] == 1): ?>
+                    <span class="icon-check" title="Active"></span>
+                    <?php endif; ?>
+                </td>
+                <td align="right"><?php echo ($template['UniqueCurrentPrice'] ? "$" . $template['UniqueCurrentPrice'] : "") ?></td>
+                <td align="right"><?php echo ($template['NormalPrice'] ? "$" . $template['NormalPrice'] : "") ?></td>
+                <td>
+                    <!-- STATUS ACTIVE -->
+                    <?php if ($template['IsActive'] == 1): ?>
+                    <span class="icon-check" title="Active"></span>
+                    <?php endif; ?>
+
+                    <!-- STATUS IMAGE -->
+                    <?php if ($template['ImageDefault']): ?>
+                    <span class="icon-camera" title="Image"></span>
+                    <?php endif; ?>
+                </td>
+                <td>
+                    <a href="<?php echo $this->rurl(array('module' => 'admin', 'controller' => 'template', 'action' => 'edit', 'id' => $template['TemplateId']), null, true) ?>">
+                        <span class="icon-pencil" title="Edit"></span>
+                    </a>
+                    <span href="<?php echo $this->rurl(array('module' => 'admin', 'controller' => 'template', 'action' => 'delete', 'id' => $template['TemplateId']), null, true) ?>"
+                          class="icon-remove" title="Delete"></span>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+    $('#btnAdd').click(function () {
+        window.location.href = '/admin/template/add';
+    });
+</script>

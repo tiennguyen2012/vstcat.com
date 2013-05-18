@@ -1,0 +1,43 @@
+<div class="form">
+
+    <form action="" method="post">
+
+        <div class="button-set">
+            <input class="btn btn-primary" id="btnSave" type="submit" value="<?php echo $this->lang('Save') ?>">
+            <input class="btn btn-danger" id="btnCancel" type="reset" value="<?php echo $this->lang('Cancel') ?>">
+            <input class="btn" type="button" onclick="window.location.href='<?php echo $this->href ?>'" id="btnBack" value="<?php echo $this->lang('Back') ?>">
+        </div>
+
+        <?php echo $this->render('block-lang.phtml') ?><br/>
+
+        <div class="tabbable">
+            <ul class="nav nav-tabs" id="myTab">
+                <li class="active"><a href="#general" data-toggle="tab"><?php echo $this->lang('General') ?></a></li>
+                <li><a href="#detail" data-toggle="tab"><?php echo $this->lang('Detail') ?></a></li>
+            </ul>
+
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="general">
+                    <?php echo $this->form->getElement('PageName') ?>
+                    <?php echo $this->form->getElement('PageTitle') ?>
+                    <?php echo $this->form->getElement('PageCode') ?>
+                    <?php echo $this->form->getElement('IsActive') ?>
+                </div>
+                <div class="tab-pane" id="detail">
+                    <?php echo $this->form->getElement('PageContent') ?>
+                </div>
+                <?php echo $this->form->getElement('PageId') ?>
+                <?php echo $this->form->getElement('PageLangId') ?>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    var editor = CKEDITOR.replace('PageContent', {
+        height:350,
+        width:800,
+        toolbar:'Custom'
+    });
+    CKFinder.setupCKEditor(editor, '/ckfinder/');
+</script>

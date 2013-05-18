@@ -1,0 +1,11 @@
+<?php $this->headScript()->appendFile('/ckeditor/ckeditor.js') ?>
+<?php $this->headScript()->appendFile('/ckfinder/ckfinder.js') ?>
+<div id="ptemplate-add">
+    <h4><?php echo $this->lang('Template Add') ?></h4>
+
+    <div class="content">
+        <?php // echo $this->form ?>
+        <?php echo $this->partial('template/block/form.phtml', $this) ?>
+
+    </div>
+</div>

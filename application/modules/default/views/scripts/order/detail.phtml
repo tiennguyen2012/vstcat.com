@@ -1,0 +1,135 @@
+<?php $paymentMethods = Coco_NotORM::getInstance()->PaymentMethods()->where('IsActive', 1)->where('IsDeleted', 0) ?>
+<div id="porder-detail">
+    <h4><?php echo $this->lang('Order Detail') ?></h4>
+
+    <div class="warning">
+        <?php if($this->order['TotalPrice']): ?>
+        <?php echo $this->lang('After pay success. System send email to notify.') ?>
+        <?php else: ?>
+        <?php echo $this->lang('This is free order, please click download button.') ?>
+        <?php endif; ?>
+    </div>
+
+    <div class="content">
+        <!-- BLOCK USER INFO -->
+        <div class="user-block row-fluid">
+            <h5><?php echo $this->lang('Customer Information') ?></h5>
+            <?php $user = Coco_NotORM::getInstance()->Users[$this->order['UserId']] ?>
+            <div>
+                <div class="row-fluid">
+                    <div class="span3"><?php echo $this->lang('Fullname') ?></div>
+                    <div class="span6"><b><?php echo $this->escape($user['Fullname']) ?></b></div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span3"><?php echo $this->lang('Email') ?></div>
+                    <div class="span6"><i><?php echo $this->escape($user['Email']) ?></i></div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span3"><?php echo $this->lang('Address') ?></div>
+                    <div class="span6"><?php echo $this->escape($user['Address']) ?></div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span3"><?php echo $this->lang('Country') ?></div>
+                    <div class="span6">
+                        <?php $countryName = Coco_NotORM::getInstance()->Countrys[array('CountryCode' => $user['CountryCode'])]['CountryName'] ?>
+                        <img width="20" height="20"
+                             src="<?php echo BASE_URL ?>/images/flags/<?php echo $user['CountryCode'] ?>.gif"
+                             alt="<?php echo $countryName ?>" title="<?php echo $countryName ?>"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOCK ORDER INFO -->
+        <div class="order-block row-fluid">
+            <h5><?php echo $this->lang('Order Information') ?></h5>
+
+            <div class="content">
+                <div class="row-fluid">
+                    <div class="span3"><?php echo $this->lang('Order Status') ?></div>
+                    <div class="span6 order-status"><b><?php echo $this->order['OrderStatus'] ?></b></div>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span3"><?php echo $this->lang('You setting for site') ?></div>
+                    <div class="span4">
+                        <i><?php echo Vts_App::getUserLogin()->CurrentDomain  ?></i>
+                    </div>
+                </div>
+
+                <!-- BLOCK ORDER DETAIL -->
+                <div class="row-fluid order-detail">
+                    <?php $orderDetails = Coco_NotORM::getInstance()->OrderDetails()->where('OrderId', $this->order['OrderId']) ?>
+                    <?php $itemId = 0 ?>
+                    <?php if ($orderDetails): ?>
+                    <?php foreach ($orderDetails as $item): ?>
+                        <?php $itemId = $item['ItemId'] ?>
+                        <?php if (strtoupper($item['ItemType']) == 'TEMPLATE'): ?>
+                            <div class="row-fluid">
+                                <div class="span3"><?php echo $this->lang('Template code') ?></div>
+                                <div class="span4"><b><?php echo $this->escape($item['ItemCode']) ?></b></div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span3"><?php echo $this->lang('Template name') ?></div>
+                                <div class="span4"><b><?php echo $this->escape($item['ItemName']) ?></b></div>
+                            </div>
+
+                        <?php elseif (strtoupper($item['ItemType']) == 'NEW_AND_TEMPLATE'): ?>
+                            <div class="row-fluid">
+                                <div class="span3"><?php echo $this->lang('Template code') ?></div>
+                                <div class="span4"><b><?php echo $this->escape($item['ItemCode']) ?></b></div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span3"><?php echo $this->lang('Template name') ?></div>
+                                <div class="span4"><b><?php echo $this->escape($item['ItemName']) ?></b> (<i><?php echo $this->escape($item['PriceType']) ?></i>)</div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span3"><?php echo $this->lang('Because member type') ?></div>
+                                <div class="span4"><i><?php echo ($item['ItemType']  == 'NEW_AND_TEMPLATE' ? 'You just buy for new website' : 'Set up for old website' ) ?></i></div>
+                            </div>
+
+                        <?php endif; ?>
+                        <?php endforeach ?>
+                    <?php else: ?>
+                    <div><?php echo $this->lang('Current your order is empty item.') ?></div>
+                    <?php endif; ?>
+                </div>
+
+                <div class="block-order">
+                    <div class="row-fluid">
+                        <div class="span3"><?php echo $this->lang('Total') ?></div>
+                        <div class="span4  total-price">
+                            <b><?php echo '$'.$this->order['TotalPrice']  ?></b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAYMENT FOR ORDER -->
+        <?php if($this->order['TotalPrice']): ?>
+        <div class="row-fluid">
+            <div class="">
+                <?php foreach ($paymentMethods as $paymentMethod): ?>
+                <?php $classPayment = $paymentMethod['Class'] ?>
+                <?php $lPayment = new $classPayment(); ?>
+                <?php echo $lPayment->render($this->order['OrderId']) ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <?php else: ?>
+        <div class="row-fluid">
+            <button id="btnDownload" class="btn btn-primary"><?php echo $this->lang('Download now') ?></button>
+            <button id="btnTemplate" class="btn"><?php echo $this->lang('Back template') ?></button>
+        </div>
+        <?php endif; ?>
+    </div>
+</div>
+<script>
+    $('#btnDownload').click(function(){
+        window.location.href = '<?php echo BASE_URL ?>/template/download/order-id/<?php echo $this->order['OrderId'] ?>/item-id/<?php echo $itemId ?>/item-type/template';
+    })
+    $('#btnTemplate').click(function(){
+        window.location.href = '<?php echo BASE_URL ?>/template';
+    })
+</script>

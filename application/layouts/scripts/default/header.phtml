@@ -1,0 +1,110 @@
+<div id="header">
+    <div class="top1">
+        <div class="container">
+            <div class="left logo"></div>
+            <div class="left block-right" align="right">
+                <!-- USER PROFILE -->
+                <div class="row-fluid">
+                    <!-- BOX FLAG -->
+                    <div class="flag right">
+                        <div class="box-flag">
+                            <?php $default = new Zend_Session_Namespace('default'); ?>
+                            <?php $language = Coco_NotORM::getInstance()->Languages[array('LanguageCode' => $default->language)] ?>
+                            <img class="icon-flag"
+                                 src="<?php echo BASE_URL ?>/images/flags/<?php echo $language['LanguageCode']  ?>.gif"
+                                 alt="<?php  echo $language['LanguageName'] ?>"/>
+                            <img src="<?php echo BASE_URL ?>/images/arrow.gif" style="cursor: pointer" id="arrow-flag"
+                                 alt="Arrow"/>
+                        </div>
+
+                        <div id="flag-popup" style="display: none; margin-left: -44px">
+                            <ul>
+                                <?php $languages = Coco_NotORM::getInstance()->Languages()->order('LanguageName ASC') ?>
+                                <?php foreach ($languages as $language): ?>
+                                <li class="item"><a
+                                        href="<?php echo $this->url(array('controller' => 'system', 'action' => 'change-lang', 'lang-code' => $language['LanguageCode']), null, true) ?>">
+                                    <img src="<?php echo BASE_URL ?>/images/flags/<?php echo $language['LanguageCode']  ?>.gif"><?php echo $language['LanguageName'] ?>
+                                </a>
+                                </li>
+                                <?php endforeach ?>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- USER LOGIN -->
+                    <div class="user-info">
+                        <?php $default = new Zend_Session_Namespace('default'); ?>
+                        <?php if ($default->userLogin): ?>
+                        <a href="<?php echo $this->url(array('controller' => 'order'), null, true) ?>"><?php echo $this->lang('My Orders') ?></a>&nbsp;&nbsp;&nbsp;
+                        <a href="<?php echo $this->url(array('controller' => 'order'), null, true) ?>"><?php echo $this->lang('My Affiliates') ?></a>&nbsp;&nbsp;&nbsp;
+                        <a href="<?php echo $this->url(array('controller' => 'order'), null, true) ?>"><?php echo $this->lang('My Profile') ?></a>&nbsp;&nbsp;&nbsp;
+                        <?php echo $this->lang('Welcome ') ?><a
+                                href="<?php echo $this->url(array('controller' => 'user', 'action' => 'management')) ?>"><?php echo $default->userLogin->Fullname ?></a>
+                        (<a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'signout')) ?>"
+                            class="logout"><?php echo $this->lang('Sign out') ?></a>)
+                        <?php endif; ?>
+                    </div>
+                </div>
+
+                <!-- BLOCK MENU TOP -->
+                <div class="top-menu">
+                    <ul>
+                        <li>
+                            <a href="<?php echo $this->url(array('controller' => 'page', 'action' => 'detail', 'code' => 'about-us'), null, true) ?>"><?php echo $this->lang('About Us') ?></a>
+                        </li>
+                        <li>
+                            <a href="<?php echo $this->url(array('controller' => 'page', 'action' => 'detail', 'code' => 'affiliates'), null, true) ?>">
+                                <?php echo $this->lang('Affiliates') ?>
+                            </a></li>
+                        <li>
+                            <a href="<?php echo $this->url(array('controller' => 'page', 'action' => 'detail', 'code' => 'order'), null, true) ?>">
+                                <?php echo $this->lang('Orders') ?>
+                            </a></li>
+                        <li>
+                            <a href="<?php echo $this->url(array('controller' => 'page', 'action' => 'detail', 'code' => 'price'), null, true) ?>">
+                                <?php echo $this->lang('Prices') ?>
+                            </a></li>
+                        <li>
+                            <a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'signup'), null, true) ?>">
+                                <?php echo $this->lang('Sign Up') ?></a>
+                        </li>
+                        <?php if (!Vts_App::getUserLogin()->UserId): ?>
+                        <li>
+                            <a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'signin'), null, true) ?>">
+                                <?php echo $this->lang('Sign In') ?></a>
+                        </li>
+                        <?php endif; ?>
+                        <li><a href="<?php echo $this->url(array('controller' => 'contact'), null, true) ?>">
+                            <?php echo $this->lang('Contact') ?></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="container">
+            <ul>
+                <li><a class="<?php echo Vts_App::isActive('default', 'index', 'index') ? 'active' : '' ?>"
+                       href="/"><?php echo $this->lang('Home') ?></a></li>
+                <li>
+                    <a class="<?php echo Vts_App::isActive('default', 'template') ? 'active' : '' ?>"
+                       href="<?php echo $this->url(array('controller' => 'template', 'action' => 'index'), null, true) ?>"><?php echo $this->lang('Templates') ?></a>
+                </li>
+                <li>
+                    <a class="<?php echo Vts_App::isActive('default', 'module') ? 'active' : '' ?>"
+                       href="<?php echo $this->url(array('controller' => 'module', 'action' => 'index'), null, true) ?>"><?php echo $this->lang('Modules') ?></a>
+                </li>
+                <li>
+                    <a class="<?php echo Vts_App::isActive('default', 'document') ? 'active' : '' ?>"
+                       href="<?php echo $this->url(array('controller' => 'document', 'action' => 'index'), null, true) ?>"><?php echo $this->lang('Documents') ?></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $('#arrow-flag').click(function () {
+        $('#flag-popup').slideToggle();
+    });
+</script>

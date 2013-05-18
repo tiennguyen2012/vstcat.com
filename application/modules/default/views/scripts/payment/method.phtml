@@ -1,0 +1,39 @@
+<div id="ppayment-method">
+    <h4><?php echo $this->lang('You are paying for template') ?> <?php echo $this->template['TemplateName'] ?></h4>
+
+    <div class="row-fluid">
+        <div class="span6">
+            <div class="span4">
+                <img alt="<?php echo $this->template['TemplateName'] ?>"
+                     src="<?php echo BASE_URL ?>/uploads/templates/<?php echo $this->template['TemplateId'] ?>/<?php echo $this->template['ImageDefault'] ?>"/>
+            </div>
+            <div class="span8">
+                <div><?php echo $this->lang('You pay for website with package is <b>Unique with') ?>
+                    <?php echo '$' . $this->template['UniqueCurrentPrice'] ?> <?php echo $this->lang('</b>') ?></div>
+            </div>
+        </div>
+    </div>
+    <?php if (isset($this->params['type'])): ?>
+    <div class="row-fluid method-payment">
+        <h4><?php echo $this->lang('Some method for payment') ?></h4>
+
+        <div class="content">
+            <div class="row-fluid">
+                <?php echo $this->lang('Let click image to choose payment method.') ?>
+            </div>
+            <?php foreach ($this->paymentMethods as $pmethod): ?>
+            <div class="item">
+                <?php $className = $pmethod['Class'] ?>
+                <?php $lPayment = new $className() ?>
+                <?php if ($this->params['type'] == 'unique'): ?>
+                <?php $amount = floatval($this->template['UniqueCurrentPrice']) ?>
+                <?php elseif ($this->params['type'] == 'normal'): ?>
+                <?php $amount = floatval($this->template['NormalPrice']) ?>
+                <?php endif; ?>
+                <?php echo $lPayment->render($this->template, $amount) ?>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <?php endif; ?>
+</div>

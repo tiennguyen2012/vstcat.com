@@ -1,0 +1,29 @@
+body {
+    margin: 0; padding: 0;
+}
+
+
+.form .button-set { float: right }
+.form .description { font-size: 11px; color: green; font-style: italic }
+.list .button-set { float: right; margin-bottom: 10px }
+.errors { background-color: yellow; padding: 5px; margin-bottom: 10px }
+.errors ul { padding: 0; margin: 0 0 0 20px}
+
+.file_delete { cursor: pointer }
+
+.bs-docs-sidenav  { width: 195px !important; }
+
+#progress { height: 20px; width: 200px; border: 1px solid #f0f0f0; display: none; float: left }
+#progress .bar { height: 20px; background-color: #4387f5; width: 0% }
+
+/** HEADER **/
+#header .top-menu { width: 100%; height: 30px; background-color: #000000; color: #ffffff}
+#header .top-menu ul { list-style: none; margin: 0; padding: 0 }
+#header .top-menu ul li { float: left; padding: 0 10px; line-height: 30px }
+
+/** LANGUAGE ***/
+.block-lang img.active {box-shadow: 3px 3px 3px #888888; cursor: pointer }
+
+/** PAGE TEMPLATE ***/
+#ptemplare-edit .photos .item { padding: 10px; float: left; width: 140px; height: 139px }
+#ptemplare-edit .photos .item img { width: 140px; height: 130px }

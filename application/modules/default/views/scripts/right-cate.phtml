@@ -1,0 +1,55 @@
+<?php $categorys = Coco_NotORM::getInstance()->Categorys()->where('IsActive', 1)->where('IsDeleted', 0) ?>
+<?php if (count($categorys) > 0): ?>
+<div class="category box-right">
+    <h4 class="title"><?php echo $this->lang('Product Categories') ?></h4>
+
+    <div class="content">
+        <ul>
+            <li>
+                <a href="<?php echo $this->url(array('controller' => 'template', 'action' => 'index'),null, true) ?>">
+                    All Templates <span>(<?php echo Coco_NotORM::getInstance()->Templates()
+                    ->where('IsActive', 1)->where('IsDeleted', 0)->where('ImageDefault IS NOT NULL')->count() ?>)</span>
+                </a>
+            </li>
+            <?php foreach ($categorys as $category): ?>
+            <li>
+                <a href="<?php echo $this->url(array('controller' => 'template', 'action' => 'index', 'cate' => $category['CategoryId']), null, true) ?>">
+                    <?php echo $category['CategoryName'] ?> <span>(<?php echo $category->Templates()
+                    ->where('IsActive', 1)->where('IsDeleted', 0)->where('ImageDefault IS NOT NULL')
+                    ->count() ?>)</span>
+                </a>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+<?php endif; ?>
+
+<div class="line"></div>
+
+<!-- PRODUCT TYPE -->
+<?php $templateTypes = Coco_NotORM::getInstance()->TemplateTypes()->where('IsActive', 1)->where('IsDeleted', 0) ?>
+<?php if (count($templateTypes) > 0): ?>
+<div class="product-type box-right">
+    <h4 class="title"><?php echo $this->lang('Product Types') ?></h4>
+
+    <div class="content">
+        <ul>
+            <li>
+                <a href="<?php echo $this->url(array('controller' => 'template', 'action' => 'index'), null, true) ?>">
+                    All Types <span>(<?php echo Coco_NotORM::getInstance()->Templates()->
+                    where('IsActive', 1)->where('IsDeleted', 0)->count() ?>)</span>
+                </a>
+            </li>
+            <?php foreach ($templateTypes as $templateType): ?>
+            <li>
+                <a href="<?php echo $this->url(array('controller' => 'template', 'action' => 'index', 'type' => $templateType['TemplateTypeId']), null, true) ?>">
+                    <?php echo $templateType['TemplateTypeName'] ?> (<?php echo $templateType->Templates()
+                ->where('IsActive', 1)->where('IsDeleted', 0)->count() ?>)
+                </a>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+<?php endif; ?>

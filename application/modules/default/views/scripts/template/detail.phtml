@@ -1,0 +1,185 @@
+<div id="ptemplate-detail" xmlns="http://www.w3.org/1999/html">
+    <div class="row-fluid">
+        <!-- PRODUCT IMAGE -->
+        <div class="span4">
+            <img src="<?php echo BASE_URL ?>/uploads/templates/<?php echo $this->template['TemplateId'] ?>/<?php echo $this->template['ImageDefault'] ?>"
+                 alt="<?php echo $this->template['TemplateName'] ?>" class="template-image"/>
+
+            <div class="row-fluid">
+                <button class="btn btn-info" id="btnDemon">view demo</button>
+            </div>
+
+        </div>
+        <!-- PRODUCT DESCRIPTION -->
+        <div class="span8">
+            <h4><?php echo $this->escape($this->template['TemplateName']) ?></h4>
+
+            <div class="category-name">
+                <span>Category: </span>
+                <a href=""> <?php echo Coco_NotORM::getInstance()->Categorys[$this->template['CategoryId']]['CategoryName'] ?></a>
+            </div>
+            <div class="template-type">
+                <span>Template Type: </span>
+                <a href=""> <?php echo Coco_NotORM::getInstance()->TemplateTypes[$this->template['TemplateTypeId']]['TemplateTypeName'] ?></a>
+            </div>
+
+            <!-- BLOCK ONLY SET UP TEMPLATE -->
+            <?php if ($this->isMember): ?>
+            <div class="block-download row-fluid">
+                <h5><?php echo $this->lang('Now, you can download or setup this template in your website:') ?></h5>
+
+                <div class="description">
+                    <ul>
+                        <li>With unique. You can buy full website (download and setup your server. I have nine website.
+                            Include <b>code and template</b>).
+                        </li>
+                        <?php if (empty($this->template['NormalPrice']) || $this->template['IsFreeMember'] == 1): ?>
+                        <li>With free for member. If you are member, you download and setup for your website is free.
+                        </li>
+                        <?php endif; ?>
+                    </ul>
+
+                    <div class="row-fluid">
+                        <?php if ($this->template['UniqueCurrentPrice']): ?>
+                        <div class="span5 btn-buy">
+                            <div>
+                                <?php echo $this->lang('Setup this template with <b>unique</b>') ?>
+                                <b><span class="price">$<?php echo $this->template['UniqueCurrentPrice'] ?></span></b>
+                                <?php echo $this->lang('for this template.') ?>
+                            </div>
+                            <button id="btnUniqueCurrentPrice" class="btn btn-primary">
+                                <?php echo $this->lang('setup unique') ?>
+                            </button>
+                        </div>
+                        <?php endif; ?>
+                        <?php if ($this->template['IsFreeMember']): ?>
+                        <div class="span5 btn-buy">
+                            <div>
+                                <?php echo $this->lang('Setup this template with <b>normal</b> for this template.') ?>
+                            </div>
+                            <button id="btnFreeForMember" class="btn btn-danger">Free for Members</button>
+                        </div>
+                        <?php elseif ($this->template['NormalPrice']): ?>
+                        <div class="span5 btn-buy">
+                            <?php echo $this->lang('Setup this template with <b>normal</b> for this template only') ?><span class="price"> $<?php echo $this->template['NormalPrice'] ?></span>
+                            <button id="btnNormalPrice" class="btn btn-danger"> setup normal</button>
+                        </div>
+
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+            <?php else: ?>
+                <div class="warning"><?php echo $this->lang('Please login to button download template in here.') ?>
+                    <a href="<?php echo $this->rurl(array('controller' => 'user', 'action' => 'signin'), null, true) ?>"><?php echo $this->lang('Login') ?></a> </div>
+            <?php endif; ?>
+
+            <!-- BLOCK BUY WITH NEW MEMBER -->
+            <div class="block-buy">
+                <?php $lTemplate = new Vts_Template() ?>
+                <?php $priceSetupInsiteNormal = $lTemplate->getPrice($this->template, 'new_and_template', 'normal', 'insite') ?>
+                <?php $priceSetupInsiteUnique = $lTemplate->getPrice($this->template, 'new_and_template', 'unique', 'insite') ?>
+                <?php $priceSetupDownloadNormal = $lTemplate->getPrice($this->template, 'new_and_template', 'normal', 'download') ?>
+                <?php $priceSetupDownloadUnique = $lTemplate->getPrice($this->template, 'new_and_template', 'unique', 'download') ?>
+                <div class="description">
+                    <h5><?php echo $this->lang('Now, you buy our products yet. Please choose two options:') ?></h5>
+                    <ul>
+                        <li><?php echo $this->lang('<b>Download Unique or Normal</b>: You can download full website with this template and setup in your server.') ?></li>
+                        <li><?php echo $this->lang("<b>Setup in VtsCat</b>: You can setup your website in VtsCat. You must not pay for hosting.") ?></li>
+                    </ul>
+                    <div class="row-fluid">
+                        <div class="span5 btn-buy">
+                            <div><?php echo $this->lang('Setup in <b>VtsCat normal</b> with <span class="price">$') ?><?php echo $priceSetupInsiteNormal ?>
+                                /<?php echo $this->lang('month') ?></span><?php echo $this->lang('. Download free template for member.') ?></div>
+                            <button class="btn btn-primary"
+                                    id="btnSetupInVtsCatNormal"><?php echo $this->lang('setup in VtsCat normal') ?></button>
+                        </div>
+                        <div class="span5 btn-buy">
+                            <div><?php echo $this->lang('Setup in <b>VtsCat unique</b> with ') ?><span
+                                    class="price">$<?php echo $priceSetupInsiteUnique ?></span> <?php echo $this->lang(' for first setup and') ?>
+                                <span class="price">$<?php echo $priceSetupInsiteNormal ?>
+                                    /<?php echo $this->lang('month') ?></span> for next month.
+                            </div>
+                            <button class="btn btn-primary"
+                                    id="btnSetupInVtsCatUnique"><?php echo $this->lang('setup in VtsCat unique') ?></button>
+                        </div>
+                    </div>
+                    <div class="row-fluid btnbuy-download">
+                        <div class="span5 btn-buy">
+                            <div><?php echo $this->lang('Download <b>full website normal</b> with <span class="price">$') ?><?php echo $priceSetupDownloadNormal ?></span></div>
+                            <button class="btn btn-primary"
+                                    id="btnDownloadNormal"><?php echo $this->lang('download normal') ?></button>
+                        </div>
+                        <div class="span5 btn-buy">
+                            <div><?php echo $this->lang('Download <b>full website unique</b> with <span class="price">$') ?><?php echo $priceSetupDownloadUnique ?></span></div>
+                            <button class="btn btn-primary"
+                                    id="btnDownloadUnique"><?php echo $this->lang('download unique') ?></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- PRODUCT DETAIL -->
+    <?php if (count($this->photos) > 0): ?>
+    <div class="photos row-fluid">
+        <h4>Photos</h4>
+
+        <div class="content">
+            <?php foreach ($this->photos as $photo): ?>
+            <div class="item">
+                <img src="<?php echo BASE_URL ?>/uploads/templates/<?php echo $this->template['TemplateId'] ?>/<?php echo $photo ?>"
+                     alt="<?php echo $this->template['TemplatePhotoName'] ?>"/>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <?php endif; ?>
+
+    <!-- PRODUCT DESCRIPTION -->
+    <div class="product-description">
+        <h4>Description</h4>
+
+        <div class="content">
+            <?php if (empty($this->template['TemplateDescription'])): ?>
+            <div>We are updating</div>
+            <?php else: ?>
+            <?php echo $this->template['TemplateDescription'] ?>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+
+
+<?php $this->placeholder('right')->captureStart() ?>
+<?php echo $this->partial('right-cate.phtml') ?>
+<?php $this->placeholder('right')->captureEnd() ?>
+
+<script type="text/javascript">
+    $('#btnUniqueCurrentPrice').click(function () {
+        window.location.href = "<?php echo $this->rurl(array('controller' => 'order', 'action' => 'add', 'item-id' => $this->params['id'], 'item-type' => 'template', 'price-type' => 'unique'), null, true) ?>";
+    })
+    $('#btnFreeForMember').click(function () {
+        window.location.href = "<?php echo $this->rurl(array('controller' => 'order', 'action' => 'add', 'item-id' => $this->params['id'], 'item-type' => 'template', 'price-type' => 'normal'), null, true) ?>";
+    })
+    $('#btnNormalPrice').click(function () {
+        window.location.href = "<?php echo $this->rurl(array('controller' => 'order', 'action' => 'add', 'item-id' => $this->params['id'], 'item-type' => 'template', 'price-type' => 'normal'), null, true) ?>";
+    })
+    $('#btnSetupInVtsCatNormal').click(function () {
+        window.location.href = "<?php echo $this->rurl(array('controller' => 'order', 'action' => 'add', 'item-id' => $this->params['id'], 'item-type' => 'new_and_template', 'price-type' => 'normal', 'website-type' => 'insite'), null, true) ?>";
+    })
+    $('#btnSetupInVtsCatUnique').click(function () {
+        window.location.href = "<?php echo $this->rurl(array('controller' => 'order', 'action' => 'add', 'item-id' => $this->params['id'], 'item-type' => 'new_and_template', 'price-type' => 'unique', 'website-type' => 'insite'), null, true) ?>";
+    })
+    $('#btnDownloadNormal').click(function () {
+        window.location.href = "<?php echo $this->rurl(array('controller' => 'order', 'action' => 'add', 'item-id' => $this->params['id'], 'item-type' => 'new_and_template', 'price-type' => 'normal', 'website-type' => 'download'), null, true) ?>";
+    })
+    $('#btnDownloadUnique').click(function () {
+        window.location.href = "<?php echo $this->rurl(array('controller' => 'order', 'action' => 'add', 'item-id' => $this->params['id'], 'item-type' => 'new_and_template', 'price-type' => 'unique', 'website-type' => 'download')) ?>";
+    })
+    $('#btnDemon').click(function(){
+        window.open('<?php echo "http://demo". $this->template['TemplateCodeName'].'.'. HOST_NAME ?>', '_blank');
+    })
+</script>

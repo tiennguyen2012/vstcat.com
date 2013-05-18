@@ -1,0 +1,11 @@
+E:\xampp\htdocs\vtssoft\vtsweb\application\modules\admin\models\Page.php:20:SELECT * FROM Pages WHERE (PageId = '1');
+E:\xampp\htdocs\vtssoft\vtsweb\application\layouts\scripts\default\header.phtml:18:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
+E:\xampp\htdocs\vtssoft\vtsweb\application\layouts\scripts\default\header.phtml:29:SELECT * FROM Languages ORDER BY LanguageName ASC;
+E:\xampp\htdocs\vtssoft\vtsweb\application\modules\admin\models\Page.php:20:SELECT * FROM Pages WHERE (PageId = '1');
+E:\xampp\htdocs\vtssoft\vtsweb\application\modules\admin\models\Page.php:24:UPDATE Pages SET PageId = '1', PageName = 'about-us', PageTitle = 'About Us', PageContent = '<p>\r\n	About us</p>\r\n', CreatedDate = '2013-03-12 16:49:32', UpdateDate = NULL, IsActive = '1', IsDeleted = '0', PageCode = 'about-us';
+E:\xampp\htdocs\vtssoft\vtsweb\application\layouts\scripts\default\header.phtml:18:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
+E:\xampp\htdocs\vtssoft\vtsweb\application\layouts\scripts\default\header.phtml:29:SELECT * FROM Languages ORDER BY LanguageName ASC;
+E:\xampp\htdocs\vtssoft\vtsweb\application\modules\admin\models\Page.php:20:SELECT * FROM Pages WHERE (PageId = '1');
+E:\xampp\htdocs\vtssoft\vtsweb\application\modules\admin\models\Page.php:24:UPDATE Pages SET PageId = '1', PageName = 'about-us', PageTitle = 'About Us', PageContent = '<p>\r\n	About us</p>\r\n', CreatedDate = '2013-03-12 16:49:32', UpdateDate = NULL, IsActive = '1', IsDeleted = '0', PageCode = 'about-us';
+E:\xampp\htdocs\vtssoft\vtsweb\application\layouts\scripts\default\header.phtml:18:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
+E:\xampp\htdocs\vtssoft\vtsweb\application\layouts\scripts\default\header.phtml:29:SELECT * FROM Languages ORDER BY LanguageName ASC;

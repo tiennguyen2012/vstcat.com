@@ -1,0 +1,11 @@
+<?php if($this->form->getMessages()): ?>
+<div class="errors">
+    <ul>
+    <?php foreach($this->form->getMessages() as $key => $message): ?>
+        <?php foreach($message as $item): ?>
+        <li><?php echo $this->form->getElement($key)->getLabel().": ".$item ?></li>
+        <?php endforeach ?>
+    <?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>

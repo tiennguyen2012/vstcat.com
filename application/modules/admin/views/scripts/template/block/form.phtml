@@ -1,0 +1,161 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="/jquery-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="/jquery-upload/js/jquery.iframe-transport.js"></script>
+<script src="/jquery-upload/js/jquery.fileupload.js"></script>
+<div class="form">
+    <form action="" method="post" enctype="multipart/form-data">
+        <div class="button-set">
+            <input class="btn btn-primary" id="btnSave" type="submit" value="<?php echo $this->lang('Save') ?>">
+            <input class="btn btn-danger" id="btnCancel" type="reset" value="<?php echo $this->lang('Cancel') ?>">
+            <input class="btn" type="button" onclick="window.location.href='<?php echo $this->href ?>'" id="btnBack"
+                   value="<?php echo $this->lang('Back') ?>">
+        </div>
+
+        <?php echo $this->render('block-lang.phtml') ?><br/>
+
+        <?php echo $this->partial('block-error.phtml', $this) ?>
+
+        <div class="tabbable">
+            <ul class="nav nav-tabs" id="myTab">
+                <li class="active"><a href="#general" data-toggle="tab"><?php echo $this->lang('General') ?></a></li>
+                <li><a href="#price" data-toggle="tab"><?php echo $this->lang('Price') ?></a></li>
+                <li><a href="#detail" data-toggle="tab"><?php echo $this->lang('Detail') ?></a></li>
+                <li><a href="#image" data-toggle="tab"><?php echo $this->lang('Image') ?></a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="general">
+                    <?php echo $this->form->getElement('TemplateCode') ?>
+                    <?php echo $this->form->getElement('TemplateCodeName') ?>
+                    <?php echo $this->form->getElement('TemplateName') ?>
+                    <?php echo $this->form->getElement('CategoryId') ?>
+                    <?php echo $this->form->getElement('TemplateTypeId') ?>
+                    <?php echo $this->form->getElement('IsActive') ?>
+                </div>
+                <div class="tab-pane" id="price">
+                    <?php echo $this->form->getElement('IsFreeMember') ?>
+                    <?php echo $this->form->getElement('UniqueCurrentPrice') ?>
+                    <?php echo $this->form->getElement('NormalPrice') ?>
+                </div>
+                <div class="tab-pane" id="detail">
+                    <?php echo $this->form->getElement('TemplateDescription') ?>
+                </div>
+                <div class="tab-pane" id="image">
+                    <?php if ($this->form->getElement('TemplateId')->getValue()): ?>
+                    <!-- BLOCK UPLOAD -->
+                    <input id="fileupload" type="file" name="files[]"
+                           data-url="/jquery-upload/server/php/index.php?type=templates&id=<?php echo $this->form->getElement('TemplateId')->getValue() ?>"
+                           multiple>
+                    <div id="progress">
+                        <div class="bar"></div>
+                    </div>
+                    <div id="addMoreUpload">
+
+                    </div>
+
+                    <!-- BLOCK PHOTO -->
+                    <?php $templateId = $this->form->getElement('TemplateId')->getValue() ?>
+                    <?php if ($templateId): ?>
+                        <div class="photos row-fluid">
+                            <?php $lTemplate = new Vts_Template() ?>
+                            <?php $templatePhotos = $lTemplate->photos($templateId)?>
+                            <?php if ($templatePhotos): ?>
+                            <?php foreach ($templatePhotos as $photo): ?>
+                                <div class="item">
+                                    <img src="<?php echo BASE_URL ?>/uploads/templates/<?php echo $templateId ?>/<?php echo $photo ?>"/>
+                                    <input <?php echo ($photo == $this->form->getElement('ImageDefault')->getValue() ? 'checked="checked"' : '') ?>
+                                            type="radio" name="ImageDefault" value="<?php echo $photo ?>">
+                                    <?php echo $this->lang('(default)') ?>
+                                    <?php if ($this->form->getElement('ImageDefault')->getValue() != $photo): ?>
+                                    <span image="<?php echo $photo ?>" class="file_delete icon-remove"
+                                          title="Delete"></span>
+                                    <?php endif; ?>
+                                </div>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </div>
+                        <?php endif; ?>
+                    <?php else: ?>
+                    <div><?php echo $this->lang("You can upload image when you edit template.") ?></div>
+                    <?php endif; ?>
+                </div>
+                <?php echo $this->form->getElement('TemplateId') ?>
+                <?php echo $this->form->getElement('TemplateLangId') ?>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    var editor = CKEDITOR.replace('TemplateDescription', {
+        height:350,
+        width:800,
+        toolbar:'Custom'
+    });
+    CKFinder.setupCKEditor(editor, '/ckfinder/');
+
+    /**
+     * Upload file more
+     */
+    $('#linkAddMore').click(function () {
+        $('#addMoreUpload').append('<div><input type="file" name="FileUpload[]"> <a class="uploadItemUpload" href="#"><?php echo $this->lang('Delete') ?></a></div>');
+        $('.uploadItemUpload').unbind('click');
+        $('.uploadItemUpload').click(function () {
+            $(this).parent().remove();
+        });
+        return false;
+    });
+</script>
+
+<script>
+    $(function () {
+        $('#fileupload').fileupload({
+            type:'DELETE',
+            dataType:'json',
+            progressall:function (e, data) {
+                $('#progress').show();
+                var progress = parseInt(data.loaded / data.total * 100, 10);
+                $('#progress .bar').css(
+                        'width',
+                        progress + '%'
+                );
+            },
+            done:function (e, data) {
+                $('#progress').hide();
+                $.each(data.result.files, function (index, file) {
+                    $('.photos').append('<div class="item"><img src="<?php echo BASE_URL . "/uploads/templates/" . $templateId ?>/thumbnail/' +
+                            file.name + '"/><input type="radio" name="ImageDefault" value="' + file.name + '">(<?php echo $this->lang('default') ?>)' +
+                            '<span  image="' + file.name + '" class="file_delete icon-remove" title="Delete"></span></div>');
+
+                    $('.file_delete').unbind('click');
+                    $('.file_delete').click(function () {
+                        var obj = $(this);
+                        $.ajax({
+                            url:'/admin/template/delete-file/id/<?php echo $this->form->getElement('TemplateId')->getValue() ?>/image/' + $(this).attr('image'),
+                            dataType:'json',
+                            success:function (data) {
+                                if (data.result == true) {
+                                    obj.parent().remove();
+                                }
+                            }
+                        });
+                        return false;
+                    });
+                });
+            }
+        });
+
+        $('.file_delete').click(function () {
+            var obj = $(this);
+            $.ajax({
+                url:'/admin/template/delete-file/id/<?php echo $this->form->getElement('TemplateId')->getValue() ?>/image/' + $(this).attr('image'),
+                dataType:'json',
+                success:function (data) {
+                    if (data.result == true) {
+                        obj.parent().remove();
+                    }
+                }
+            });
+            return false;
+        });
+    });
+</script>

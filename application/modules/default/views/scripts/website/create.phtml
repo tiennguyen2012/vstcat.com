@@ -1,0 +1,44 @@
+<div id="pwebsite-create">
+    <h4>Create website</h4>
+
+    <div class="description">
+        You can choose one in two ways create your website.
+        <ul>
+            <li>Create new website in our hosting. We will set up your website with default template. After finished,
+                You can download some templates for your website.
+            </li>
+            <li>Create new website in your hosting. You download code and set up in your server. After that you download
+                some templates for your website.
+            </li>
+        </ul>
+    </div>
+    <div class="domain">
+        <form action="" method="post">
+            <div>Your domain to we set up.</div>
+
+            <?php $errors = $this->form->getMessages() ?>
+            <?php if($errors): ?>
+            <ul class="errors">
+                <?php foreach($errors as $key => $error): ?>
+                <?php foreach($error as $item): ?>
+                    <li><?php echo $key ?>: <?php echo $item ?></li>
+                    <?php endforeach ?>
+                <?php endforeach ?>
+            </ul>
+            <?php endif; ?>
+
+            <div>
+                <input type="text" name="Domain" value="<?php echo $this->form->getElement('Domain')->getValue() ?>"/>
+            </div>
+            <div class="example">
+                <span>Example: vtsweb.com, mycompany.net, testwebsite.info</span>
+            </div>
+            <br/>
+
+            <div>
+                <input type="submit" value="Create" class="btn btn-primary"/>
+                <input type="reset" value="Skip" class="btn"/>
+            </div>
+        </form>
+    </div>
+</div>

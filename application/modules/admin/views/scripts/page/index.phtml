@@ -1,0 +1,51 @@
+<div id="ppage-index" class="list">
+    <h4><?php echo $this->lang('Pages') ?></h4>
+
+    <div class="button-set">
+        <input type="button" id="btnAdd" class="btn btn-primary" value="<?php echo $this->lang('Add') ?>" />
+    </div>
+
+    <div class="content">
+        <table class="table">
+            <tr>
+                <th>#</th>
+                <th><?php echo $this->lang('Page Name') ?></th>
+                <th><?php echo $this->lang('Page Title') ?></th>
+                <th><?php echo $this->lang('Page Code') ?></th>
+                <th><?php echo $this->lang('Status') ?></th>
+                <th><?php echo $this->lang('Action') ?></th>
+            </tr>
+            <?php $index = 0 ?>
+            <?php foreach ($this->pages as $page): ?>
+            <?php $index++ ?>
+            <?php $pageLang = $page->PageLangs()->where('Lang', LANGUAGE_DEFAULT)->fetch()  ?>
+            <tr>
+                <td><?php echo $index ?></td>
+                <td><?php echo $pageLang['PageName'] ?></td>
+                <td><?php echo $pageLang['PageTitle'] ?></td>
+                <td><?php echo $page['PageCode'] ?></td>
+                <td>
+                    <?php if($page['IsActive'] == 1): ?>
+                        <span class="label label-success"><?php echo $this->lang('Active') ?></span>
+                    <?php else: ?>
+                        <span class="label label-important"><?php echo $this->lang('Disabled') ?></span>
+                    <?php endif; ?>
+                </td>
+                <td>
+                    <a href="<?php echo $this->rurl(array('module' => 'admin', 'controller' => 'page', 'action' => 'edit', 'id' => $page['PageId']), null, true) ?>">
+                        <span class="label label-success"><?php echo $this->lang('Edit') ?></span>
+                    </a>
+                    <a href="<?php echo $this->rurl(array('module' => 'admin', 'controller' => 'page', 'action' => 'delete', 'id' => $page['PageId']), null, true) ?>">
+                        <span class="label label-success"><?php echo $this->lang('Delete') ?></span>
+                    </a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+    $('#btnAdd').click(function(){
+        window.location.href = '/admin/page/add';
+    });
+</script>

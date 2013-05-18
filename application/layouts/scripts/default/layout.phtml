@@ -1,0 +1,33 @@
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title><?php echo $this->lang('VTS Web') ?></title>
+        <?php $this->headLink()->appendStylesheet('/bootstrap/css/bootstrap.min.css') ?>
+        <?php $this->headLink()->appendStylesheet('/css/default.css') ?>
+        <?php $this->headScript()->appendFile('/bootstrap/js/bootstrap.min.js') ?>
+        <?php $this->headScript()->appendFile('/js/jquery.min.js') ?>
+        <?php echo $this->headTitle() ?>
+        <?php echo $this->headScript() ?>
+        <?php echo $this->headStyle() ?>
+        <?php echo $this->headLink() ?>
+    </head>
+    <body>
+        <?php echo $this->render('header.phtml') ?>
+        <div id="nav"><?php echo $this->placeholder('nav') ?></div>
+        <div id="content" class="container row">
+            <div class="page">
+                <div class="pleft">
+                    <?php echo $this->layout()->content ?>
+                </div>
+                <div class="pright">
+                    <?php echo $this->placeholder('right') ?>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <?php echo $this->render('footer.phtml') ?>
+    </body>
+</html>

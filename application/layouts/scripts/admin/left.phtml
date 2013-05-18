@@ -1,0 +1,24 @@
+<div id="left-menu">
+    <div class="bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav affix-top">
+            <li class="<?php echo Vts_App::isActive('admin', 'index') ? 'active' : '' ?>">
+                <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'index')) ?>"><i class="icon-chevron-right"></i> <?php echo $this->lang('Overview') ?>
+                </a>
+            </li>
+            <li class="<?php echo Vts_App::isActive('admin', 'template') ? 'active' : '' ?>">
+                <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'template', 'action' => 'index'), null, true) ?>">
+                    <i class="icon-chevron-right"></i> <?php echo $this->lang('Templates') ?>
+                </a>
+            </li>
+            <li><a href="#modals"><i class="icon-chevron-right"></i> <?php echo $this->lang('Modules') ?></a></li>
+            <li class=""><a href="#dropdowns"><i class="icon-chevron-right"></i> <?php echo $this->lang('Affiliate') ?></a></li>
+            <li class=""><a href="#scrollspy"><i class="icon-chevron-right"></i> <?php echo $this->lang('User') ?></a></li>
+            <li class="<?php echo Vts_App::isActive('admin', 'page') ? 'active' : '' ?>">
+                <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'page', 'action' => 'index'), null, true) ?>">
+                    <i class="icon-chevron-right"></i> <?php echo $this->lang('Pages') ?>
+                </a>
+            </li>
+            <li class=""><a href="#tooltips"><i class="icon-chevron-right"></i> <?php echo $this->lang('System') ?></a></li>
+        </ul>
+    </div>
+</div>

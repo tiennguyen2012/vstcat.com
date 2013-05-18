@@ -1,0 +1,39 @@
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title><?php echo $this->lang('Admin VTS Web') ?></title>
+    <?php $this->headLink()->appendStylesheet('/bootstrap/css/bootstrap.min.css') ?>
+    <?php $this->headLink()->appendStylesheet('/bootstrap/css/bootstrap-responsive.min.css') ?>
+    <?php $this->headLink()->appendStylesheet('/bootstrap/css/doc.css') ?>
+    <?php $this->headLink()->appendStylesheet('/jquery-ui/css/smoothness/jquery-ui-1.10.1.custom.min.css') ?>
+    <?php $this->headLink()->appendStylesheet('/css/admin.css') ?>
+    <?php $this->headScript()->appendFile('/js/jquery.min.js') ?>
+    <?php $this->headScript()->appendFile('/jquery-ui/js/jquery-ui-1.10.1.custom.min.js') ?>
+    <?php $this->headScript()->appendFile('/bootstrap/js/bootstrap.min.js') ?>
+    <?php $this->headScript()->appendFile('/js/admin.js') ?>
+    <?php echo $this->headTitle() ?>
+    <?php echo $this->headScript() ?>
+    <?php echo $this->headStyle() ?>
+    <?php echo $this->headLink() ?>
+</head>
+<body>
+<?php echo $this->render('header.phtml') ?>
+<div id="nav"><?php echo $this->placeholder('nav') ?></div>
+<div id="content" class="container-fluid row">
+    <div class="page container-fluid">
+        <div class="row-fluid">
+            <div class="span2">
+                <?php echo $this->render('left.phtml') ?>
+            </div>
+            <div class="span10">
+                <?php echo $this->layout()->content ?>
+            </div>
+        </div>
+    </div>
+</div>
+<?php echo $this->render('footer.phtml') ?>
+</body>
+</html>

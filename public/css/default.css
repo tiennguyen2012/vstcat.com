@@ -1,0 +1,155 @@
+body {
+    margin: 0; padding: 0;
+    background-color: #e6e6e6;
+}
+
+.container { width: 1049px }
+.clearfix { clear: both }
+.left { float: left }
+.right { float: right }
+
+span.required { color: red }
+ul.errors { color: red }
+
+.box { }
+.box .title { border-bottom: 1px dotted #e6e6e6; padding-bottom: 10px  }
+.box .content  { margin-bottom: 10px }
+.box .content .item { float: left; padding: 10px; }
+.box .content .item img { border: 1px solid #e6e6e6; cursor: pointer; width:145px; height: 150px }
+.box .content .item img:hover {   box-shadow: 5px 5px 5px #888888;}
+.box .content .item .template-name { font-weight: bold }
+.box .content .item .template-price { font-size: 12px }
+.box .content .item .template-free-member { font-size: 12px; color: #d29b72  }
+.box .content .item .description { margin-top: 10px;  text-align: center }
+
+.warning {
+    background-color: yellow; color: red; padding: 7px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+/** HEADER PAGE **/
+#header .top1 { height: 100px; background-color: #000000; width: 100% }
+#header .menu { height: 40px; background-color: #1e1d1d; width: 100%; border-top: 1.5px solid #272727  }
+#header .menu ul { list-style: none; margin: 0; padding: 0 }
+#header .menu ul li { line-height: 40px; color: #ffffff; float: left; padding: 0 10px }
+#header .menu ul li a { color: #ffffff; text-decoration: none;padding: 5px; }
+#header .menu ul li a:hover,
+#header .menu ul li a.active {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #646464;
+}
+
+#flag-popup { position: absolute; background-color: #ffffff; width: 85px; padding: 5px; border: 1px solid #e6e6e6 }
+#flag-popup ul { list-style: none; margin: 0; padding: 0; text-align: left  }
+#flag-popup ul li { font-size: 11px }
+#flag-popup ul li a { text-decoration: none }
+#flag-popup ul li img { width: 20px; height: 15px; margin-right: 5px }
+
+#header .top-menu { float: right; margin-top: 20px }
+#header .top-menu ul { margin: 0; padding: 0; list-style: none }
+#header .top-menu ul li { float: left; text-transform: uppercase; color: #ffffff; padding: 0 15px }
+#header .top-menu ul li:last-child { padding-right: 0 }
+#header .top-menu ul li a { text-decoration: none; color: #ffffff }
+#header .logo { width: 200px; height: 100px }
+#header .flag { margin-top: 10px; background-color: #ffffff; width: 50px; padding: 3px;  }
+#header .flag .box-flag {}
+#header .flag .box-flag .icon-flag { width: 29px; height: 19px; }
+#header .block-right { float: right; }
+
+#header .block-right .user-info { float: right; color: #ffffff; margin-top: 15px; text-align: right; padding: 0 15px 0 15px }
+#header .block-right .user-info a { color: #ffffff }
+#header .block-right .user-info .logout { font-size: 12px }
+
+/** PAGE CONTENT **/
+#content { background-color: #ffffff; margin-top: 20px; margin-bottom: 20px }
+#content .page { padding: 30px }
+#content .page .pleft { width: 680px; float: left }
+#content .page .pright { float: left; margin-left: 50px; width: 256px; }
+
+#content .page .pright .box-right { }
+#content .page .pright .box-right .title { border-bottom: 1px dotted #e6e6e6; padding-bottom: 10px }
+#content .page .pright .box-right .content ul { list-style: none; margin: 0; padding: 0 }
+#content .page .pright .box-right .content ul li {
+    background-image: url("../images/cat_sub_ul_a_hover.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    text-indent: 30px; line-height: 25px;
+}
+#content .page .pright .box-right .content ul li a { padding: 3px }
+#content .page .pright .box-right .content ul li a.active,
+#content .page .pright .box-right .content ul li a:hover {
+    moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #646464;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#content .page .pright .line { height: 20px }
+
+/** FOOTER **/
+#footer .line1 { height: 40px; background-color: #1e1d1d; width: 100%; border-bottom: 1.5px solid #272727  }
+#footer .line1 ul { list-style: none; margin: 0; padding: 0 }
+#footer .line1 ul li { line-height: 40px; color: #ffffff; float: left; padding: 0 20px }
+#footer .line1 ul li a { color: #ffffff; text-decoration: none;padding: 5px; }
+#footer .line1 ul li a:hover,
+#footer .line1 ul li a.active {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #646464;
+}
+#footer .line2 { height: 100px; background-color: #000000; width: 100% }
+
+/** PAGE TEMPLATE DETAIL **/
+#ptemplate-detail .template-image { width: 210px; border: 1px solid #e6e6e6 }
+#ptemplate-detail .block-download,
+#ptemplate-detail .block-buy{ margin-top: 20px }
+#ptemplate-detail .block-download .description,
+#ptemplate-detail .block-buy .description{ font-size: 11px }
+#ptemplate-detail .block-download .description .price,
+#ptemplate-detail .block-buy .description .price{ font-size: 16px; font-weight: bold; color: red }
+#ptemplate-detail .photos {  }
+#ptemplate-detail .photos .item { width: 100px; margin: 10px; float: left }
+#ptemplate-detail .photos .item img { width: 110px; height: 130px }
+#ptemplate-detail .photos .item:last-child { margin-right: 0 }
+#ptemplate-detail .photos .item:first-child { margin-left: 0 }
+#ptemplate-detail .btn-buy { padding: 5px ; text-align: center; -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    background-color: #d6e9c6;
+}
+#ptemplate-detail .btn-buy:hover {
+    background-color: #f0f0f0;
+
+}
+#ptemplate-detail .btnbuy-download { margin-top: 7px }
+#ptemplate-detail #btnDemon { margin-top: 10px; width: 98% }
+
+/** PAGE SIGN UP **/
+#puser-signup .account-info { width: 300px }
+
+#puser-signup .profile-info { width: 300px }
+
+/** PAGE SIGN IN **/
+#puser-signin .information .content{ font-size: 12px }
+
+
+/** PAGE MEMBER CREATE **/
+#pwebsite-create .domain .example { font-size: 11px; font-style: italic }
+
+/** PAYMENT **/
+#ppayment-method .method-payment {}
+#ppayment-method .method-payment .item { float: left; width: 150px; margin: 10px }
+
+/** ORDER DETAIL **/
+#porder-detail .order-status { color: red }
+#porder-detail .total-price {color: red }
+
+/** ORDER **/
+#porder-index .money { text-align: right }

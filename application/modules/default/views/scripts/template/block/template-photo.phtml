@@ -1,0 +1,15 @@
+<?php $photos = $this->template->TemplatePhotos() ?>
+<?php if (count($photos) > 0): ?>
+<div class="photos row-fluid">
+    <h4>Photos</h4>
+
+    <div class="content">
+        <?php foreach ($photos as $photo): ?>
+        <div class="item">
+            <img src="<?php echo BASE_URL ?>/uploads/templates/<?php echo $this->template['TemplateId'] ?>/<?php echo $photo['PhotoFile'] ?>"
+                 alt="<?php echo $this->template['TemplatePhotoName'] ?>"/>
+        </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+<?php endif; ?>

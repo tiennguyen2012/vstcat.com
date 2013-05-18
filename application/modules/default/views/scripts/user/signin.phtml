@@ -1,0 +1,51 @@
+<div id="puser-signin">
+    <h4><?php echo $this->lang('Sign In') ?></h4>
+
+    <?php $errors = $this->form->getMessages() ?>
+    <?php if($errors): ?>
+    <ul class="errors">
+        <?php foreach($errors as $key => $error): ?>
+        <?php foreach($error as $item): ?>
+            <li><?php echo $key ?>: <?php echo $item ?></li>
+            <?php endforeach ?>
+        <?php endforeach ?>
+    </ul>
+    <?php endif; ?>
+
+    <div class="content">
+        <div class="span4">
+            <form action="" method="post">
+                <div class="row-fluid">
+                    <div><?php echo $this->lang('Username') ?></div>
+                    <div>
+                        <input type="text" name="Username"
+                               value="<?php echo $this->form->getElement('Username')->getValue() ?>"
+                               placeholder="<?php echo $this->lang('Username') ?>">
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div><?php echo $this->lang('Password') ?></div>
+                    <div>
+                        <input type="password" name="Password" placeholder="<?php echo $this->lang('Password') ?>">
+                    </div>
+                </div>
+                <div class="button-set">
+                    <input class="btn btn-primary" type="submit" value="<?php echo $this->lang('Login') ?>">
+                    <input class="btn" type="reset" value="<?php echo $this->lang('Reset') ?>">
+                </div>
+            </form>
+        </div>
+        <div class="span4 information">
+            <h5><?php echo $this->lang('Information') ?></h5>
+            <div class="content">
+                <?php echo $this->lang('When you login, you can') ?>
+                <ul>
+                    <li><?php echo $this->lang('Change your information and change password.') ?></li>
+                    <li><?php echo $this->lang('Download free template, buy website, payment for some bill.') ?></li>
+                    <li><?php echo $this->lang('Request supporter by support system and notify from system.') ?></li>
+                    <li><?php echo $this->lang('Registry affiliates, you can sale to earn money every months.') ?></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

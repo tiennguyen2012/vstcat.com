@@ -1,0 +1,48 @@
+<div id="ptemplate-index" class="box">
+    <?php $templates = $this->templates; ?>
+
+    <!-- SHOW TITLE OF LIST -->
+    <?php if (isset($this->params['cate'])): ?>
+    <?php $titleName = Coco_NotORM::getInstance()->Categorys[$this->params['cate']]['CategoryName'] ?>
+    <?php if ($titleName) ?>
+            <h4><?php echo $this->lang('Templates with category is') ?> <?php echo $titleName ?> </h4>
+    <?php elseif (isset($this->params['type'])): ?>
+    <?php $titleName = Coco_NotORM::getInstance()->TemplateTypes[$this->params['type']]['TemplateTypeName'] ?>
+    <?php if ($titleName) ?>
+            <h4><?php echo $this->lang('Templates with template type is') ?> <?php echo $titleName ?> </h4>
+    <?php else: ?>
+    <h4><?php echo $this->lang('Templates') ?> </h4>
+    <?php endif; ?>
+    <?php echo $this->lang('Templates were order by with created date.') ?>
+
+    <div class="content">
+        <?php echo $this->paginationControl($this->templates, 'Elastic', 'pagination.phtml'); ?>
+        <div class="row-fluid">
+            <?php foreach ($templates as $template): ?>
+            <div class="item">
+                <img src="<?php echo BASE_URL ?>/uploads/templates/<?php echo $template['TemplateId'] ?>/<?php echo $template['ImageDefault'] ?>"
+                     alt="<?php echo $template['TemplateName'] ?>"/>
+
+                <div class="description">
+                    <div class="template-name">
+                        <a href="<?php echo $this->url(array('action' => 'detail', 'controller' => 'template', 'id' => $template['TemplateId'])) ?>">
+                            <?php echo $template['TemplateName'] ?>
+                        </a>
+                    </div>
+                    <div class="template-price"><?php echo $this->lang('Unique') ?>:
+                        <span>$<?php echo $template['UniqueCurrentPrice'] ?></span>
+                    </div>
+                    <?php if ($template['IsFreeMember']): ?>
+                    <div class="template-free-member"><?php echo $this->lang('Free for member') ?>.</div>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+        <?php echo $this->paginationControl($this->templates, 'Elastic', 'pagination.phtml'); ?>
+    </div>
+</div>
+
+<?php $this->placeholder('right')->captureStart() ?>
+<?php echo $this->partial('right-cate.phtml') ?>
+<?php $this->placeholder('right')->captureEnd() ?>

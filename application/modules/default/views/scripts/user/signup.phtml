@@ -1,0 +1,73 @@
+<div id="puser-signup">
+    <h4><?php echo $this->lang('Sign Up') ?></h4>
+
+    <div><?php echo $this->lang('You registry to buy and management your account') ?>.</div>
+    <br/>
+
+    <?php $errors = $this->form->getMessages() ?>
+    <?php if($errors): ?>
+    <ul class="errors">
+    <?php foreach($errors as $key => $error): ?>
+        <?php foreach($error as $item): ?>
+            <li><?php echo $key ?>: <?php echo $item ?></li>
+        <?php endforeach ?>
+    <?php endforeach ?>
+    </ul>
+    <?php endif; ?>
+
+    <form method="POST" action="">
+        <div class="row-fluid">
+            <div class="left account-info">
+                <div class="field-name"><?php echo $this->lang('Username or Email') ?> <span class="required">*</span></div>
+                <div class="field-value">
+                    <input type="text" name="Username" value="<?php echo $this->form->getElement('Username')->getValue() ?>" placeholder="<?php echo $this->lang('Username or Email') ?>"/>
+                </div>
+
+                <div class="field-name"><?php echo $this->lang('Password') ?> <span class="required">*</span></div>
+                <div class="field-value">
+                    <input type="password" name="Password" value="" placeholder="<?php echo $this->lang('Password') ?>"/>
+                </div>
+
+                <div class="field-name"><?php echo $this->lang('Re-Password') ?> <span class="required">*</span></div>
+                <div class="field-value">
+                    <input type="password" name="RePassword" value="" placeholder="<?php echo $this->lang('RePassword') ?>"/>
+                </div>
+            </div>
+            <div class="left profile-info">
+                <div class="field-name"><?php echo $this->lang('Full name') ?> <span class="required">*</span></div>
+                <div class="field-value">
+                    <input type="text" name="Fullname" value="<?php echo $this->form->getElement('Fullname')->getValue() ?>" placeholder="<?php echo $this->lang('Full name') ?>"/>
+                </div>
+
+                <div class="field-name"><?php echo $this->lang('Email') ?> <span class="required">*</span></div>
+                <div class="field-value">
+                    <input type="text" name="Email" value="<?php echo $this->form->getElement('Email')->getValue() ?>" placeholder="<?php echo $this->lang('Email') ?>"/>
+                </div>
+
+
+                <div class="field-name"><?php echo $this->lang('Country') ?> <span class="required">*</span></div>
+                <div class="field-value">
+                    <?php $countries = Coco_NotORM::getInstance()->Countrys()->order('CountryName ASC')->fetchPairs('CountryCode', 'CountryName') ?>
+                    <select name="CountryCode">
+                        <?php foreach ($countries as $key => $country): ?>
+                        <?php if($key == $this->form->getElement('CountryCode')->getValue()): ?>
+                            <option selected="selected" value="<?php echo $key ?>"><?php echo $country ?></option>
+                        <?php else: ?>
+                            <option value="<?php echo $key ?>"><?php echo $country ?></option>
+                        <?php endif; ?>
+                        <?php endforeach ?>
+                    </select>
+                </div>
+
+                <div class="field-name"><?php echo $this->lang('Address') ?></div>
+                <div class="field-value">
+                    <input type="text" name="Address" value="<?php echo $this->form->getElement('Address')->getValue() ?>" placeholder="<?php echo $this->lang('Address') ?>"/>
+                </div>
+            </div>
+        </div>
+        <div class="button-set row-fluid">
+            <input type="submit" class="btn btn-primary" value="<?php echo $this->lang('Sign Up') ?>" title="Create user" />
+            <input type="reset" class="btn" value="<?php echo $this->lang('Cancel') ?>"/>
+        </div>
+    </form>
+</div>
