@@ -129,7 +129,7 @@ ul.errors { color: red }
 
 }
 #ptemplate-detail .btnbuy-download { margin-top: 7px }
-#ptemplate-detail #btnDemon { margin-top: 10px; width: 98% }
+#ptemplate-detail #btnDemon { margin-top: 10px; cursor: pointer }
 
 /** PAGE SIGN UP **/
 #puser-signup .account-info { width: 300px }
@@ -153,3 +153,13 @@ ul.errors { color: red }
 
 /** ORDER **/
 #porder-index .money { text-align: right }
+
+/** PRICE ***/
+#page-price {}
+#page-price .setup-vtscat {}
+#page-price .setup-vtscat .item { width: 220px; float: left;  }
+#page-price .setup-vtscat .item .row-item { height:40px; border-bottom: 1px dotted #f0f0f0  }
+#page-price .setup-vtscat .item .row-item span { font-size: 12px; line-height: 12px }
+#page-price .setup-vtscat .item .row-item h5 { margin: 0 }
+#page-price .setup-vtscat .item .row-item.title { font-size: 20px; font-weight: bold; color: green }
+#page-price .setup-vtscat .item.block-price { text-align: center; }

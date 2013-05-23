@@ -13,4 +13,8 @@ class PageController extends Coco_Controller_Action_Default {
         $page = Coco_NotORM::getInstance()->Pages[array('PageCode' => $code)];
         $this->view->page = $page;
     }
+
+    public function priceAction(){
+
+    }
 }
