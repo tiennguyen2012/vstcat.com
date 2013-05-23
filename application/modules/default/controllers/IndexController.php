@@ -19,7 +19,8 @@ class IndexController extends Coco_Controller_Action_Default
         $data = $this->_model->index();
 
         $this->view->bestSale = $data['best-sale'];
-        $this->view->templateTypes = $data['template-types'];
+//        $this->view->templateTypes = $data['template-types'];
+        $this->view->templateCategorys = $data['template-categorys'];
     }
 
 
