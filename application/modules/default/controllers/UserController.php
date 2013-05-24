@@ -8,6 +8,17 @@
  */
 class UserController extends Coco_Controller_Action_Default {
 
+    /**
+     * @var Default_Model_User
+     */
+    private $_user;
+
+    public function init(){
+        parent::init();
+
+        $this->_user = new Default_Model_User();
+    }
+
     public function signupAction(){
         $form = new Default_Form_FormSignUp();
 
@@ -71,5 +82,60 @@ class UserController extends Coco_Controller_Action_Default {
         $lUser = new Vts_Modules_User();
         $res = $lUser->logout();
         $this->_redirect('/user/signin');
+    }
+
+    public function forgetPasswordAction(){
+        $form = new Default_Form_FormForgetPassword();
+
+        if($this->_request->isPost()){
+            $data = $this->_request->getPost();
+            if($form->isValid($data)){
+                $res = $this->_user->forgetPassword($data['Email']);
+                if($res){
+                    $this->_redirect($this->view->url(array('controller' => 'user', 'action' => 'forget-success'), null, true));
+                }
+            }
+        }
+
+        $this->view->form = $form;
+    }
+
+    /**
+     * This is action use to change password
+     * @author tien.nguyen
+     */
+    public function forgetPassTokenAction(){
+        $token = $this->_getParam('token');
+        if($token){
+            if($this->_user->checkExpireToke($token)){
+                $form = new Default_Form_FormForgetToken();
+                if($this->_request->isPost()){
+                    $data = $this->_request->getPost();
+                    if($form->isValid($data)){
+                        $res = $this->_user->changePassToken($token, $data);
+                        if($res){
+                            $this->_redirect($this->view->url(array('controller' => 'user', 'action' => 'forget-success'), null, true));
+                        }else{
+                            throw new Zend_Exception("System have problem when you save.");
+                        }
+                    }
+                    $form->populate($data);
+                }
+
+                $this->view->form  = $form;
+            }else{
+                throw new Zend_Exception("Token is expired. Please create new request.");
+            }
+        }else{
+            throw new Zend_Exception("Your token is empty.");
+        }
+    }
+
+    /**
+     * Change password successfull
+     * @author tien.nguyen
+     */
+    public function forgetSuccessAction(){
+        $this->render("forget-password-success");
     }
 }

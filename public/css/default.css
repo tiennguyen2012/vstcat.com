@@ -138,6 +138,7 @@ ul.errors { color: red }
 
 /** PAGE SIGN IN **/
 #puser-signin .information .content{ font-size: 12px }
+#puser-signin .button-set { margin-top: 15px }
 
 
 /** PAGE MEMBER CREATE **/
