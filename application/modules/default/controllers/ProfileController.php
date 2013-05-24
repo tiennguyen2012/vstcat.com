@@ -13,6 +13,6 @@ class Default_ProfileController extends Coco_Controller_Action_Default {
     }
 
     public function profileAction(){
-        
+
     }
 }

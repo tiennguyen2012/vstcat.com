@@ -28,7 +28,7 @@
       <file leaf-file-name="ProfileController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/modules/default/controllers/ProfileController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="8" selection-start="340" selection-end="340" vertical-scroll-proportion="0.4704797">
+            <state line="15" column="0" selection-start="332" selection-end="332" vertical-scroll-proportion="0.4704797">
               <folding />
             </state>
           </provider>
@@ -746,7 +746,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/default/controllers/ProfileController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="8" selection-start="340" selection-end="340" vertical-scroll-proportion="0.4704797">
+        <state line="15" column="0" selection-start="332" selection-end="332" vertical-scroll-proportion="0.4704797">
           <folding />
         </state>
       </provider>
