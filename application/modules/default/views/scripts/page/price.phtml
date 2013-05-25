@@ -61,7 +61,9 @@
                 <div class="row-item even"></div>
                 <div class="row-item"></div>
                 <div class="row-item even">
+                    <a href="<?php echo $this->url(array('controller' => 'order', 'action' => 'set-account-type' , 'account-type' => 'PERSONAL')) ?>">
                     <button class="btn btn-primary"><?php echo $this->translate('Order now') ?></button>
+                    </a>
                 </div>
             </div>
             <div class="item block-price even">
@@ -92,7 +94,9 @@
                 </div>
                 <div class="row-item"></div>
                 <div class="row-item even">
+                    <a href="<?php echo $this->url(array('controller' => 'order', 'action' => 'set-account-type' , 'account-type' => 'BUSINESS')) ?>">
                     <button class="btn btn-primary"><?php echo $this->translate('Order now') ?></button>
+                    </a>
                 </div>
             </div>
             <div class="item block-price">
@@ -125,7 +129,9 @@
                     <img class="checked" src="/images/check.png" title="Checked" alt="Checked"/>
                 </div>
                 <div class="row-item even">
-                    <button class="btn btn-primary"><?php echo $this->translate('Order now') ?></button>
+                    <a href="<?php echo $this->url(array('controller' => 'order', 'action' => 'set-account-type' , 'account-type' => 'G-BUSINESS')) ?>">
+                        <button class="btn btn-primary"><?php echo $this->translate('Order now') ?></button>
+                    </a>
                 </div>
             </div>
         </div>

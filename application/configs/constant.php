@@ -38,9 +38,11 @@ define('EMAIL_NAME', 'VTS Contact');
 /**
  * FLOW ORDER
  */
+define('ORDER_LOGIN', BASE_URL.'/user/signin');
 define('ORDER_TEMPLATE', BASE_URL.'/template');
 define('ORDER_ACCOUNT_TYPE', BASE_URL.'/page/price');
-define('ORDER_DOMAIN', BASE_URL.'/page/price');
+define('ORDER_DOMAIN', BASE_URL.'/website/domain');
+define('ORDER_SUCCESS', BASE_URL.'/website/create-success');
 
 /**
  * PAYMENT

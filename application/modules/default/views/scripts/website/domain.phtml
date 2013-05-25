@@ -1,0 +1,66 @@
+<div id="pwebsite-create">
+    <h4>Your domain</h4>
+
+    <div class="description">
+        You can choose one in two ways create your website.
+    </div>
+    <div class="domain">
+        <form action="" method="post">
+
+            <ul>
+                <li><?php echo $this->translate('Create website with your domain') ?></li>
+                <li><?php echo $this->translate('Create website with sub domain of vtscat.com') ?></li>
+            </ul>
+
+            <div>Your domain to we set up.</div>
+            <?php $errors = $this->form->getMessages() ?>
+            <?php if($errors): ?>
+            <ul class="errors">
+                <?php foreach($errors as $key => $error): ?>
+                <?php foreach($error as $item): ?>
+                    <li><?php echo $key ?>: <?php echo $item ?></li>
+                    <?php endforeach ?>
+                <?php endforeach ?>
+            </ul>
+            <?php endif; ?>
+
+
+            <div>
+                <input type="text" name="Domain" value="<?php echo $this->form->getElement('Domain')->getValue() ?>"/>
+            </div>
+            <div class="example">
+                <span>Example: vtsweb.com, mycompany.net, testwebsite.info</span>
+            </div>
+            <br/>
+
+            <input type="checkbox" <?php if($this->UseSubDomain == 1) echo 'checked="checked"' ?> name="UseSubDomain" value="1"/>
+                <span class="example"><?php echo $this->translate('Use sub domain of vtscat.com') ?></span>
+
+            <!-- SET BY SUB DOMAIN -->
+            <div><?php echo $this->translate('Input your sub domain in there') ?></div>
+            <?php $errors = $this->formSubDomain->getMessages() ?>
+            <?php if($errors): ?>
+            <ul class="errors">
+                <?php foreach($errors as $key => $error): ?>
+                <?php foreach($error as $item): ?>
+                    <li><?php echo $key ?>: <?php echo $item ?></li>
+                    <?php endforeach ?>
+                <?php endforeach ?>
+            </ul>
+            <?php endif; ?>
+
+            <div>
+                <input type="text" style="width: 50px" name="SubDomain" value="<?php echo $this->formSubDomain->getElement('SubDomain')->getValue() ?>"/>.vtscat.com
+            </div>
+            <div class="example">
+                <span>Example: tiennguyen (tiennguyen.vtscat.com)</span>
+            </div>
+            <br/>
+
+            <div>
+                <input type="submit" value="Create" class="btn btn-primary"/>
+                <input type="reset" value="Skip" class="btn"/>
+            </div>
+        </form>
+    </div>
+</div>

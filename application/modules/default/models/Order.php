@@ -192,4 +192,14 @@ class Default_Model_Order
         }
         return null;
     }
+
+    public function saveOrder(){
+        //get basket
+        $basket = Vts_Session::get('basket');
+        if($basket){
+            //save order.
+
+            //save order detail
+        }
+    }
 }

@@ -30,6 +30,34 @@ class WebsiteController extends Coco_Controller_Action_Default {
         $this->view->form = $form;
     }
 
+    /**
+     * Domain for website
+     */
+    public function domainAction(){
+        $form = new Default_Form_FormDomain();
+        $formSubDomain = new Default_Form_FormSubDomain();
+
+        if($this->_request->isPost()){
+            $data = $this->_request->getPost();
+
+            if(empty($data['UseSubDomain'])){
+                if($form->isValid($data)){
+                    $this->_redirect($this->view->url(array('controller' => 'order', 'action' => 'set-domain', 'domain' => $data['Domain']), null, true));
+                }
+                $form->populate($data);
+            }else{
+                if($formSubDomain->isValid($data)){
+                    $this->_redirect($this->view->url(array('controller' => 'order', 'action' => 'set-domain', 'domain' => $data['SubDomain'].".vtscat.com"), null, true));
+                }
+                $formSubDomain->populate($data);
+            }
+            $this->view->UseSubDomain = $data['UseSubDomain'];
+        }
+
+        $this->view->form = $form;
+        $this->view->formSubDomain = $formSubDomain;
+    }
+
     public function createSuccessAction(){
 
     }

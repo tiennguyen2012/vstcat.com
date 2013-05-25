@@ -15,8 +15,6 @@ class OrderController extends Coco_Controller_Action_Default {
 
     public function init(){
         parent::init();
-        //check login
-        $this->checkLogin();
 
         $this->_model = new Default_Model_Order();
     }
@@ -39,6 +37,8 @@ class OrderController extends Coco_Controller_Action_Default {
     }
 
     public function addAction(){
+        $this->checkLogin();
+
         $itemId = $this->_getParam('item-id');
         $itemType = $this->_getParam('item-type');
         $priceType = $this->_getParam('price-type');
@@ -56,28 +56,98 @@ class OrderController extends Coco_Controller_Action_Default {
         }
     }
 
+    public function saveOrderAction(){
+        //get basket
+        $basket = Vts_Session::get('basket');
+        if($basket){
+
+        }
+    }
+
     /**
      * Get order
      */
     public function detailAction(){
+        $this->checkLogin();
+
         $orderId = $this->_getParam('order-id');
         $order = $this->_model->getOrder($orderId);
         $this->view->order = $order;
     }
 
     /**
-     * Add order template
-     * @author
+     * Set account type for user
+     * @author tien.nguyen
+     * @throws Zend_Exception
      */
-    public function addOrderTemplateAction(){
-        $templateId = $this->_getParam('template-id');
+    public function setAccountTypeAction(){
+        $accountType = $this->_getParam('account-type');
+
+        if(empty($accountType)){
+            throw new Zend_Exception('Account Type is empty.');
+        }
 
         $vtsBasket = new Vts_Basket();
-        $vtsTemplate = new Vts_Template();
+        $res = $vtsBasket->setTypeAccount($accountType);
+        if($res){
+            $this->_redirect($vtsBasket->getNextStep());
+        }else{
+            throw new Zend_Exception('Set domain have error. Please contact with admin vtscat@gmail.com.');
+        }
+    }
 
-        $template = Coco_NotORM::getInstance()->Templates[array('TemplateId' => $templateId, 'IsActive' => 0)];
-        if($template){
+    /**
+     * Set domain
+     * @author tien.nguyen
+     * @throws Zend_Exception
+     */
+    public function setDomainAction(){
+        $domain = $this->_getParam('domain');
+        if(empty($domain)){
+            throw new Zend_Exception('Domain is empty.');
+        }
 
+        $vtsBasket = new Vts_Basket();
+        $res = $vtsBasket->setDomain($domain);
+        if($res){
+            $this->_redirect($vtsBasket->getNextStep());
+        }else{
+            throw new Zend_Exception('Set domain have error. Please contact with admin vtscat@gmail.com.');
+        }
+    }
+
+    /**
+     * Add order template
+     * @author tien.nguyen
+     */
+    public function setTemplateAction(){
+        $templateId = $this->_getParam('template-id');
+        if(empty($templateId)){
+            throw new Zend_Exception('Template Id is empty.');
+        }
+
+        $vtsBasket = new Vts_Basket();
+        $res = $vtsBasket->setTemplate($templateId);
+        if($res){
+            $this->_redirect($vtsBasket->getNextStep());
+        }else{
+            throw new Zend_Exception("Set template have error. Please contact with admin  vtscat@gmail.com.");
+        }
+    }
+
+    public function newOrderAction(){
+        $templateId = $this->_getParam('template-id');
+
+        if($templateId){
+            $vtsBasket = new Vts_Basket();
+            $res = $vtsBasket->removeAll();
+            if($res){
+                $this->_redirect($this->view->url(array('controller' => 'order', 'action' => 'set-template', 'template-id' => $templateId), null, true));
+            }else{
+                throw new Zend_Exception('Have error when remove basket.');
+            }
+        }else{
+            throw new Zend_Exception('Template Id is empty.');
         }
     }
 }

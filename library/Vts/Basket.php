@@ -11,14 +11,9 @@ class Vts_Basket {
     public function __construct(){}
 
     public function get(){
-        $basket = Vts_Session::get("basket");
-        if(empty($basket->items)){
-            $basket->items = array();
-        }
+        $basket = Vts_Session::get("basket", new stdClass());
         return $basket;
     }
-
-
 
     /**
      * Get to
@@ -43,13 +38,13 @@ class Vts_Basket {
      */
     public function getNextStep(){
         $basket = $this->get();
-        $arr = array('Template' => ORDER_TEMPLATE, 'AccountType' => ORDER_TEMPLATE, 'Domain' => ORDER_DOMAIN);
+        $arr = array('Template' => ORDER_TEMPLATE, 'AccountType' => ORDER_ACCOUNT_TYPE, 'Domain' => ORDER_DOMAIN);
         foreach($arr as $key => $value){
             if(empty($basket->{$key})){
                 return $value;
             }
         }
-        return null;
+        return ORDER_SUCCESS;
     }
 
     /**
@@ -124,8 +119,9 @@ class Vts_Basket {
      * @return bool
      */
     public function setValue($name, $value){
-        $basket = $this->get();
-        $basket->{$name} = $value;
+        $default = new Zend_Session_Namespace('default');
+        $default->basket->{$name} = $value;
+
         return true;
     }
 
@@ -135,8 +131,8 @@ class Vts_Basket {
      * @param $templateId
      * @throws Zend_Exception
      */
-    public function setTemplate($templateId, $typePrice) {
-        $template = Coco_NotORM::getInstance()->Templates[array('TemplateId' => $templateId, 'IsActive' => 0)];
+    public function setTemplate($templateId) {
+        $template = Coco_NotORM::getInstance()->Templates[array('TemplateId' => $templateId, 'IsActive' => 1, 'IsDeleted' => 0)];
         $vtsTemplate = new Vts_Template();
         if($template){
             $item = new stdClass();
@@ -157,7 +153,7 @@ class Vts_Basket {
      * @return bool
      */
     public function setTypeAccount($accountTypeCode){
-        $accountTypeCodeObj = Coco_NotORM::getInstance()->AccountTypes[array('AccountTypeCode' => $accountTypeCode, 'IsAction' => 0)];
+        $accountTypeCodeObj = Coco_NotORM::getInstance()->AccountTypes[array('AccountTypeCode' => $accountTypeCode, 'IsActive' => 1)];
         if($accountTypeCodeObj){
             $item = new stdClass();
             $item->ItemQuality = 1;
@@ -189,5 +185,15 @@ class Vts_Basket {
 
         //set domain
         return $this->setValue("Domain", $item);
+    }
+
+    /**
+     * Remove all item in basket
+     * @return bool
+     */
+    public function removeAll(){
+        $default = new Zend_Session_Namespace('default');
+        $default->basket = null;
+        return  true;
     }
 }
