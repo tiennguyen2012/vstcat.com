@@ -27,6 +27,7 @@ ul.errors { color: red }
     -webkit-border-radius: 5px;
     border-radius: 5px;
     -moz-border-radius: 5px;
+    margin-bottom: 5px;
 }
 
 /** HEADER PAGE **/
@@ -123,6 +124,7 @@ ul.errors { color: red }
     border-radius: 5px;
     -moz-border-radius: 5px;
     background-color: #d6e9c6;
+    margin: 0 5px 0 0;
 }
 #ptemplate-detail .btn-buy:hover {
     background-color: #f0f0f0;
@@ -159,7 +161,10 @@ ul.errors { color: red }
 #page-price {}
 #page-price .setup-vtscat {}
 #page-price .setup-vtscat .item { width: 230px; float: left;  }
-#page-price .setup-vtscat .item.block-price { width: 200px }
+#page-price .setup-vtscat .item.block-price { width: 150px }
+#page-price .setup-vtscat .item.block-price .row-item { font-size: 11px; font-style: italic }
+#page-price .setup-vtscat .item.block-price .row-item.even { background-color: #f8f9f9 }
+#page-price .setup-vtscat .item.block-price.even .row-item.even { background-color: #f0f0f0 }
 #page-price .setup-vtscat .item .checked { width: 30px }
 #page-price .setup-vtscat .item .row-item { height:40px; border-bottom: 1px dotted #f0f0f0; padding: 5px  }
 #page-price .setup-vtscat .item .row-item.even { background-color: #f0f0f0; }

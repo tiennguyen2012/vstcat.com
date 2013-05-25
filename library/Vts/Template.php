@@ -10,6 +10,47 @@ class Vts_Template
 {
 
     /**
+     * Get price of template by default
+     * @param $templateId
+     */
+    public function getPriceDefault($template){
+        if($template){
+            if(empty($template['UniqueCurrentPrice'])){
+                if($template['IsFreeMember']){
+                    return 0;
+                }else{
+                    return floatval($template['NormalPrice']);
+                }
+            }else{
+                return floatval($template['UniqueCurrentPrice']);
+            }
+        }else{
+            throw new Zend_Exception('Template not found');
+        }
+    }
+
+    /**
+     * @param $template
+     * @return string
+     * @throws Zend_Exception
+     */
+    public function getPriceTypeDefault($template) {
+        if($template){
+            if(empty($template['UniqueCurrentPrice'])){
+                if($template['IsFreeMember']){
+                    return "FREE";
+                }else{
+                    return "NORMAL";
+                }
+            }else{
+                return "UNIQUE";
+            }
+        }else{
+            throw new Zend_Exception('Template not found');
+        }
+    }
+
+    /**
      * Get price for template
      *
      * @param $template object template get database by Coco_NotORM

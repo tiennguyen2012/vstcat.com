@@ -30,10 +30,17 @@ define('LANGUAGE_DEFAULT', 'en');
 define('EMAIL_SSL', 'ssl');
 define('EMAIL_PORT', 465);
 define('EMAIL_AUTH', 'login');
-define('EMAIL_USER', 'tien.nguyen@kiss-concept.com');
+define('EMAIL_USER', 'vtscat@gmail.com');
 define('EMAIL_PASSWORD', 'tinhanh123');
 define('EMAIL_SERVER', 'smtp.gmail.com');
 define('EMAIL_NAME', 'VTS Contact');
+
+/**
+ * FLOW ORDER
+ */
+define('ORDER_TEMPLATE', BASE_URL.'/template');
+define('ORDER_ACCOUNT_TYPE', BASE_URL.'/page/price');
+define('ORDER_DOMAIN', BASE_URL.'/page/price');
 
 /**
  * PAYMENT

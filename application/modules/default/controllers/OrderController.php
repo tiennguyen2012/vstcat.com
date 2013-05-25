@@ -64,4 +64,20 @@ class OrderController extends Coco_Controller_Action_Default {
         $order = $this->_model->getOrder($orderId);
         $this->view->order = $order;
     }
+
+    /**
+     * Add order template
+     * @author
+     */
+    public function addOrderTemplateAction(){
+        $templateId = $this->_getParam('template-id');
+
+        $vtsBasket = new Vts_Basket();
+        $vtsTemplate = new Vts_Template();
+
+        $template = Coco_NotORM::getInstance()->Templates[array('TemplateId' => $templateId, 'IsActive' => 0)];
+        if($template){
+
+        }
+    }
 }

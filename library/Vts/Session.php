@@ -12,4 +12,9 @@ class Vts_Session {
         $default = new Zend_Session_Namespace('default');
         return $default->{$name};
     }
+
+    public static function set($name, $value){
+        $default = new Zend_Session_Namespace('default');
+        $default->{$name} = $value;
+    }
 }
