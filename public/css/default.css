@@ -158,8 +158,11 @@ ul.errors { color: red }
 /** PRICE ***/
 #page-price {}
 #page-price .setup-vtscat {}
-#page-price .setup-vtscat .item { width: 220px; float: left;  }
-#page-price .setup-vtscat .item .row-item { height:40px; border-bottom: 1px dotted #f0f0f0  }
+#page-price .setup-vtscat .item { width: 230px; float: left;  }
+#page-price .setup-vtscat .item.block-price { width: 200px }
+#page-price .setup-vtscat .item .checked { width: 30px }
+#page-price .setup-vtscat .item .row-item { height:40px; border-bottom: 1px dotted #f0f0f0; padding: 5px  }
+#page-price .setup-vtscat .item .row-item.even { background-color: #f0f0f0; }
 #page-price .setup-vtscat .item .row-item span { font-size: 12px; line-height: 12px }
 #page-price .setup-vtscat .item .row-item h5 { margin: 0 }
 #page-price .setup-vtscat .item .row-item.title { font-size: 20px; font-weight: bold; color: green }

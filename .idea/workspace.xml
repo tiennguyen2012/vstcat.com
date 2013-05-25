@@ -25,19 +25,42 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
       <file leaf-file-name="ProfileController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/modules/default/controllers/ProfileController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="15" column="0" selection-start="332" selection-end="332" vertical-scroll-proportion="0.4704797">
+=======
+      <file leaf-file-name="header.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/layouts/scripts/default/header.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="69" column="29" selection-start="4695" selection-end="4695" vertical-scroll-proportion="-2.8461537">
+>>>>>>> 3560b9d... Price page
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="PaymentController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/modules/default/controllers/PaymentController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="12" column="5" selection-start="267" selection-end="267" vertical-scroll-proportion="-7.8461537">
+=======
+      <file leaf-file-name="price.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/modules/default/views/scripts/page/price.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="40" selection-start="1967" selection-end="1978" vertical-scroll-proportion="-20.923077">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/css/default.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="159" column="43" selection-start="6339" selection-end="6339" vertical-scroll-proportion="0.7494331">
+>>>>>>> 3560b9d... Price page
               <folding />
             </state>
           </provider>
@@ -80,8 +103,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="754" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -417,32 +440,6 @@
               <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vtsweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vtscat.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -515,8 +512,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -547,6 +548,24 @@
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="89f58cb7-23fa-4fe1-b053-c88551f1c09a" name="Default" comment="" />
@@ -556,14 +575,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21818182" sideWeight="0.3237774" order="4" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2780303" sideWeight="0.6644182" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18623266" sideWeight="0.6644182" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> 3560b9d... Price page
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32715008" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -656,13 +679,18 @@
     </entry>
     <entry file="file://D:/ZendFramework-1.11.7/library/Zend/Validate/StringLength.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="92" column="27" selection-start="2487" selection-end="2492" vertical-scroll-proportion="-10.269231">
           <folding />
         </state>
+=======
+        <state line="9" column="0" selection-start="229" selection-end="229" vertical-scroll-proportion="0.2693662" />
+>>>>>>> 3560b9d... Price page
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/default/views/scripts/user/signin.phtml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="33" column="201" selection-start="1712" selection-end="1712" vertical-scroll-proportion="-6.8461537">
           <folding>
             <marker date="1369410905238" expanded="true" signature="2109:2149" placeholder="..." />
@@ -670,24 +698,36 @@
             <marker date="1369410905238" expanded="true" signature="2295:2343" placeholder="..." />
           </folding>
         </state>
+=======
+        <state line="4" column="50" selection-start="64272" selection-end="64272" vertical-scroll-proportion="0.122522525" />
+>>>>>>> 3560b9d... Price page
       </provider>
     </entry>
     <entry file="file://D:/ZendFramework-1.11.7/library/Zend/Validate/Identical.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="45" column="72" selection-start="1489" selection-end="1489" vertical-scroll-proportion="-14.846154">
           <folding />
         </state>
+=======
+        <state line="57" column="0" selection-start="1341" selection-end="1341" vertical-scroll-proportion="0.0" />
+>>>>>>> 3560b9d... Price page
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/default/views/scripts/user/forget-password.phtml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="1" column="4" selection-start="36" selection-end="1195" vertical-scroll-proportion="-0.65384614">
           <folding />
         </state>
+=======
+        <state line="12" column="0" selection-start="624" selection-end="624" vertical-scroll-proportion="0.0" />
+>>>>>>> 3560b9d... Price page
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/default/views/scripts/user/forget-password-email.phtml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="8" column="17" selection-start="583" selection-end="583" vertical-scroll-proportion="0.25708884">
           <folding>
             <marker date="1369411337747" expanded="true" signature="143:185" placeholder="..." />
@@ -698,55 +738,92 @@
     <entry file="file://$PROJECT_DIR$/application/modules/default/views/scripts/user/forget-pass-token.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="68" selection-start="824" selection-end="824" vertical-scroll-proportion="-14.384615">
+=======
+        <state line="22" column="38" selection-start="474" selection-end="491" vertical-scroll-proportion="0.0">
+>>>>>>> 3560b9d... Price page
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/default/forms/FormForgetPassword.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="18" column="34" selection-start="470" selection-end="470" vertical-scroll-proportion="-11.769231">
+=======
+        <state line="17" column="0" selection-start="458" selection-end="458" vertical-scroll-proportion="0.33761683">
+>>>>>>> 3560b9d... Price page
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/application/modules/default/forms/FormForgetToken.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="37" selection-start="869" selection-end="869" vertical-scroll-proportion="-14.384615">
+=======
+    <entry file="file://$PROJECT_DIR$/application/modules/default/views/scripts/index/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="20" selection-start="4575" selection-end="4575" vertical-scroll-proportion="0.0">
+>>>>>>> 3560b9d... Price page
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/application/modules/default/controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="116" column="0" selection-start="3697" selection-end="3697" vertical-scroll-proportion="-3.2307692">
+=======
+    <entry file="file://$PROJECT_DIR$/application/modules/default/models/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="40" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0">
+>>>>>>> 3560b9d... Price page
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/application/modules/default/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="36" selection-start="896" selection-end="896" vertical-scroll-proportion="-15.692307">
+=======
+    <entry file="file://$PROJECT_DIR$/application/modules/default/views/scripts/template/detail.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="27" selection-start="639" selection-end="639" vertical-scroll-proportion="0.0">
+>>>>>>> 3560b9d... Price page
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/layouts/scripts/default/header.phtml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="41" column="100" selection-start="2888" selection-end="2888" vertical-scroll-proportion="0.5463138">
+=======
+        <state line="69" column="29" selection-start="4695" selection-end="4695" vertical-scroll-proportion="-2.8461537">
+>>>>>>> 3560b9d... Price page
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/default/controllers/PaymentController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="12" column="5" selection-start="267" selection-end="267" vertical-scroll-proportion="-7.8461537">
+=======
+        <state line="35" column="40" selection-start="1967" selection-end="1978" vertical-scroll-proportion="-20.923077">
+>>>>>>> 3560b9d... Price page
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/default/controllers/ProfileController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="15" column="0" selection-start="332" selection-end="332" vertical-scroll-proportion="0.4704797">
+=======
+        <state line="159" column="43" selection-start="6339" selection-end="6339" vertical-scroll-proportion="0.7494331">
+>>>>>>> 3560b9d... Price page
           <folding />
         </state>
       </provider>

@@ -68,7 +68,7 @@
                             <a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'signup'), null, true) ?>">
                                 <?php echo $this->lang('Sign Up') ?></a>
                         </li>
-                        <?php if (!Vts_App::getUserLogin()->UserId): ?>
+                        <?php if (isset(Vts_App::getUserLogin()->UserId)): ?>
                         <li>
                             <a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'signin'), null, true) ?>">
                                 <?php echo $this->lang('Sign In') ?></a>

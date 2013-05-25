@@ -1287,6 +1287,7 @@ E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
+<<<<<<< HEAD
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\forms\FormContact.php:31:SELECT CountryCode, CountryName FROM Countrys;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\contact\index.phtml:39:SELECT CountryCode, CountryName FROM Countrys ORDER BY CountryName ASC;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
@@ -1305,11 +1306,20 @@ E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:2:SELECT * FROM Categorys WHERE (IsActive = 1) AND (IsDeleted = 0);
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:11:SELECT * FROM Templates WHERE (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL);
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:19:SELECT * FROM Templates WHERE (Templates.CategoryId IN (1, 2, 3, 4, 5)) AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL);
+=======
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\index\index.phtml:15:SELECT * FROM Templates WHERE (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL) LIMIT 4 OFFSET 0;
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\index\index.phtml:44:SELECT * FROM Categorys WHERE (IsActive = 1) AND (IsDeleted = 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\index\index.phtml:47:(SELECT * FROM Templates WHERE (CategoryId = '1') AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL) ORDER BY Templates.CategoryId DESC, CreatedDate DESC LIMIT 4 OFFSET 0) UNION (SELECT * FROM Templates WHERE (CategoryId = '2') AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL) ORDER BY Templates.CategoryId DESC, CreatedDate DESC LIMIT 4 OFFSET 0) UNION (SELECT * FROM Templates WHERE (CategoryId = '3') AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL) ORDER BY Templates.CategoryId DESC, CreatedDate DESC LIMIT 4 OFFSET 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:2:SELECT * FROM Categorys WHERE (IsActive = 1) AND (IsDeleted = 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:11:SELECT * FROM Templates WHERE (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:19:SELECT * FROM Templates WHERE (Templates.CategoryId IN (1, 2, 3)) AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL);
+>>>>>>> 3560b9d... Price page
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:32:SELECT * FROM TemplateTypes WHERE (IsActive = 1) AND (IsDeleted = 0);
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:41:SELECT * FROM Templates WHERE (IsActive = 1) AND (IsDeleted = 0);
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:48:SELECT * FROM Templates WHERE (Templates.TemplateTypeId IN (1, 2, 3)) AND (IsActive = 1) AND (IsDeleted = 0);
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
+<<<<<<< HEAD
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\models\Template.php:12:SELECT * FROM Templates WHERE (TemplateId = '1') AND (IsActive = 1) AND (IsDeleted = 0) LIMIT 1 OFFSET 0;
@@ -1318,11 +1328,19 @@ E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:2:SELECT * FROM Categorys WHERE (IsActive = 1) AND (IsDeleted = 0);
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:11:SELECT * FROM Templates WHERE (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL);
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:19:SELECT * FROM Templates WHERE (Templates.CategoryId IN (1, 2, 3, 4, 5)) AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL);
+=======
+E:\Framework\ZendFramework-1.12.1-minimal\library\Zend\Paginator\Adapter\Iterator.php:72:SELECT * FROM Templates WHERE (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL) AND (CategoryId = '1');
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\template\index.phtml:6:SELECT * FROM Categorys WHERE (CategoryId = '1');
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:2:SELECT * FROM Categorys WHERE (IsActive = 1) AND (IsDeleted = 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:11:SELECT * FROM Templates WHERE (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:19:SELECT * FROM Templates WHERE (Templates.CategoryId IN (1, 2, 3)) AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL);
+>>>>>>> 3560b9d... Price page
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:32:SELECT * FROM TemplateTypes WHERE (IsActive = 1) AND (IsDeleted = 0);
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:41:SELECT * FROM Templates WHERE (IsActive = 1) AND (IsDeleted = 0);
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:48:SELECT * FROM Templates WHERE (Templates.TemplateTypeId IN (1, 2, 3)) AND (IsActive = 1) AND (IsDeleted = 0);
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
+<<<<<<< HEAD
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
@@ -1383,6 +1401,39 @@ E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
+=======
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\index\index.phtml:15:SELECT * FROM Templates WHERE (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL) LIMIT 4 OFFSET 0;
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\index\index.phtml:44:SELECT * FROM Categorys WHERE (IsActive = 1) AND (IsDeleted = 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\index\index.phtml:47:(SELECT * FROM Templates WHERE (CategoryId = '1') AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL) ORDER BY Templates.CategoryId DESC, CreatedDate DESC LIMIT 4 OFFSET 0) UNION (SELECT * FROM Templates WHERE (CategoryId = '2') AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL) ORDER BY Templates.CategoryId DESC, CreatedDate DESC LIMIT 4 OFFSET 0) UNION (SELECT * FROM Templates WHERE (CategoryId = '3') AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL) ORDER BY Templates.CategoryId DESC, CreatedDate DESC LIMIT 4 OFFSET 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:2:SELECT * FROM Categorys WHERE (IsActive = 1) AND (IsDeleted = 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:11:SELECT * FROM Templates WHERE (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:19:SELECT * FROM Templates WHERE (Templates.CategoryId IN (1, 2, 3)) AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:32:SELECT * FROM TemplateTypes WHERE (IsActive = 1) AND (IsDeleted = 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:41:SELECT * FROM Templates WHERE (IsActive = 1) AND (IsDeleted = 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:48:SELECT * FROM Templates WHERE (Templates.TemplateTypeId IN (1, 2, 3)) AND (IsActive = 1) AND (IsDeleted = 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\index\index.phtml:15:SELECT * FROM Templates WHERE (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL) LIMIT 4 OFFSET 0;
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\index\index.phtml:44:SELECT * FROM Categorys WHERE (IsActive = 1) AND (IsDeleted = 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\index\index.phtml:47:(SELECT * FROM Templates WHERE (CategoryId = '1') AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL) ORDER BY Templates.CategoryId DESC, CreatedDate DESC LIMIT 4 OFFSET 0) UNION (SELECT * FROM Templates WHERE (CategoryId = '2') AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL) ORDER BY Templates.CategoryId DESC, CreatedDate DESC LIMIT 4 OFFSET 0) UNION (SELECT * FROM Templates WHERE (CategoryId = '3') AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL) ORDER BY Templates.CategoryId DESC, CreatedDate DESC LIMIT 4 OFFSET 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:2:SELECT * FROM Categorys WHERE (IsActive = 1) AND (IsDeleted = 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:11:SELECT * FROM Templates WHERE (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:19:SELECT * FROM Templates WHERE (Templates.CategoryId IN (1, 2, 3)) AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:32:SELECT * FROM TemplateTypes WHERE (IsActive = 1) AND (IsDeleted = 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:41:SELECT * FROM Templates WHERE (IsActive = 1) AND (IsDeleted = 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:48:SELECT * FROM Templates WHERE (Templates.TemplateTypeId IN (1, 2, 3)) AND (IsActive = 1) AND (IsDeleted = 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'vi') LIMIT 1 OFFSET 0;
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\index\index.phtml:15:SELECT * FROM Templates WHERE (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL) LIMIT 4 OFFSET 0;
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\index\index.phtml:44:SELECT * FROM Categorys WHERE (IsActive = 1) AND (IsDeleted = 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\index\index.phtml:47:(SELECT * FROM Templates WHERE (CategoryId = '1') AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL) ORDER BY Templates.CategoryId DESC, CreatedDate DESC LIMIT 4 OFFSET 0) UNION (SELECT * FROM Templates WHERE (CategoryId = '2') AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL) ORDER BY Templates.CategoryId DESC, CreatedDate DESC LIMIT 4 OFFSET 0) UNION (SELECT * FROM Templates WHERE (CategoryId = '3') AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL) ORDER BY Templates.CategoryId DESC, CreatedDate DESC LIMIT 4 OFFSET 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:2:SELECT * FROM Categorys WHERE (IsActive = 1) AND (IsDeleted = 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:11:SELECT * FROM Templates WHERE (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:19:SELECT * FROM Templates WHERE (Templates.CategoryId IN (1, 2, 3)) AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:32:SELECT * FROM TemplateTypes WHERE (IsActive = 1) AND (IsDeleted = 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:41:SELECT * FROM Templates WHERE (IsActive = 1) AND (IsDeleted = 0);
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:48:SELECT * FROM Templates WHERE (Templates.TemplateTypeId IN (1, 2, 3)) AND (IsActive = 1) AND (IsDeleted = 0);
+>>>>>>> 3560b9d... Price page
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\models\Template.php:12:SELECT * FROM Templates WHERE (TemplateId = '1') AND (IsActive = 1) AND (IsDeleted = 0) LIMIT 1 OFFSET 0;
@@ -1390,7 +1441,11 @@ E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\template\detail.phtml:23:SELECT * FROM TemplateTypes WHERE (TemplateTypeId = '1');
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:2:SELECT * FROM Categorys WHERE (IsActive = 1) AND (IsDeleted = 0);
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:11:SELECT * FROM Templates WHERE (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL);
+<<<<<<< HEAD
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:19:SELECT * FROM Templates WHERE (Templates.CategoryId IN (1, 2, 3, 4, 5)) AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL);
+=======
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:19:SELECT * FROM Templates WHERE (Templates.CategoryId IN (1, 2, 3)) AND (IsActive = 1) AND (IsDeleted = 0) AND (ImageDefault IS NOT NULL);
+>>>>>>> 3560b9d... Price page
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:32:SELECT * FROM TemplateTypes WHERE (IsActive = 1) AND (IsDeleted = 0);
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:41:SELECT * FROM Templates WHERE (IsActive = 1) AND (IsDeleted = 0);
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:48:SELECT * FROM Templates WHERE (Templates.TemplateTypeId IN (1, 2, 3)) AND (IsActive = 1) AND (IsDeleted = 0);
@@ -1400,6 +1455,7 @@ E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
+<<<<<<< HEAD
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\forms\FormSignUp.php:43:SELECT CountryCode, CountryName FROM Countrys;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\user\signup.phtml:50:SELECT CountryCode, CountryName FROM Countrys ORDER BY CountryName ASC;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
@@ -1730,28 +1786,41 @@ E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
+=======
+>>>>>>> 3560b9d... Price page
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
+<<<<<<< HEAD
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\models\User.php:12:SELECT * FROM Users WHERE (Email = 'nguyenvantien2009@gmail.com') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\models\User.php:17:UPDATE Users SET Token = '4e5b82f5a466a16905d14d5c2bbe7622', TokenExpireDate = '2013-05-25 06:09:49' WHERE (UserId = '15');
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\models\User.php:12:SELECT * FROM Users WHERE (Email = 'nguyenvantien2009@gmail.com') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\models\User.php:17:UPDATE Users SET Token = '4e5b82f5a466a16905d14d5c2bbe7622', TokenExpireDate = '2013-05-25 06:10:16' WHERE (UserId = '15');
+=======
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
+E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
+>>>>>>> 3560b9d... Price page
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
+<<<<<<< HEAD
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\models\User.php:68:SELECT * FROM Users WHERE (Token = '4e5b82f5a466a16905d14d5c2bbe7622') LIMIT 1 OFFSET 0;
+=======
+>>>>>>> 3560b9d... Price page
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
+<<<<<<< HEAD
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\models\User.php:68:SELECT * FROM Users WHERE (Token = '4e5b82f5a466a16905d14d5c2bbe7622') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\models\User.php:49:SELECT * FROM Users WHERE (Token = '4e5b82f5a466a16905d14d5c2bbe7622') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\models\User.php:52:UPDATE Users SET Password = 'b67caeadd08813208b511ac9a14ecc12' WHERE (UserId = '15');
+=======
+>>>>>>> 3560b9d... Price page
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
@@ -1760,6 +1829,7 @@ E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
+<<<<<<< HEAD
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\library\Vts\Modules\User.php:20:SELECT * FROM Users WHERE (Username = 'nguyenvantien2009@gmail.com') AND (Password = 'b67caeadd08813208b511ac9a14ecc12') AND (IsActive = 1) AND (IsDeleted = 0) LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
@@ -1845,6 +1915,8 @@ E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\right-cate.phtml:48:SELECT * FROM Templates WHERE (Templates.TemplateTypeId IN (1, 2, 3)) AND (IsActive = 1) AND (IsDeleted = 0);
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
+=======
+>>>>>>> 3560b9d... Price page
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
@@ -1853,6 +1925,7 @@ E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
+<<<<<<< HEAD
 D:\ZendFramework-1.11.7\library\Zend\Paginator\Adapter\Iterator.php:72:SELECT * FROM Orders WHERE (UserId = '15') AND (IsDeleted = 0) ORDER BY CreatedDate DESC;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\order\index.phtml:24:SELECT * FROM OrderDetails WHERE (OrderId = '62');
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\order\index.phtml:29:SELECT * FROM Websites WHERE (WebsiteId = '25');
@@ -1874,6 +1947,8 @@ E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\order\index.phtml:29:SELECT * FROM Websites WHERE (WebsiteId = '24');
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\order\index.phtml:24:SELECT * FROM OrderDetails WHERE (OrderId = '52');
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\modules\default\views\scripts\order\index.phtml:29:SELECT * FROM Websites WHERE (WebsiteId = '24');
+=======
+>>>>>>> 3560b9d... Price page
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:23:SELECT * FROM Languages ORDER BY LanguageName ASC;
 E:\xampp\htdocs\vtssoft\vtscat.com\system\vtscat.com\application\layouts\scripts\default\header.phtml:12:SELECT * FROM Languages WHERE (LanguageCode = 'en') LIMIT 1 OFFSET 0;
