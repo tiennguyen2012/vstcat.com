@@ -93,13 +93,14 @@ class OrderController extends Coco_Controller_Action_Default {
      */
     public function setAccountTypeAction(){
         $accountType = $this->_getParam('account-type');
+        $cycleBilling = $this->_getParam('cycle-billing');
 
-        if(empty($accountType)){
-            throw new Zend_Exception('Account Type is empty.');
+        if(empty($accountType) || empty($cycleBilling)){
+            throw new Zend_Exception('Account Type OR Cycle Billing is empty.');
         }
 
         $vtsBasket = new Vts_Basket();
-        $res = $vtsBasket->setTypeAccount($accountType);
+        $res = $vtsBasket->setTypeAccount($accountType, $cycleBilling);
         if($res){
             $this->_redirect($vtsBasket->getNextStep());
         }else{

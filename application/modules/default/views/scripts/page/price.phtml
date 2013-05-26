@@ -1,9 +1,41 @@
 <div id="page-price">
+    <h4><?php echo $this->translate('Price') ?></h4>
+    <div>
+        <?php echo $this->translate('Price table of our services applied start on 2013/01/01.') ?>
+    </div>
+    <p/>
     <div class="setup-vtscat">
-        <div class="content">
+        <div class="row-fluid box-cyclebilling">
+            <div class="span2">
+                <h5><?php echo $this->translate('Cycle Billing') ?></h5>
+            </div>
+            <div class="span10">
+                <form id="frmCycle" name="frmCycle">
+                    <div class="span3">
+                        <input type="radio" value="MONTHLY" class="cycileBilling"  checked="checked" name="cycleBilling"> <?php echo $this->translate('Monthly') ?>
+                        <div class="cyceBillingDescription"><?php echo $this->translate('not discount') ?></div>
+                    </div>
+                    <div class="span3">
+                        <input align="left" value="SIX_MONTHLY" type="radio" class="cycileBilling" name="cycleBilling"> <?php echo $this->translate('Six Monthly') ?>
+                        <div class="cyceBillingDescription"><?php echo $this->translate('discount 1/2 month') ?></div>
+                    </div>
+                    <div class="span3">
+                        <input align="left" value="YEARLY" type="radio" class="cycileBilling" name="cycleBilling"> <?php echo $this->translate('Yearly') ?>
+                        <div class="cyceBillingDescription"><?php echo $this->translate('discount 1 month') ?></div>
+                    </div>
+                    <div class="span3">
+                        <input align="left" value="TWO_YEARLY" type="radio" class="cycileBilling" name="cycleBilling"> <?php echo $this->translate('Two Yearly') ?>
+                        <div class="cyceBillingDescription"><?php echo $this->translate('discount 2 months') ?></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br/>
+
+        <!-- PAY PRCIE -->
+        <div class="content row-fluid">
             <div class="item header">
-                <div class="row-item">
-                </div>
+                <div class="row-item"></div>
                 <div class="row-item">
                     <h5><?php echo $this->translate('Hosting') ?></h5>
                     <span><?php echo $this->translate('Your code will set in vtscat hosting.') ?></span>
@@ -40,7 +72,7 @@
             <div class="item block-price">
                 <div class="row-item title">
                     <?php echo $this->translate('Personal') ?>
-                    <div>$19/mo</div>
+                    <div class="pricePersonal">$19/mo</div>
                 </div>
                 <div class="row-item">
                     <img class="checked" src="/images/check.png" title="Checked" alt="Checked"/>
@@ -61,7 +93,7 @@
                 <div class="row-item even"></div>
                 <div class="row-item"></div>
                 <div class="row-item even">
-                    <a href="<?php echo $this->url(array('controller' => 'order', 'action' => 'set-account-type' , 'account-type' => 'PERSONAL')) ?>">
+                    <a class="btnOrderNow" href="<?php echo $this->url(array('controller' => 'order', 'action' => 'set-account-type' , 'account-type' => 'PERSONAL')) ?>">
                     <button class="btn btn-primary"><?php echo $this->translate('Order now') ?></button>
                     </a>
                 </div>
@@ -69,7 +101,7 @@
             <div class="item block-price even">
                 <div class="row-item title">
                     <?php echo $this->translate('Business') ?>
-                    <div>$29/mo</div>
+                    <div class="priceBusiness">$29/mo</div>
                 </div>
                 <div class="row-item">
                     <img class="checked" src="/images/check.png" title="Checked" alt="Checked"/>
@@ -94,7 +126,7 @@
                 </div>
                 <div class="row-item"></div>
                 <div class="row-item even">
-                    <a href="<?php echo $this->url(array('controller' => 'order', 'action' => 'set-account-type' , 'account-type' => 'BUSINESS')) ?>">
+                    <a class="btnOrderNow"  href="<?php echo $this->url(array('controller' => 'order', 'action' => 'set-account-type' , 'account-type' => 'BUSINESS')) ?>">
                     <button class="btn btn-primary"><?php echo $this->translate('Order now') ?></button>
                     </a>
                 </div>
@@ -102,7 +134,7 @@
             <div class="item block-price">
                 <div class="row-item title">
                     <?php echo $this->translate('G-Business') ?>
-                    <div>$39/mo</div>
+                    <div class="priceGBusiness">$39/mo</div>
                 </div>
                 <div class="row-item">
                     <img class="checked" src="/images/check.png" title="Checked" alt="Checked"/>
@@ -129,7 +161,7 @@
                     <img class="checked" src="/images/check.png" title="Checked" alt="Checked"/>
                 </div>
                 <div class="row-item even">
-                    <a href="<?php echo $this->url(array('controller' => 'order', 'action' => 'set-account-type' , 'account-type' => 'G-BUSINESS')) ?>">
+                    <a class="btnOrderNow"  href="<?php echo $this->url(array('controller' => 'order', 'action' => 'set-account-type' , 'account-type' => 'G-BUSINESS')) ?>">
                         <button class="btn btn-primary"><?php echo $this->translate('Order now') ?></button>
                     </a>
                 </div>

@@ -20,49 +20,64 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="price.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/modules/default/views/scripts/page/price.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="145" selection-start="1230" selection-end="1386" vertical-scroll-proportion="80.34615">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/default.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="52" selection-start="2086" selection-end="2099" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="OrderController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/modules/default/controllers/OrderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="0" selection-start="2748" selection-end="2748" vertical-scroll-proportion="-11.346154">
+            <state line="67" column="39" selection-start="2197" selection-end="2206" vertical-scroll-proportion="-6.2156863">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.phtml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/modules/default/views/scripts/order/detail.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="39" selection-start="2634" selection-end="2634" vertical-scroll-proportion="0.6143667">
-              <folding>
-                <marker date="1369546216547" expanded="true" signature="2956:3049" placeholder="..." />
-                <marker date="1369546216547" expanded="true" signature="3238:3336" placeholder="..." />
-                <marker date="1369546216547" expanded="true" signature="3271:3304" placeholder="..." />
-                <marker date="1369546216547" expanded="true" signature="3738:3856" placeholder="..." />
-                <element signature="n#style#0;n#td#3;n#tr#1;n#table#0;n#div#2;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <marker date="1369546216547" expanded="true" signature="4011:4063" placeholder="..." />
-                <marker date="1369546216547" expanded="true" signature="4974:5017" placeholder="..." />
-                <marker date="1369546216547" expanded="true" signature="5317:5468" placeholder="..." />
-                <marker date="1369546216547" expanded="true" signature="5344:5468" placeholder="..." />
-                <marker date="1369546216547" expanded="true" signature="5736:5821" placeholder="..." />
-                <marker date="1369546216547" expanded="true" signature="6015:6022" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="constant.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/configs/constant.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="27" selection-start="1283" selection-end="1283" vertical-scroll-proportion="-12.038462">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Order.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Order.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/modules/default/models/Order.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="188" column="23" selection-start="6624" selection-end="6624" vertical-scroll-proportion="-8.423077">
+            <state line="211" column="61" selection-start="7372" selection-end="7372" vertical-scroll-proportion="0.44612476">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TemplateController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/modules/default/controllers/TemplateController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="32" selection-start="730" selection-end="730" vertical-scroll-proportion="-11.846154">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/Vts/App.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Basket.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/Vts/Basket.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="132" column="35" selection-start="3061" selection-end="3076" vertical-scroll-proportion="-10.692307">
               <folding />
             </state>
           </provider>
@@ -78,22 +93,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/library/Vts/Member.php" />
-        <option value="$PROJECT_DIR$/library/Vts/Session.php" />
-        <option value="$PROJECT_DIR$/application/modules/default/controllers/WebsiteController.php" />
         <option value="$PROJECT_DIR$/application/modules/default/views/scripts/website/domain.phtml" />
         <option value="$PROJECT_DIR$/application/modules/default/forms/FormSubDomain.php" />
         <option value="$PROJECT_DIR$/application/modules/default/views/scripts/template/detail.phtml" />
-        <option value="$PROJECT_DIR$/application/modules/default/views/scripts/page/price.phtml" />
         <option value="$PROJECT_DIR$/library/Vts/Unit.php" />
         <option value="$PROJECT_DIR$/application/modules/default/views/scripts/user/signin.phtml" />
         <option value="$PROJECT_DIR$/application/modules/default/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/public/index.php" />
-        <option value="$PROJECT_DIR$/application/modules/default/controllers/OrderController.php" />
-        <option value="$PROJECT_DIR$/application/modules/default/models/Order.php" />
-        <option value="$PROJECT_DIR$/library/Vts/Basket.php" />
         <option value="$PROJECT_DIR$/application/configs/constant.php" />
         <option value="$PROJECT_DIR$/application/modules/default/views/scripts/order/detail.phtml" />
+        <option value="$PROJECT_DIR$/application/layouts/scripts/default/layout.phtml" />
+        <option value="$PROJECT_DIR$/public/css/default.css" />
+        <option value="$PROJECT_DIR$/application/modules/default/views/scripts/page/price.phtml" />
+        <option value="$PROJECT_DIR$/public/js/default.js" />
+        <option value="$PROJECT_DIR$/application/modules/default/controllers/OrderController.php" />
+        <option value="$PROJECT_DIR$/library/Vts/Basket.php" />
+        <option value="$PROJECT_DIR$/application/modules/default/models/Order.php" />
       </list>
     </option>
   </component>
@@ -160,6 +175,42 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vtsweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vtscat.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vtsweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vtscat.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -286,96 +337,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vtsweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vtscat.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vtsweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vtscat.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="order" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vtsweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vtscat.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -633,76 +594,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/modules/default/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="44" selection-start="858" selection-end="858" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/default/controllers/ModuleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/Vts/Unit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="23" selection-start="558" selection-end="558" vertical-scroll-proportion="-15.038462">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/layouts/scripts/default/header.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="161" selection-start="2920" selection-end="2949" vertical-scroll-proportion="-9.153846">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/default/views/scripts/user/signin.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="39" selection-start="988" selection-end="988" vertical-scroll-proportion="-8.461538">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/default/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="82" selection-start="2230" selection-end="2240" vertical-scroll-proportion="0.610586">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/helpers/Rurl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="65" selection-start="376" selection-end="387" vertical-scroll-proportion="-7.1923075">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.032136105">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/Vts/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="30" selection-start="517" selection-end="517" vertical-scroll-proportion="-9.115385">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/default/controllers/WebsiteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="109" selection-start="1875" selection-end="1887" vertical-scroll-proportion="-11.730769">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/ZendFramework-1.11.7/library/Zend/Controller/Action.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="99" column="0" selection-start="2610" selection-end="2610" vertical-scroll-proportion="-7.5">
@@ -710,50 +601,120 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/Vts/Basket.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="31" selection-start="2365" selection-end="2365" vertical-scroll-proportion="0.35160682">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/default/controllers/OrderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="0" selection-start="2748" selection-end="2748" vertical-scroll-proportion="-11.346154">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/default/models/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="188" column="23" selection-start="6624" selection-end="6624" vertical-scroll-proportion="-8.423077">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/configs/constant.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="27" selection-start="1283" selection-end="1283" vertical-scroll-proportion="-12.038462">
+        <state line="50" column="27" selection-start="1283" selection-end="1283" vertical-scroll-proportion="0.57749075">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="10" selection-start="256" selection-end="256" vertical-scroll-proportion="0.17957747">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/layouts/scripts/default/header.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="38" selection-start="3326" selection-end="3326" vertical-scroll-proportion="0.28922495">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/layouts/scripts/default/layout.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="59" selection-start="292" selection-end="292" vertical-scroll-proportion="0.17957747">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/default/views/scripts/page/detail.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/default.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="169" column="63" selection-start="7020" selection-end="7020" vertical-scroll-proportion="0.64084506">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/default/views/scripts/order/detail.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="39" selection-start="2634" selection-end="2634" vertical-scroll-proportion="0.6143667">
+        <state line="63" column="32" selection-start="3272" selection-end="3272" vertical-scroll-proportion="0.38941398">
           <folding>
-            <marker date="1369546216547" expanded="true" signature="2956:3049" placeholder="..." />
-            <marker date="1369546216547" expanded="true" signature="3238:3336" placeholder="..." />
-            <marker date="1369546216547" expanded="true" signature="3271:3304" placeholder="..." />
-            <marker date="1369546216547" expanded="true" signature="3738:3856" placeholder="..." />
+            <marker date="1369554681496" expanded="true" signature="2956:3049" placeholder="..." />
+            <marker date="1369554681496" expanded="true" signature="3238:3336" placeholder="..." />
+            <marker date="1369554681496" expanded="true" signature="3271:3304" placeholder="..." />
+            <marker date="1369554681496" expanded="true" signature="3738:3856" placeholder="..." />
             <element signature="n#style#0;n#td#3;n#tr#1;n#table#0;n#div#2;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <marker date="1369546216547" expanded="true" signature="4011:4063" placeholder="..." />
-            <marker date="1369546216547" expanded="true" signature="4974:5017" placeholder="..." />
-            <marker date="1369546216547" expanded="true" signature="5317:5468" placeholder="..." />
-            <marker date="1369546216547" expanded="true" signature="5344:5468" placeholder="..." />
-            <marker date="1369546216547" expanded="true" signature="5736:5821" placeholder="..." />
-            <marker date="1369546216547" expanded="true" signature="6015:6022" placeholder="..." />
+            <marker date="1369554681496" expanded="true" signature="4011:4063" placeholder="..." />
+            <marker date="1369554681496" expanded="true" signature="4974:5017" placeholder="..." />
+            <marker date="1369554681496" expanded="true" signature="5599:5750" placeholder="..." />
+            <marker date="1369554681496" expanded="true" signature="5626:5750" placeholder="..." />
+            <marker date="1369554681496" expanded="true" signature="6018:6103" placeholder="..." />
+            <marker date="1369554681496" expanded="true" signature="6297:6304" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webide.jar!/resources/html5-schema/phrase.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="4" selection-start="1089" selection-end="1110" vertical-scroll-proportion="0.4225352">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Vts/App.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/default.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="52" selection-start="2086" selection-end="2099" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/default/views/scripts/page/price.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="145" selection-start="1230" selection-end="1386" vertical-scroll-proportion="80.34615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/default/controllers/OrderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="39" selection-start="2197" selection-end="2206" vertical-scroll-proportion="-6.2156863">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Vts/Basket.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="132" column="35" selection-start="3061" selection-end="3076" vertical-scroll-proportion="-10.692307">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/default/controllers/TemplateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="32" selection-start="730" selection-end="730" vertical-scroll-proportion="-11.846154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/default/models/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="211" column="61" selection-start="7372" selection-end="7372" vertical-scroll-proportion="0.44612476">
+          <folding />
         </state>
       </provider>
     </entry>

@@ -213,7 +213,7 @@ class Default_Model_Order
                     }
 
                     //update total order
-                    $res->update(array('TotalPrice' => $vtsBasket->getTotal()));
+                    $res->update(array('TotalPrice' => $vtsBasket->getTotal(), 'CycleBilling' => $vtsBasket->getCycleBilling()));
                     return $res;
                 }
                 return false;

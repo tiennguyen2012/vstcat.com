@@ -126,6 +126,19 @@ class Vts_Basket {
     }
 
     /**
+     * Get cycle billing
+     * @author tien.nguyen
+     * @return null
+     */
+    public function getCycleBilling(){
+        $basket = $this->get();
+        if(isset($basket->AccountType)){
+            return $basket->AccountType->Options;
+        }
+        return null;
+    }
+
+    /**
      * @param $name
      * @param $value
      * @return bool
@@ -165,7 +178,7 @@ class Vts_Basket {
      * @param $accountType
      * @return bool
      */
-    public function setTypeAccount($accountTypeCode){
+    public function setTypeAccount($accountTypeCode, $cycleBilling){
         $accountTypeCodeObj = Coco_NotORM::getInstance()->AccountTypes[array('AccountTypeCode' => $accountTypeCode, 'IsActive' => 1)];
         if($accountTypeCodeObj){
             $item = new stdClass();
@@ -176,6 +189,7 @@ class Vts_Basket {
             $item->ItemType = 'ACCOUNT_TYPE';
             $item->ItemCode = $accountTypeCode;
             $item->ItemName = $accountTypeCodeObj['AccountTypeName'];
+            $item->Options = strtoupper($cycleBilling);
 
             return $this->setValue("AccountType", $item);
         }else{
