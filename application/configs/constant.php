@@ -38,11 +38,26 @@ define('EMAIL_NAME', 'VTS Contact');
 /**
  * FLOW ORDER
  */
-define('ORDER_LOGIN', BASE_URL.'/user/signin');
+define('ORDER_LOGIN', BASE_URL.'/user/signin/href/'.base64_encode('/order/set-info'));
 define('ORDER_TEMPLATE', BASE_URL.'/template');
 define('ORDER_ACCOUNT_TYPE', BASE_URL.'/page/price');
 define('ORDER_DOMAIN', BASE_URL.'/website/domain');
-define('ORDER_SUCCESS', BASE_URL.'/website/create-success');
+define('ORDER_SAVE', BASE_URL.'/order/save-order');
+
+/**
+ * CYCLE BILLING
+ */
+define('CYCLE_MONTHLY', 'Monthly');
+define('CYCLE_SIX_MONTHLY', 'Six Monthly');
+define('CYCLE_YEARLY', 'Yearly');
+define('CYCLE_TWO_YEARLY', 'Two Yearly');
+
+/**
+ * ORDER STATUS
+ */
+define('ORDER_STATUS_PENDING', 'PENDING');
+define('ORDER_STATUS_PURCHASED', 'PURCHASED');
+define('ORDER_STATUS_PAYMENT_FAIL', 'PAYMENT_FAIL');
 
 /**
  * PAYMENT

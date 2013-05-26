@@ -23,11 +23,11 @@ class Vts_Basket {
         $total = 0;
         $basket = $this->get();
         if($basket->Template)
-            $total = floatval($basket->Template->Price);
+            $total += floatval($basket->Template->Price);
         if($basket->AccountType)
-            $total = floatval($basket->AccountType->Price);
+            $total += floatval($basket->AccountType->Price);
         if($basket->Domain)
-            $total = floatval($basket->Domain->Price);
+            $total += floatval($basket->Domain->Price);
 
         return $total;
     }
@@ -38,13 +38,13 @@ class Vts_Basket {
      */
     public function getNextStep(){
         $basket = $this->get();
-        $arr = array('Template' => ORDER_TEMPLATE, 'AccountType' => ORDER_ACCOUNT_TYPE, 'Domain' => ORDER_DOMAIN);
+        $arr = array('Info' => ORDER_LOGIN, 'Template' => ORDER_TEMPLATE, 'AccountType' => ORDER_ACCOUNT_TYPE, 'Domain' => ORDER_DOMAIN);
         foreach($arr as $key => $value){
             if(empty($basket->{$key})){
                 return $value;
             }
         }
-        return ORDER_SUCCESS;
+        return ORDER_SAVE;
     }
 
     /**
@@ -96,7 +96,7 @@ class Vts_Basket {
      */
     public function getDetail(){
         $basket = $this->get();
-        $res = arrray();
+        $res = array();
 
         //get Template
         if($basket->Template)
@@ -111,6 +111,18 @@ class Vts_Basket {
             $res[] = $basket->Domain;
 
         return $res;
+    }
+
+    /**
+     * Get info customer for basket
+     * @author tien.nguyen
+     */
+    public function getInfo(){
+        $basket = $this->get();
+        if(isset($basket->Info)){
+            return $basket->Info;
+        }
+        return null;
     }
 
     /**
@@ -141,6 +153,7 @@ class Vts_Basket {
             $item->PriceType = $vtsTemplate->getPriceTypeDefault($template);
             $item->ItemId = $templateId;
             $item->ItemType = "TEMPLATE";
+            $item->ItemName = $template['TemplateName'];
             $item->ItemCode = $template['TemplateCode'];
             return $this->setValue("Template", $item);
         }else{
@@ -162,6 +175,7 @@ class Vts_Basket {
             $item->PriceType = $accountTypeCode;
             $item->ItemType = 'ACCOUNT_TYPE';
             $item->ItemCode = $accountTypeCode;
+            $item->ItemName = $accountTypeCodeObj['AccountTypeName'];
 
             return $this->setValue("AccountType", $item);
         }else{
@@ -181,10 +195,29 @@ class Vts_Basket {
         $item->ItemId = '';
         $item->PriceType = '';
         $item->ItemType = 'DOMAIN';
+        $item->ItemName = $domain;
         $item->ItemCode = '';
 
         //set domain
         return $this->setValue("Domain", $item);
+    }
+
+    /**
+     * Set information by user login system
+     * @author tiennguyen
+     */
+    public function setInfoByBasket(){
+        //get user from session. have all property of table user.
+        $userLogin = Vts_Session::get('userLogin');
+        if($userLogin){
+            $item = new stdClass();
+            $item->UserId = $userLogin->UserId;
+            $item->OrderStatus = ORDER_STATUS_PENDING;
+
+            return $this->setValue('Info', $item);
+        }else{
+            throw new Zend_Exception('You do not login system.');
+        }
     }
 
     /**

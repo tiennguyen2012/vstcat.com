@@ -56,11 +56,22 @@ class OrderController extends Coco_Controller_Action_Default {
         }
     }
 
+    /**
+     * Action save order
+     * @author tien.nguyen
+     * @throws Zend_Exception
+     */
     public function saveOrderAction(){
         //get basket
         $basket = Vts_Session::get('basket');
         if($basket){
-
+            $res = $this->_model->saveOrder();
+            if($res){
+                $this->_redirect($this->view->url(array('controller' => 'order', 'action' => 'detail',
+                    'order-id' => $res['OrderId']), null, true));
+            }
+        }else{
+            throw new Zend_Exception('Basket is empty.');
         }
     }
 
@@ -132,6 +143,16 @@ class OrderController extends Coco_Controller_Action_Default {
             $this->_redirect($vtsBasket->getNextStep());
         }else{
             throw new Zend_Exception("Set template have error. Please contact with admin  vtscat@gmail.com.");
+        }
+    }
+
+    public function setInfoAction(){
+        $vtsBasket = new Vts_Basket();
+        $res = $vtsBasket->setInfoByBasket();
+        if($res){
+            $this->_redirect($vtsBasket->getNextStep());
+        }else{
+            throw new Zend_Exception("Maybe you do not login system, yet.");
         }
     }
 

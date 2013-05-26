@@ -43,7 +43,7 @@ class UserController extends Coco_Controller_Action_Default {
                     //login system
                     $lUser = new Vts_Modules_User();
                     $lUser->login($user['Username'], $user['Password']);
-                    $this->_redirect('/website/create');
+                    $this->_redirect( $this->href ? $this->href : '/website/create');
                 }
             }
             $form->populate($data);

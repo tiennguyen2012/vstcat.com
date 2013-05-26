@@ -51,10 +51,8 @@
                 </div>
 
                 <div class="row-fluid">
-                    <div class="span3"><?php echo $this->lang('You setting for site') ?></div>
-                    <div class="span4">
-                        <i><?php echo Vts_App::getUserLogin()->CurrentDomain  ?></i>
-                    </div>
+                    <div class="span3"><?php echo $this->lang('Cycle Billing') ?></div>
+                    <div class="span6"><b><?php echo constant('CYCLE_'.$this->order['CycleBilling']) ?></b></div>
                 </div>
 
                 <!-- BLOCK ORDER DETAIL -->
@@ -62,34 +60,28 @@
                     <?php $orderDetails = Coco_NotORM::getInstance()->OrderDetails()->where('OrderId', $this->order['OrderId']) ?>
                     <?php $itemId = 0 ?>
                     <?php if ($orderDetails): ?>
-                    <?php foreach ($orderDetails as $item): ?>
-                        <?php $itemId = $item['ItemId'] ?>
-                        <?php if (strtoupper($item['ItemType']) == 'TEMPLATE'): ?>
-                            <div class="row-fluid">
-                                <div class="span3"><?php echo $this->lang('Template code') ?></div>
-                                <div class="span4"><b><?php echo $this->escape($item['ItemCode']) ?></b></div>
-                            </div>
-                            <div class="row-fluid">
-                                <div class="span3"><?php echo $this->lang('Template name') ?></div>
-                                <div class="span4"><b><?php echo $this->escape($item['ItemName']) ?></b></div>
-                            </div>
-
-                        <?php elseif (strtoupper($item['ItemType']) == 'NEW_AND_TEMPLATE'): ?>
-                            <div class="row-fluid">
-                                <div class="span3"><?php echo $this->lang('Template code') ?></div>
-                                <div class="span4"><b><?php echo $this->escape($item['ItemCode']) ?></b></div>
-                            </div>
-                            <div class="row-fluid">
-                                <div class="span3"><?php echo $this->lang('Template name') ?></div>
-                                <div class="span4"><b><?php echo $this->escape($item['ItemName']) ?></b> (<i><?php echo $this->escape($item['PriceType']) ?></i>)</div>
-                            </div>
-                            <div class="row-fluid">
-                                <div class="span3"><?php echo $this->lang('Because member type') ?></div>
-                                <div class="span4"><i><?php echo ($item['ItemType']  == 'NEW_AND_TEMPLATE' ? 'You just buy for new website' : 'Set up for old website' ) ?></i></div>
-                            </div>
-
-                        <?php endif; ?>
-                        <?php endforeach ?>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th><?php echo $this->translate('No') ?></th>
+                                <th><?php echo $this->translate('Item') ?></th>
+                                <th><?php echo $this->translate('Type') ?></th>
+                                <th><?php echo $this->translate('Price') ?></th>
+                            </tr>
+                            <?php foreach ($orderDetails as $index => $item): ?>
+                            <tr>
+                                <td><?php echo ++$index ?></td>
+                                <td><?php echo $item['ItemName'] ?></td>
+                                <td><?php echo $item['ItemType'] ?></td>
+                                <td style="text-align: right">
+                                    <?php if($item['Price'] == 0): ?>
+                                        <span class="label label-success"><?php echo $this->translate('Free') ?></span>
+                                    <?php else: ?>
+                                        <?php echo "$".number_format($item['Price'], 2, ".", ",") ?>
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
+                            <?php endforeach ?>
+                        </table>
                     <?php else: ?>
                     <div><?php echo $this->lang('Current your order is empty item.') ?></div>
                     <?php endif; ?>
@@ -99,7 +91,7 @@
                     <div class="row-fluid">
                         <div class="span3"><?php echo $this->lang('Total') ?></div>
                         <div class="span4  total-price">
-                            <b><?php echo '$'.$this->order['TotalPrice']  ?></b>
+                            <b><?php echo '$'.number_format($this->order['TotalPrice'], 2, ".", ",") ;  ?></b>
                         </div>
                     </div>
                 </div>

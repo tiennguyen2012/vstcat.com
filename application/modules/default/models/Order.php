@@ -93,10 +93,10 @@ class Default_Model_Order
         if ($login->CurrentWebsiteId) {
             $website = Coco_NotORM::getInstance()->Websites[$login->CurrentWebsiteId];
             if ($website) {
-                try{
+                try {
                     $website->update(array('WebsiteType' => strtoupper($websiteType)));
                     return true;
-                }catch (exception $e){
+                } catch (exception $e) {
                     return false;
                 }
             }
@@ -134,13 +134,13 @@ class Default_Model_Order
                     $total += floatval($item['Price']);
                 }
             }
-            try{
-                if($total == 0)
+            try {
+                if ($total == 0)
                     $order->update(array('TotalPrice' => $total, 'OrderStatus' => 'PURCHASED'));
                 else
                     $order->update(array('TotalPrice' => $total));
                 return true;
-            }catch (exception $e){
+            } catch (exception $e) {
 
             }
         }
@@ -193,13 +193,59 @@ class Default_Model_Order
         return null;
     }
 
+    /**
+     * Save order from basket
+     * @author tien.nguyen
+     */
     public function saveOrder(){
         //get basket
-        $basket = Vts_Session::get('basket');
-        if($basket){
-            //save order.
+        $vtsBasket = new Vts_Basket();
+        $basket = $vtsBasket->get();
+        if ($basket) {
+            try {
+                //save order.
+                $info = $vtsBasket->getInfo();
+                if ($info) {
+                    $data = Vts_Unit::toArray($info);
+                    $res = Coco_NotORM::getInstance()->Orders()->insert($data);
+                    if ($res) {
+                        $this->saveOrderDetail($res['OrderId']);
+                    }
 
-            //save order detail
+                    //update total order
+                    $res->update(array('TotalPrice' => $vtsBasket->getTotal()));
+                    return $res;
+                }
+                return false;
+            } catch (exception $e) {
+                return false;
+            }
         }
+    }
+
+    /**
+     * Save order detail
+     * @author tien.nguyen
+     * @param $orderId
+     * @return bool
+     */
+    public function saveOrderDetail($orderId)
+    {
+        try {
+            $vtsBasket = new Vts_Basket();
+            //save order detail
+            $basketDetail = $vtsBasket->getDetail();
+            if ($basketDetail) {
+                foreach ($basketDetail as $item) {
+                    $data = Vts_Unit::toArray($item);
+                    $data['OrderId'] = $orderId;
+                    $res = Coco_NotORM::getInstance()->OrderDetails()->insert($data);
+                }
+            }
+            return true;
+        } catch (exception $e) {
+            return false;
+        }
+
     }
 }
