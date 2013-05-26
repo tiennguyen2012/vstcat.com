@@ -53,6 +53,13 @@ define('CYCLE_YEARLY', 'Yearly');
 define('CYCLE_TWO_YEARLY', 'Two Yearly');
 
 /**
+ * ORDER TYPE
+ */
+define('ORDER_TYPE_TEMPLATE', 'Template');
+define('ORDER_TYPE_ACCOUNT_TYPE', 'Type of account');
+define('ORDER_TYPE_DOMAIN', 'Domain');
+
+/**
  * ORDER STATUS
  */
 define('ORDER_STATUS_PENDING', 'PENDING');

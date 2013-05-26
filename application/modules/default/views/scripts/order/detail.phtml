@@ -42,6 +42,7 @@
 
         <!-- BLOCK ORDER INFO -->
         <div class="order-block row-fluid">
+            <?php $domain = "" ?>
             <h5><?php echo $this->lang('Order Information') ?></h5>
 
             <div class="content">
@@ -67,24 +68,37 @@
                                 <th><?php echo $this->translate('Type') ?></th>
                                 <th><?php echo $this->translate('Price') ?></th>
                             </tr>
-                            <?php foreach ($orderDetails as $index => $item): ?>
-                            <tr>
-                                <td><?php echo ++$index ?></td>
-                                <td><?php echo $item['ItemName'] ?></td>
-                                <td><?php echo $item['ItemType'] ?></td>
-                                <td style="text-align: right">
-                                    <?php if($item['Price'] == 0): ?>
-                                        <span class="label label-success"><?php echo $this->translate('Free') ?></span>
-                                    <?php else: ?>
-                                        <?php echo "$".number_format($item['Price'], 2, ".", ",") ?>
-                                    <?php endif; ?>
-                                </td>
-                            </tr>
+                            <?php $index = 0 ?>
+                            <?php foreach ($orderDetails as $item): ?>
+                                <?php if($item['ItemType'] != 'DOMAIN'): ?>
+                                <tr>
+                                    <td><?php echo ++$index ?></td>
+                                    <td><?php echo $item['ItemName'] ?></td>
+                                    <td><?php echo constant('ORDER_TYPE_'. $item['ItemType']) ?></td>
+                                    <td style="text-align: right">
+                                        <?php if($item['Price'] == 0): ?>
+                                            <span class="label label-success"><?php echo $this->translate('Free') ?></span>
+                                        <?php else: ?>
+                                            <?php echo "$".number_format($item['Price'], 2, ".", ",") ?>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                                <?php else: ?>
+                                    <?php $domain = $item['ItemName'] ?>
+                                <?php endif; ?>
                             <?php endforeach ?>
                         </table>
                     <?php else: ?>
                     <div><?php echo $this->lang('Current your order is empty item.') ?></div>
                     <?php endif; ?>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span3"><?php echo $this->lang('You setting with domain') ?></div>
+                    <div class="span6">
+                        <b><?php echo $domain ?></b>
+                        <div style="font-size: 12px;">(<?php echo $this->translate('This is your domain. we do not sale domain.') ?>)</div>
+                    </div>
                 </div>
 
                 <div class="block-order">
@@ -100,8 +114,13 @@
 
         <!-- DESCRIPTION -->
         <div class="description">
-            <i><?php echo $this->translate('Note:') ?>
-            <span><?php echo $this->translate('We will not guarantee about your domain, if your order do not pay now.') ?></span></i>
+            <i>
+                <?php echo $this->translate('Note:') ?>
+                <ul>
+                    <li><?php echo $this->translate('We will not guarantee about your domain, if your order do not pay now.') ?></li>
+                    <li><?php echo $this->translate('With template is not free, you only pay only 1 time for "Template". Next bill, you only pay for "Type of Account".') ?></li>
+                </ul>
+                </i>
         </div>
         <br/>
 

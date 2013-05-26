@@ -48,12 +48,12 @@ class PaymentController extends Coco_Controller_Action_Default
             $className = $paymentMethod['Class'];
             $object = new $className();
             $payment = $object->getPayment($this->_getAllParams());
+
             //insert transaction
             $resPaymentTransaction = $object->saveTransaction($this->_getAllParams());
-
             $payment['UserId'] = $userId;
-            //insert payment
 
+            //insert payment
             $resPayment = Coco_NotORM::getInstance()->Payments()->insert($payment);
             if ($resPaymentTransaction) {
                 $resPaymentTransaction['PaymentId'] = $resPayment['PaymentId'];
@@ -70,6 +70,7 @@ class PaymentController extends Coco_Controller_Action_Default
             } else {
                 $order = Coco_NotORM::getInstance()->Orders[$orderId]->update(array('OrderStatus' => 'PAYMENT_FAIL'));
             }
+
             //send email notify when payment success.
             $lOrder = new Vts_Order();
             $lOrder->sendEmailPayment($orderId);
