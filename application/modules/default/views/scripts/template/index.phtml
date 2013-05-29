@@ -1,6 +1,8 @@
 <div id="ptemplate-index" class="box">
     <?php $templates = $this->templates; ?>
 
+
+
     <!-- SHOW TITLE OF LIST -->
     <?php if (isset($this->params['cate'])): ?>
     <?php $titleName = Coco_NotORM::getInstance()->Categorys[$this->params['cate']]['CategoryName'] ?>
@@ -13,6 +15,10 @@
     <?php else: ?>
     <h4><?php echo $this->lang('Templates') ?> </h4>
     <?php endif; ?>
+
+    <?php if(count($templates) > 0): ?>
+
+
     <?php echo $this->lang('Templates were order by with created date.') ?>
 
     <div class="content">
@@ -41,6 +47,9 @@
         </div>
         <?php echo $this->paginationControl($this->templates, 'Elastic', 'pagination.phtml'); ?>
     </div>
+    <?php else: ?>
+        <div><?php echo $this->lang('We are developing this function.') ?></div>
+    <?php endif; ?>
 </div>
 
 <?php $this->placeholder('right')->captureStart() ?>

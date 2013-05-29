@@ -1,7 +1,9 @@
 <div id="header">
     <div class="top1">
         <div class="container">
-            <div class="left logo"></div>
+            <div class="left logo">
+                <a href="<?php echo BASE_URL ?>"><img border="0" width="130px" src="<?php echo BASE_URL ?>/images/logo.png" alt="Logo VTSCat"/></a>
+            </div>
             <div class="left block-right" align="right">
                 <!-- USER PROFILE -->
                 <div class="row-fluid">
@@ -17,6 +19,7 @@
                                  alt="Arrow"/>
                         </div>
 
+                        <!--
                         <div id="flag-popup" style="display: none; margin-left: -44px">
                             <ul>
                                 <?php $languages = Coco_NotORM::getInstance()->Languages()->order('LanguageName ASC') ?>
@@ -29,6 +32,7 @@
                                 <?php endforeach ?>
                             </ul>
                         </div>
+                        -->
                     </div>
 
                     <!-- USER LOGIN -->

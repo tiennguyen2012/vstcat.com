@@ -2,8 +2,10 @@
     <div class="row-fluid">
         <!-- PRODUCT IMAGE -->
         <div class="span4">
-            <img src="<?php echo BASE_URL ?>/uploads/templates/<?php echo $this->template['TemplateId'] ?>/<?php echo $this->template['ImageDefault'] ?>"
-                 alt="<?php echo $this->template['TemplateName'] ?>" class="template-image"/>
+            <a rel="lightbox" href="<?php echo BASE_URL ?>/uploads/templates/<?php echo $this->template['TemplateId'] ?>/<?php echo $this->template['ImageDefault'] ?>">
+                <img border="0" src="<?php echo BASE_URL ?>/uploads/templates/<?php echo $this->template['TemplateId'] ?>/<?php echo $this->template['ImageDefault'] ?>"
+                    alt="<?php echo $this->template['TemplateName'] ?>" class="template-image"/>
+            </a>
 
             <div class="row-fluid">
                 <img id="btnDemon" src="/images/view_demo_gray.png" alt="View Demo" title="View Demo"/>
@@ -83,8 +85,10 @@
         <div class="content">
             <?php foreach ($this->photos as $photo): ?>
             <div class="item">
+                <a rel="lightbox[roadtrip]" href="<?php echo BASE_URL ?>/uploads/templates/<?php echo $this->template['TemplateId'] ?>/<?php echo $photo ?>">
                 <img src="<?php echo BASE_URL ?>/uploads/templates/<?php echo $this->template['TemplateId'] ?>/<?php echo $photo ?>"
                      alt="<?php echo $this->template['TemplatePhotoName'] ?>"/>
+                </a>
             </div>
             <?php endforeach; ?>
         </div>

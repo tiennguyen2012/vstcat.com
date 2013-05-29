@@ -15,7 +15,7 @@ ul.errors { color: red }
 .box .title { border-bottom: 1px dotted #e6e6e6; padding-bottom: 10px  }
 .box .content  { margin-bottom: 10px }
 .box .content .item { float: left; padding: 10px; }
-.box .content .item img { border: 1px solid #e6e6e6; cursor: pointer; width:145px; height: 150px }
+.box .content .item img { border: 1px solid #e6e6e6; cursor: pointer; width:145px; height: 170px }
 .box .content .item img:hover {   box-shadow: 5px 5px 5px #888888;}
 .box .content .item .template-name { font-weight: bold }
 .box .content .item .template-price { font-size: 12px }
@@ -55,7 +55,7 @@ ul.errors { color: red }
 #header .top-menu ul li { float: left; text-transform: uppercase; color: #ffffff; padding: 0 15px }
 #header .top-menu ul li:last-child { padding-right: 0 }
 #header .top-menu ul li a { text-decoration: none; color: #ffffff }
-#header .logo { width: 200px; height: 100px }
+#header .logo { width: 200px; height: 95px; margin-top: 5px }
 #header .flag { margin-top: 10px; background-color: #ffffff; width: 50px; padding: 3px;  }
 #header .flag .box-flag {}
 #header .flag .box-flag .icon-flag { width: 29px; height: 19px; }

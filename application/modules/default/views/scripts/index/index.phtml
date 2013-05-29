@@ -24,9 +24,14 @@
                             <?php echo $item['TemplateName'] ?>
                         </a>
                     </div>
-                    <div class="template-price"><?php echo $this->lang('Unique') ?>: <span>$<?php echo $item['UniqueCurrentPrice'] ?></span></div>
-                    <?php if ($item['IsFreeMember']): ?>
-                    <div class="template-free-member"><?php echo $this->lang('Free for member') ?>.</div>
+
+                    <!-- PRICE -->
+                    <?php if($item['UniqueCurrentPrice']): ?>
+                        <div class="template-price"><?php echo $this->lang('Unique') ?>: <span>$<?php echo $item['UniqueCurrentPrice'] ?></span></div>
+                    <?php elseif($item['IsFreeMember']): ?>
+                        <div class="template-free-member"><?php echo $this->lang('Free for member') ?>.</div>
+                    <?php elseif($item['NormalPrice'] != 0): ?>
+                    <div class="template-free-member"><?php echo '$'.$item['NormalPrice'] ?> <?php echo $this->lang('with member.') ?></div>
                     <?php endif; ?>
                 </div>
             </div>
@@ -34,8 +39,10 @@
             <div class="clearfix"></div>
         </div>
         <div class="row-fluid" align="right">
+            <!--
             <button class="btn btn-primary btn-more" cate="<?php echo $item['CategoryId'] ?>"
                 href="<?php echo $this->url(array('controller' => 'template', 'action' => 'index', 'cate' => $item['CategoryId']), null, true) ?>href="<?php echo $this->url(array('controller' => 'template', 'action' => 'index', 'cate' => $item['CategoryId']), null, true) ?>><?php echo $this->lang('More') ?> ...</button>
+                -->
         </div>
     </div>
     <?php endif; ?>
@@ -61,10 +68,14 @@
                                     <?php echo $tpl['TemplateName'] ?>
                                 </a>
                             </div>
-                            <div class="template-price"><?php echo $this->lang('Unique') ?>: <span>$<?php echo $tpl['UniqueCurrentPrice'] ?></span>
-                            </div>
-                            <?php if ($tpl['IsFreeMember']): ?>
-                            <div class="template-free-member"><?php echo $this->lang('Free for member') ?>.</div>
+
+                            <!-- PRICE -->
+                            <?php if($tpl['UniqueCurrentPrice']): ?>
+                                <div class="template-price"><?php echo $this->lang('Unique') ?>: <span>$<?php echo $tpl['UniqueCurrentPrice'] ?></span></div>
+                            <?php elseif($tpl['IsFreeMember']): ?>
+                                <div class="template-free-member"><?php echo $this->lang('Free for member') ?>.</div>
+                            <?php elseif($tpl['NormalPrice'] != 0): ?>
+                                <div class="template-free-member"><?php echo '$'.$tpl['NormalPrice'] ?> <?php echo $this->lang('with member.') ?></div>
                             <?php endif; ?>
                         </div>
                     </div>
