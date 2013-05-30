@@ -35,11 +35,14 @@
                             <?php echo $template['TemplateName'] ?>
                         </a>
                     </div>
-                    <div class="template-price"><?php echo $this->lang('Unique') ?>:
-                        <span>$<?php echo $template['UniqueCurrentPrice'] ?></span>
-                    </div>
-                    <?php if ($template['IsFreeMember']): ?>
-                    <div class="template-free-member"><?php echo $this->lang('Free for member') ?>.</div>
+
+                    <!-- PRICE -->
+                    <?php if($template['UniqueCurrentPrice']): ?>
+                        <div class="template-price"><?php echo $this->lang('Unique') ?>: <span>$<?php echo $template['UniqueCurrentPrice'] ?></span></div>
+                    <?php elseif($template['IsFreeMember']): ?>
+                        <div class="template-free-member"><?php echo $this->lang('Free for member') ?>.</div>
+                    <?php elseif($template['NormalPrice'] != 0): ?>
+                        <div class="template-free-member"><?php echo '$'.$template['NormalPrice'] ?> <?php echo $this->lang('with member.') ?></div>
                     <?php endif; ?>
                 </div>
             </div>
