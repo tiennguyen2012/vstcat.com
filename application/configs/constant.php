@@ -1,4 +1,9 @@
 <?php
+/**
+ * Some variable for debug
+ */
+define('DEBUG_NOT_ORM', false);
+
 define('BASE_URL', 'http://'.$_SERVER['HTTP_HOST']);
 define('HOST_NAME', $_SERVER['HTTP_HOST']);
 /**

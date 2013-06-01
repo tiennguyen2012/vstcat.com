@@ -78,7 +78,8 @@ class Coco_NotORM
 
             //new instance NotORM
             $dbNotOrm = new NotORM($connection, self::_structure());
-            $dbNotOrm->debug =  false;
+//            $dbNotOrm->debug =  false;
+            $dbNotOrm->debug =  DEBUG_NOT_ORM;
 
             //set Zend_Registry
             Zend_Registry::set('dbNotOrm', $dbNotOrm);

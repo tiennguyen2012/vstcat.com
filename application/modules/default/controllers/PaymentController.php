@@ -74,6 +74,11 @@ class PaymentController extends Coco_Controller_Action_Default
             $lOrder = new Vts_Order();
             $lOrder->sendEmailPayment($orderId);
 
+            /**
+             * Call api and service to generate website.
+             */
+            
+
             echo "Success";
         }
     }
