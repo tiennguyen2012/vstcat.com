@@ -21,7 +21,7 @@
 
     <input type="hidden" name="currency_code" value="USD">
     <input type="hidden" name="notify_url"
-           value="<?php echo BASE_URL . $this->url(array('controller' => 'payment', 'action' => 'notify', 'type' => 'paypal', 'user-id' => Vts_App::getUserLogin()->UserId), null, true) ?>">
+           value="<?php echo BASE_URL . $this->url(array('controller' => 'payment', 'action' => 'notify', 'type' => 'paypal', 'user-id' => Vts_App::getUserLogin()->UserId, 'order-id' => $this->order['OrderId']), null, true) ?>">
     <input type="hidden" name="return"
            value="<?php echo BASE_URL . $this->url(array('controller' => 'order', 'action' => 'success', 'type' => 'paypal'), null, true) ?>">
     <input type="hidden" name="cancel_return"

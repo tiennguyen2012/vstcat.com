@@ -56,8 +56,7 @@ class PaymentController extends Coco_Controller_Action_Default
             //insert payment
             $resPayment = Coco_NotORM::getInstance()->Payments()->insert($payment);
             if ($resPaymentTransaction) {
-                $resPaymentTransaction['PaymentId'] = $resPayment['PaymentId'];
-                $resPaymentTransaction->update();
+                $resPaymentTransaction->update(array('PaymentId' => $resPayment['PaymentId']));
             }
 
             /**

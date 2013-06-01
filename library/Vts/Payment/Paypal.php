@@ -23,10 +23,10 @@ class Vts_Payment_Paypal implements Vts_Payment_Payment
     public function getPayment($params){
         $payment = array();
         $payment['Params'] = json_encode($params);
-        $payment['PayerEmail'] = $params['payer_email'];
+        $payment['PayerEmail'] = isset($params['payer_email']) ? $params['payer_email'] : '';
         $payment['Type'] = 'paypal';
-        $payment['ItemName'] = $params['item_name1'];
-        $payment['ItemQuality'] = $params['item_number1'];
+        $payment['ItemName'] = isset($params['item_name1']) ? $params['item_name1'] : '';
+        $payment['ItemQuality'] = isset($params['item_number1']) ? $params['item_number1'] : '';
 
         return $payment;
     }
