@@ -172,4 +172,8 @@ class OrderController extends Coco_Controller_Action_Default {
             throw new Zend_Exception('Template Id is empty.');
         }
     }
+
+    public function successAction(){
+
+    }
 }

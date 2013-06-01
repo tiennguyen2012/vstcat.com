@@ -5,13 +5,20 @@
     <input type="hidden" name="cmd" value="_ext-enter">
     <input type="hidden" name="redirect_cmd" value="_xclick">
     <input type="hidden" name="business" value="<?php echo PAYPAL_ACOUNT ?>">
-    <?php $indexItem = 0 ?>
-    <?php foreach ($orderDetails as $item): ?>
-        <?php $numberOfName = ($indexItem == 0) ? '' : $indexItem ?>
-        <input type="hidden" name="item_name<?php echo $numberOfName ?>" value="<?php echo $item['ItemCode'].' - '. $item['ItemName'] ?>">
-        <input type="hidden" name="amount<?php echo $numberOfName ?>" value="<?php echo $item['Price'] ?>">
-        <?php $indexItem++; ?>
-    <?php endforeach; ?>
+
+    <?php //$indexItem = 0 ?>
+    <?php //foreach ($orderDetails as $item): ?>
+        <?php //$numberOfName = ($indexItem == 0) ? '' : $indexItem ?>
+        <!--
+        <input type="hidden" name="item_name<?php //echo $numberOfName ?>" value="<?php //echo $item['ItemCode'].' - '. $item['ItemName'] ?>">
+        <input type="hidden" name="amount<?php //echo $numberOfName ?>" value="<?php //echo $item['Price'] ?>">
+        -->
+        <?php //$indexItem++; ?>
+    <?php //endforeach; ?>
+
+    <input type="hidden" name="item_name" value="Payment for OrderId <?php echo $this->order['OrderId'] ?>">
+    <input type="hidden" name="amount" value="<?php echo $this->order['TotalPrice'] ?>">
+
     <input type="hidden" name="currency_code" value="USD">
     <input type="hidden" name="notify_url"
            value="<?php echo BASE_URL . $this->url(array('controller' => 'payment', 'action' => 'notify', 'type' => 'paypal', 'user-id' => Vts_App::getUserLogin()->UserId), null, true) ?>">
