@@ -1,4 +1,5 @@
 <?php
+set_time_limit(2000000);
 // Define path to application directory
 defined('APPLICATION_PATH')
     || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application'));

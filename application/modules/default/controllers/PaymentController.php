@@ -21,6 +21,17 @@ class PaymentController extends Coco_Controller_Action_Default
         $this->view->template = $template;
         $this->view->paymentMethods = $paymentMethods;
     }
+    
+    /**
+     * Make website by manual
+     * @author tien.nguyen
+     */
+    public function makeByOrderIdAction(){
+    	$orderId = $this->_getParam('order-id');
+    	$modelWebsite = new Default_Model_Website();
+    	$modelWebsite->generate(intval($orderId));
+    	die;
+    }
 
     /**
      * Need parameters type (Type of payment example Paypal), user-id, and order id
@@ -69,16 +80,22 @@ class PaymentController extends Coco_Controller_Action_Default
             } else {
                 $order = Coco_NotORM::getInstance()->Orders[$orderId]->update(array('OrderStatus' => 'PAYMENT_FAIL'));
             }
-
-            //send email notify when payment success.
+            
+            /**
+			 * Send email to customer because we do not want customer wait
+             */
             $lOrder = new Vts_Order();
             $lOrder->sendEmailPayment($orderId);
-
-            /**
-             * Call api and service to generate website.
-             */
             
-
+            /**
+             * Check order success and generate website by api
+             */
+            $modelWebsite = new Default_Model_Website();
+            $modelWebsite->generate($orderId);
+            
+            /**
+             * Show to test success. Because this action do not use layout.
+             */
             echo "Success";
         }
     }

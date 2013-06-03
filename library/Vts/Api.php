@@ -4,14 +4,23 @@ class Vts_Api {
     /**
      * Some constant to define for api
      */
-
     const CREATE = 'create';
+    const REMOVE = 'remove';
 
+    /**
+     * Get api url
+     * @param unknown $actionName
+     * @param unknown $params
+     * @return string
+     */
     public function getApi($actionName, $params = array()) {
         $url = API_URL . '/api/' . $actionName . '/user/' . API_USER . '/pass/' . API_PASS;
         if($params){
-            $string = implode("/", $params);
+            foreach ($params as $k => $v){
+            	$url .= '/'.$k.'/'.$v;
+            }
         }
+        return $url;
     }
 
     /**
@@ -22,7 +31,9 @@ class Vts_Api {
      * @param string $newDomain Domain to setup new site
      */
     public function make($oldDomain, $newDomain) {
-        $content = file_get_contents($this->getApi(self::CREATE));
+        $content = file_get_contents($this->getApi(self::CREATE, 
+        		array('olddomain' => $oldDomain, 'domain' => $newDomain, 
+        				'fw' => FW_WORDPRESS)));
         if($content){
             $json = json_decode($content);
             if($json->result){
@@ -32,8 +43,22 @@ class Vts_Api {
         return FALSE;
     }
     
-    public function remove(){
-        
+    /**
+     * Remove website framewrok
+     * @author tien.nguyen
+     * @param string $domain
+     * @return boolean
+     */
+    public function remove($domain){
+        $content = file_get_contents($this->getApi(self::REMOVE,
+        		array('olddomain' => $domain, 'fw' => FW_WORDPRESS)));
+        if($content){
+        	$json = json_decode($content);
+        	if($json->result){
+        		return TRUE;
+        	}
+        }
+        return FALSE;
     }
 
 }

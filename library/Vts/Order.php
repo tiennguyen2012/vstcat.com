@@ -45,6 +45,7 @@ class Vts_Order {
             $view = Zend_Controller_Front::getInstance()->getParam('bootstrap')->getResource('view');
             $view = new Zend_View();
             $view->setBasePath(APPLICATION_PATH.'/../library/Vts/Order/View');
+            $view->setHelperPath(APPLICATION_PATH.'/views/helpers');
             $view->order = $order;
             $view->user = $user;
 

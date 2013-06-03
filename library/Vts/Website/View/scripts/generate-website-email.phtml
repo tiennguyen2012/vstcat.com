@@ -1,0 +1,21 @@
+<div id="email-generate-website">
+	<div><?php echo $this->lang('Dear ')?> <?php echo $this->user['Fullname']?></div>
+	<div class="content">
+		<div><?php echo $this->lang('We generated website successfull.')?></div>
+		<div><?php echo $this->lang('Now, you can access with information below:') ?></div>
+		<p></p>
+			<div><?php echo $this->lang('Website URL') ?>: <a href="<?php echo "http://".$this->domain ?>">
+				<?php echo "http://".$this->domain ?></a></div>
+			<div><?php echo $this->lang('Website Admin URL')?>: 
+			<a href="<?php echo "http://".$this->domain.'/wp-admin' ?>">
+				<?php echo "http://".$this->domain.'/wp-admin' ?></a></div>
+			<div><?php echo $this->lang('Website Admin Username') ?>: administrator</div>
+			<div><?php echo $this->lang('Website Admin Password') ?>: 123456</div>
+	</div>
+	<div><?php echo $this->lang('You need change password for admin.') ?></div>
+	<div><?php echo $this->lang('If you can not access, please send email support ') ?>
+		<?php echo EMAIL_SUPPORT ?></div>
+	<p/>
+	<div><?php echo $this->lang('Thanks') ?></div>
+	<div><?php echo $this->lang('VtsCat') ?></div>
+</div>

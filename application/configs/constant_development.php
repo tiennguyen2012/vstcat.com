@@ -9,3 +9,8 @@
 define('API_URL', 'http://dev.mana.vtscat.com');
 define('API_USER', 'vstcatapi');
 define('API_PASS', '123456');
+
+/**
+ * Some variable for debug
+ */
+define('DEBUG_NOT_ORM', true);

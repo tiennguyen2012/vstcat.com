@@ -248,4 +248,52 @@ class Default_Model_Order
         }
 
     }
+   
+    /**
+     * Get sample domain by item code
+     * @author tien.nguyen
+     * @param unknown $itemCode
+     * @return string
+     */
+    public function getSampleDomainByItemCode($itemCode){
+    	return "samplew".$itemCode.".vtscat.com";
+    }
+    
+    /**
+     * Get sample domain from Order Detail
+     * @param int $orderId
+     * @author tien.nguyen
+     * @return string|NULL
+     */
+    public function getSampleDomainByOrderId($orderId){
+    	$order = Coco_NotORM::getInstance()->Orders[array('OrderId' => $orderId)];
+    	if($order){
+    		//get sample domain
+    		$obSampleDomain = Coco_NotORM::getInstance()->
+    			OrderDetails[array('ItemType' => 'TEMPLATE', 'OrderId' => $orderId)];
+    		if($obSampleDomain){
+    			return $this->getSampleDomainByItemCode($obSampleDomain['ItemCode']);
+    		}
+    	}
+    	return null;
+    }
+    
+    /**
+     * Get domain from Order Detail
+     * @param int $orderId
+     * @author tien.nguyen
+     * @return string|NULL
+     */
+    public function getDomainByOrderId($orderId){
+    	$order = Coco_NotORM::getInstance()->Orders[array('OrderId' => $orderId)];
+    	if($order){
+    		//get sample domain
+    		$obSampleDomain = Coco_NotORM::getInstance()->
+    			OrderDetails[array('ItemType' => 'DOMAIN', 'OrderId' => $orderId)];
+    		if($obSampleDomain){
+    			return $obSampleDomain['ItemName'];
+    		}
+    	}
+    	return null;
+    }
 }

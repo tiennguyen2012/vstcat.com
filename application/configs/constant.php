@@ -1,9 +1,4 @@
 <?php
-/**
- * Some variable for debug
- */
-define('DEBUG_NOT_ORM', false);
-
 define('BASE_URL', 'http://'.$_SERVER['HTTP_HOST']);
 define('HOST_NAME', $_SERVER['HTTP_HOST']);
 /**
@@ -40,6 +35,8 @@ define('EMAIL_PASSWORD', 'tinhanh123');
 define('EMAIL_SERVER', 'smtp.gmail.com');
 define('EMAIL_NAME', 'VTS Contact');
 
+define('EMAIL_SUPPORT', 'vtscat@gmail.com');
+
 /**
  * FLOW ORDER
  */
@@ -70,6 +67,12 @@ define('ORDER_TYPE_DOMAIN', 'Domain');
 define('ORDER_STATUS_PENDING', 'PENDING');
 define('ORDER_STATUS_PURCHASED', 'PURCHASED');
 define('ORDER_STATUS_PAYMENT_FAIL', 'PAYMENT_FAIL');
+
+/**
+ * LIST FW NAME
+ */
+define("FW_WORDPRESS", "wordpress");
+define("FW_JOOMLA", "joomla");
 
 /**
  * PAYMENT
