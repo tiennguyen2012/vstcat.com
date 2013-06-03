@@ -41,19 +41,26 @@ class Vts_Order {
         if($order){
             $user = Coco_NotORM::getInstance()->Users[$order['UserId']];
             $lEmail = new Vts_Email();
+            
+            
+            $lEmail->sendEmail('VTSCat'. ' Payment with Order '.$order['OrderId'], 
+            		"order-payment-email.phtml", 
+            		array('order' => $order, 'user' => $user),
+            		array('name' => EMAIL_NAME, 'email' => EMAIL_USER),
+               		array('name' => $user['Fullname'], 'email' => $user['Email']));
 
-            $view = Zend_Controller_Front::getInstance()->getParam('bootstrap')->getResource('view');
-            $view = new Zend_View();
-            $view->setBasePath(APPLICATION_PATH.'/../library/Vts/Order/View');
-            $view->setHelperPath(APPLICATION_PATH.'/views/helpers');
-            $view->order = $order;
-            $view->user = $user;
+//             $view = Zend_Controller_Front::getInstance()->getParam('bootstrap')->getResource('view');
+//             $view = new Zend_View();
+//             $view->setBasePath(APPLICATION_PATH.'/../library/Vts/Order/View');
+//             $view->setHelperPath(APPLICATION_PATH.'/views/helpers');
+//             $view->order = $order;
+//             $view->user = $user;
 
-            $htmlOrderPayment = $view->render('order-payment-email.phtml');
-            $res = @$lEmail->send('VTSCat'. ' - '.$order['OrderId'], $htmlOrderPayment,
-                array('name' => EMAIL_NAME, 'email' => EMAIL_USER),
-                array('name' => $user['Fullname'], 'email' => $user['Email'])
-            );
+//             $htmlOrderPayment = $view->render('order-payment-email.phtml');
+//             $res = @$lEmail->send('VTSCat'. ' Payment with Order '.$order['OrderId'], $htmlOrderPayment,
+//                 array('name' => EMAIL_NAME, 'email' => EMAIL_USER),
+//                 array('name' => $user['Fullname'], 'email' => $user['Email'])
+//             );
         }
     }
 }

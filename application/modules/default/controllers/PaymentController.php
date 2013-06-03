@@ -27,10 +27,17 @@ class PaymentController extends Coco_Controller_Action_Default
      * @author tien.nguyen
      */
     public function makeByOrderIdAction(){
+    	/*
     	$orderId = $this->_getParam('order-id');
     	$modelWebsite = new Default_Model_Website();
     	$modelWebsite->generate(intval($orderId));
     	die;
+    	*/
+    	
+    	$lOrder = new Vts_Order();
+    	$lOrder->sendEmailPayment(70);
+    	die;
+    	
     }
 
     /**
