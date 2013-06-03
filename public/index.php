@@ -1,5 +1,4 @@
 <?php
-
 // Define path to application directory
 defined('APPLICATION_PATH')
     || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application'));
@@ -18,6 +17,13 @@ set_include_path(implode(PATH_SEPARATOR, array(
 
 /** Zend_Application */
 require_once APPLICATION_PATH.'/configs/constant.php';
+/**
+ * Load constant with environment
+ */
+$fileConstant = APPLICATION_PATH.'/configs/constant_'.APPLICATION_ENV.'.php';
+if(file_exists($fileConstant))
+    require_once($fileConstant);
+
 require_once 'Zend/Application.php';
 
 // Create application, bootstrap, and run

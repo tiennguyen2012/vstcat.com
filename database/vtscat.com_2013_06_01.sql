@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50527
 File Encoding         : 65001
 
-Date: 2013-06-01 17:02:08
+Date: 2013-06-02 01:45:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -204,7 +204,7 @@ CREATE TABLE `OrderDetails` (
   `ItemCode` varchar(200) DEFAULT NULL,
   `Options` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`OrderDetailId`)
-) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of OrderDetails
@@ -277,6 +277,9 @@ INSERT INTO `OrderDetails` VALUES ('65', '68', 'truongthanhsang.com', '1', '0', 
 INSERT INTO `OrderDetails` VALUES ('66', '69', 'Fashsion 002', '1', '0', 'FREE', '2', 'TEMPLATE', '00002', null);
 INSERT INTO `OrderDetails` VALUES ('67', '69', 'Business', '1', '29', 'BUSINESS', '2', 'ACCOUNT_TYPE', 'BUSINESS', 'MONTHLY');
 INSERT INTO `OrderDetails` VALUES ('68', '69', 'nguyevantien2009.com', '1', '0', '', '0', 'DOMAIN', '', null);
+INSERT INTO `OrderDetails` VALUES ('69', '70', 'Fashsion 002', '1', '12', 'NORMAL', '2', 'TEMPLATE', '00002', null);
+INSERT INTO `OrderDetails` VALUES ('70', '70', 'Business', '1', '29', 'BUSINESS', '2', 'ACCOUNT_TYPE', 'BUSINESS', 'MONTHLY');
+INSERT INTO `OrderDetails` VALUES ('71', '70', 'test123123.com', '1', '0', '', '0', 'DOMAIN', '', null);
 
 -- ----------------------------
 -- Table structure for `Orders`
@@ -295,7 +298,7 @@ CREATE TABLE `Orders` (
   `WebsiteId` int(11) DEFAULT NULL,
   `CycleBilling` enum('TWO_YEARLY','YEARLY','SIX_MONTHLY','MONTHLY') DEFAULT 'SIX_MONTHLY',
   PRIMARY KEY (`OrderId`)
-) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of Orders
@@ -363,6 +366,7 @@ INSERT INTO `Orders` VALUES ('66', '15', '2013-05-26 11:08:37', null, null, null
 INSERT INTO `Orders` VALUES ('67', '15', '2013-05-26 16:24:37', null, null, null, '19', 'PENDING', '0', null, 'SIX_MONTHLY');
 INSERT INTO `Orders` VALUES ('68', '15', '2013-05-26 17:19:33', null, null, null, '19', 'PENDING', '0', null, 'SIX_MONTHLY');
 INSERT INTO `Orders` VALUES ('69', '15', '2013-05-26 17:28:05', null, null, null, '29', 'PENDING', '0', null, 'MONTHLY');
+INSERT INTO `Orders` VALUES ('70', '15', '2013-06-01 22:28:54', null, null, null, '41', 'PAYMENT_FAIL', '0', null, 'MONTHLY');
 
 -- ----------------------------
 -- Table structure for `PageLangs`
@@ -461,6 +465,7 @@ CREATE TABLE `Payments` (
   `Type` varchar(255) DEFAULT NULL,
   `ItemName` varchar(250) DEFAULT NULL,
   `ItemQuality` varchar(255) DEFAULT NULL,
+  `UserId` int(11) DEFAULT NULL,
   PRIMARY KEY (`PaymentId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -473,7 +478,7 @@ CREATE TABLE `Payments` (
 -- ----------------------------
 DROP TABLE IF EXISTS `PaypalTransactions`;
 CREATE TABLE `PaypalTransactions` (
-  `PaymentId` int(11) NOT NULL,
+  `PaymentId` int(11) DEFAULT NULL,
   `payment_type` varchar(200) DEFAULT NULL,
   `payment_date` varchar(200) DEFAULT NULL,
   `payment_status` varchar(200) DEFAULT NULL,
@@ -516,7 +521,8 @@ CREATE TABLE `PaypalTransactions` (
   `notify_version` varchar(200) DEFAULT NULL,
   `custom` varchar(200) DEFAULT NULL,
   `invoice` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`PaymentId`)
+  `PaypalTransactionId` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`PaypalTransactionId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
