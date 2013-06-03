@@ -53,6 +53,12 @@ class Default_Model_Website {
 			$user = Coco_NotORM::getInstance()->Users[$order['UserId']];
 			$lEmail = new Vts_Email();
 			
+			$lEmail->sendEmail('VTSCat'. ' Generate Website for Order '.$order['OrderId'],
+					"generate-website-email.phtml",
+					array('order' => $order, 'user' => $user, 'domain' => $domain),
+					array('name' => EMAIL_NAME, 'email' => EMAIL_USER),
+					array('name' => $user['Fullname'], 'email' => $user['Email']));
+			/*			
 			$view = Zend_Controller_Front::getInstance()->getParam('bootstrap')->getResource('view');
 			$view = new Zend_View();
 			$view->setBasePath(APPLICATION_PATH.'/../library/Vts/Website/View');
@@ -66,6 +72,7 @@ class Default_Model_Website {
 					array('name' => EMAIL_NAME, 'email' => EMAIL_USER),
 					array('name' => $user['Fullname'], 'email' => $user['Email'])
 			);
+			*/
 		}
 	}
 	
