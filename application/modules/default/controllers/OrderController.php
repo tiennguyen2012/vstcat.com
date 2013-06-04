@@ -93,7 +93,7 @@ class OrderController extends Coco_Controller_Action_Default {
      */
     public function setAccountTypeAction(){
         $accountType = $this->_getParam('account-type');
-        $cycleBilling = $this->_getParam('cycle-billing');
+        $cycleBilling = $this->_getParam('cycle-billing', 'NONE');
 
         if(empty($accountType) || empty($cycleBilling)){
             throw new Zend_Exception('Account Type OR Cycle Billing is empty.');

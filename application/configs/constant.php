@@ -53,6 +53,7 @@ define('CYCLE_MONTHLY', 'Monthly');
 define('CYCLE_SIX_MONTHLY', 'Six Monthly');
 define('CYCLE_YEARLY', 'Yearly');
 define('CYCLE_TWO_YEARLY', 'Two Yearly');
+define('CYCLE_NONE', 'None');
 
 /**
  * ORDER TYPE

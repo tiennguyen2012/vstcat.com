@@ -178,7 +178,7 @@ class Vts_Basket {
      * @param $accountType
      * @return bool
      */
-    public function setTypeAccount($accountTypeCode, $cycleBilling){
+    public function setTypeAccount($accountTypeCode, $cycleBilling = "NONE"){
         $accountTypeCodeObj = Coco_NotORM::getInstance()->AccountTypes[array('AccountTypeCode' => $accountTypeCode, 'IsActive' => 1)];
         if($accountTypeCodeObj){
             $item = new stdClass();
@@ -187,7 +187,7 @@ class Vts_Basket {
             $item->ItemId = $accountTypeCodeObj['AccountTypeId'];
             $item->PriceType = $accountTypeCode;
             $item->ItemType = 'ACCOUNT_TYPE';
-            $item->ItemCode = $accountTypeCode;
+            $item->ItemCode = strtoupper($accountTypeCode);
             $item->ItemName = $accountTypeCodeObj['AccountTypeName'];
             $item->Options = strtoupper($cycleBilling);
 

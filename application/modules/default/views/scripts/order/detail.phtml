@@ -32,9 +32,12 @@
                     <div class="span3"><?php echo $this->lang('Country') ?></div>
                     <div class="span6">
                         <?php $countryName = Coco_NotORM::getInstance()->Countrys[array('CountryCode' => $user['CountryCode'])]['CountryName'] ?>
+                        <?php echo $countryName ?>
+                        <!-- 
                         <img width="20" height="20"
                              src="<?php echo BASE_URL ?>/images/flags/<?php echo $user['CountryCode'] ?>.gif"
                              alt="<?php echo $countryName ?>" title="<?php echo $countryName ?>"/>
+                              -->
                     </div>
                 </div>
             </div>
@@ -64,8 +67,8 @@
                         <table class="table table-bordered">
                             <tr>
                                 <th><?php echo $this->translate('No') ?></th>
-                                <th><?php echo $this->translate('Item') ?></th>
                                 <th><?php echo $this->translate('Type') ?></th>
+                                <th><?php echo $this->translate('Item') ?></th>
                                 <th><?php echo $this->translate('Price') ?></th>
                             </tr>
                             <?php $index = 0 ?>
@@ -73,8 +76,8 @@
                                 <?php if($item['ItemType'] != 'DOMAIN'): ?>
                                 <tr>
                                     <td><?php echo ++$index ?></td>
-                                    <td><?php echo $item['ItemName'] ?></td>
                                     <td><?php echo constant('ORDER_TYPE_'. $item['ItemType']) ?></td>
+                                    <td><?php echo $item['ItemName'] ?></td>
                                     <td style="text-align: right">
                                         <?php if($item['Price'] == 0): ?>
                                             <span class="label label-success"><?php echo $this->translate('Free') ?></span>
