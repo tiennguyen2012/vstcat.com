@@ -95,13 +95,34 @@ class Default_Model_Website {
 			/** Save website to table website **/
 			//check exist 
 			$existWebsite = Coco_NotORM::getInstance()->Websites[array('Domain' => $domain)];
+			
+			/** exist website **/
 			if(!$existWebsite){
 				$result = Coco_NotORM::getInstance()->Websites()->insert($data);
-				if($result) return true;
+				if($result){
+					/** UPDATE WEBSITE ID IN ORDER  **/
+					$order->update(array('WebsiteId' => $result['WebsiteId']));
+					return true;
+				}
 			}else{
 				throw new Zend_Exception('Domain '.$domain.' is exist.');
 			}
 		}
 		return false;
+	}
+	
+	/**
+	 * Check exist domain
+	 * @param string $domain
+	 * @return boolean
+	 */
+	public function isExistDomainByOrderId($orderId){
+		$modelOrder = new Default_Model_Order();
+		$domain = $modelOrder->getDomainByOrderId($orderId);
+		$website = Coco_NotORM::getInstance()->Websites[array('Domain' => $domain)];
+		if($website){
+			return TRUE;
+		}
+		return FALSE;
 	}
 }

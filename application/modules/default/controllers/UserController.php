@@ -52,6 +52,12 @@ class UserController extends Coco_Controller_Action_Default {
         $this->view->form = $form;
     }
 
+    /**
+     * Action sign in. 
+     * 1. Login user
+     * 2. Redirect: href ? href : '/user/managment
+     * @author tien.nguyen
+     */
     public function signinAction(){
         $form = new Default_Form_FormSignIn();
 
@@ -61,6 +67,7 @@ class UserController extends Coco_Controller_Action_Default {
                 $lUser = new Vts_Modules_User();
                 $res = $lUser->login($data['Username'], $data['Password']);
                 if($res){
+                	/** redirect to href and /user/management **/
                     $this->_redirect($this->href ? $this->href : '/user/management');
                 }
             }

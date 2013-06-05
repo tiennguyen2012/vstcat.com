@@ -29,6 +29,43 @@ class WebsiteController extends Coco_Controller_Action_Default {
 
         $this->view->form = $form;
     }
+    
+    /**
+     * Action generate website
+     * If order payment have 
+     * - TotalPrice = 0 and Domain not exist in Website table
+     * => Generate website.
+     * and return warning page. Not waiting generate finished
+     * @author tien.nguyen
+     */
+    public function generateWebsiteAction(){
+    	$this->_helper->viewRenderer->setNoRender(true);
+    	$this->_helper->layout->disableLayout();
+    	
+    	$orderId = $this->_getParam('order-id');
+    	
+    	/** Check website exist **/
+    	$modelWebsite = new Default_Model_Website();
+    	if($modelWebsite->isExistDomainByOrderId($orderId)){
+    		echo json_encode(array('result' => false, 'message' => 'Your domain is existed. System can not build. Please contact with administrator.'));
+    	}else{
+    		if($orderId){
+    			$modelOrder = new Default_Model_Order();
+    			$order = $modelOrder->getOrder($orderId);
+    			/** Generate website **/
+    			$modelWebsite = new Default_Model_Website();
+    			$res = $modelWebsite->generate($order);
+    			if($res){
+    				echo json_encode(array('result' => true, 'message' => 'Built website success.'));
+    			}else{
+    				echo json_encode(array('result' => false, 'message' => 'Generate not good.'));
+    			}
+    		}else{
+    			//throw new Zend_Exception('You do not have order id');
+    			echo json_encode(array('result' => false, 'message' => 'Not order id'));
+    		}
+    	}
+    }
 
     /**
      * Domain for website
@@ -57,8 +94,22 @@ class WebsiteController extends Coco_Controller_Action_Default {
         $this->view->form = $form;
         $this->view->formSubDomain = $formSubDomain;
     }
+    
+    /**
+     * This is action build website success
+     * Be used when order total price is 0, and customer click build website
+     * @author tien.nguyen
+     */
+    public function buildSuccessAction(){
+    	
+    }
 
+    /**
+     * After customer paid his order. The system generate website and send email
+     * to customer to notify for customer about this processing.
+     * @author tien.nguyen
+     */
     public function createSuccessAction(){
-
+		
     }
 }

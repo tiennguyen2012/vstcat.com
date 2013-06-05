@@ -47,13 +47,14 @@
 
                 <div class="field-name"><?php echo $this->lang('Country') ?> <span class="required">*</span></div>
                 <div class="field-value">
-                    <?php $countries = Coco_NotORM::getInstance()->Countrys()->order('CountryName ASC')->fetchPairs('CountryCode', 'CountryName') ?>
-                    <select name="CountryCode">
+                    <?php $countries = Coco_NotORM::getInstance()->CountryAlls()->order('CountryName ASC')->fetchPairs('CountryId', 'CountryName') ?>
+                    <select name="CountryName">
+                    	<option value=""><?php echo $this->lang('-- Choose country --') ?></option>
                         <?php foreach ($countries as $key => $country): ?>
-                        <?php if($key == $this->form->getElement('CountryCode')->getValue()): ?>
-                            <option selected="selected" value="<?php echo $key ?>"><?php echo $country ?></option>
+                        <?php if($country == $this->form->getElement('CountryName')->getValue()): ?>
+                            <option selected="selected" value="<?php echo $country ?>"><?php echo $country ?></option>
                         <?php else: ?>
-                            <option value="<?php echo $key ?>"><?php echo $country ?></option>
+                            <option value="<?php echo $country ?>"><?php echo $country ?></option>
                         <?php endif; ?>
                         <?php endforeach ?>
                     </select>

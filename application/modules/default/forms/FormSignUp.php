@@ -38,10 +38,12 @@ class Default_Form_FormSignUp extends Zend_Form {
         $email->addValidator('Db_NoRecordExists', false, array('table' => 'Users', 'field' => 'Email'));
         $this->addElement($email);
 
-        $countryCode = new Zend_Form_Element_Select('CountryCode');
-        $countryCode->setRequired(true);
-        $countryCode->setMultiOptions(Coco_NotORM::getInstance()->Countrys()->fetchPairs('CountryCode', 'CountryName'));
-        $this->addElement($countryCode);
+        $countryName = new Zend_Form_Element_Select('CountryName');
+        $countryName->setRequired(true);
+        $options = Coco_NotORM::getInstance()->CountryAlls()->fetchPairs('CountryId', 'CountryName');
+        $options = array_merge(array('' => '-- Choose country --'), $options);
+        $countryName->setMultiOptions($options);
+        $this->addElement($countryName);
 
         $address = new Zend_Form_Element_Text('Address');
         $this->addElement($address);

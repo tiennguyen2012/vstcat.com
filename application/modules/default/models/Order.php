@@ -207,6 +207,7 @@ class Default_Model_Order
                 $info = $vtsBasket->getInfo();
                 if ($info) {
                     $data = Vts_Unit::toArray($info);
+                    $data['OrderStatus'] = $this->generateOrderStatus($data);
                     $res = Coco_NotORM::getInstance()->Orders()->insert($data);
                     if ($res) {
                         $this->saveOrderDetail($res['OrderId']);
@@ -221,6 +222,19 @@ class Default_Model_Order
                 return false;
             }
         }
+    }
+    
+    /**
+     * generate order status when you trial 
+     * order status is NO_PURCHASED
+     * @var array $data
+     * @return string 
+     */
+    public function generateOrderStatus($data){
+    	if(empty($data['TotalPrice'])){
+    		return  ORDER_STATUS_NO_PAYMENT;
+    	}
+    	return ORDER_STATUS_PENDING;
     }
 
     /**

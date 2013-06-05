@@ -26,8 +26,10 @@
         <div class="row-fluid">
             <?php foreach ($templates as $template): ?>
             <div class="item">
+            	<a href="<?php echo  BASE_URL ?>/uploads/templates/<?php echo $template['TemplateId'] ?>/<?php echo $template['ImageDefault'] ?>"  rel="lightbox">
                 <img src="<?php echo BASE_URL ?>/uploads/templates/<?php echo $template['TemplateId'] ?>/<?php echo $template['ImageDefault'] ?>"
                      alt="<?php echo $template['TemplateName'] ?>"/>
+                </a>
 
                 <div class="description">
                     <div class="template-name">

@@ -10,8 +10,14 @@ class Vts_Basket {
 
     public function __construct(){}
 
+    /**
+     * - Get basket
+     * - Set information by basket 
+     * @return Zend_Session
+     */
     public function get(){
         $basket = Vts_Session::get("basket", new stdClass());
+        $this->setInfoByBasket();
         return $basket;
     }
 
@@ -230,7 +236,7 @@ class Vts_Basket {
 
             return $this->setValue('Info', $item);
         }else{
-            throw new Zend_Exception('You do not login system.');
+            
         }
     }
 

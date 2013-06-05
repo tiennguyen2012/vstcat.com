@@ -31,13 +31,7 @@
                 <div class="row-fluid">
                     <div class="span3"><?php echo $this->lang('Country') ?></div>
                     <div class="span6">
-                        <?php $countryName = Coco_NotORM::getInstance()->Countrys[array('CountryCode' => $user['CountryCode'])]['CountryName'] ?>
-                        <?php echo $countryName ?>
-                        <!-- 
-                        <img width="20" height="20"
-                             src="<?php echo BASE_URL ?>/images/flags/<?php echo $user['CountryCode'] ?>.gif"
-                             alt="<?php echo $countryName ?>" title="<?php echo $countryName ?>"/>
-                              -->
+                       <?php echo $this->escape($user['CountryName']) ?>
                     </div>
                 </div>
             </div>
@@ -140,17 +134,47 @@
         </div>
         <?php else: ?>
         <div class="row-fluid">
-            <button id="btnDownload" class="btn btn-primary"><?php echo $this->lang('Download now') ?></button>
-            <button id="btnTemplate" class="btn"><?php echo $this->lang('Back template') ?></button>
+            <button id="btnBuildSite" class="btn btn-primary"><?php echo $this->lang('Build Site') ?></button>
         </div>
         <?php endif; ?>
     </div>
 </div>
-<script>
-    $('#btnDownload').click(function(){
-        window.location.href = '<?php echo BASE_URL ?>/template/download/order-id/<?php echo $this->order['OrderId'] ?>/item-id/<?php echo $itemId ?>/item-type/template';
-    })
-    $('#btnTemplate').click(function(){
-        window.location.href = '<?php echo BASE_URL ?>/template';
-    })
+
+<!-- MESSAGEBOX -->
+<?php echo $this->partial("order/block/dialog_build.phtml") ?>
+<?php echo $this->partial("dialog_default.phtml", 
+		array('id' => "messageBox", 'message' => "Have error when build your website", 'title' => 'Warning')) ?>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#btnDownload').click(function(){
+	        window.location.href = '<?php echo BASE_URL ?>/template/download/order-id/<?php echo $this->order['OrderId'] ?>/item-id/<?php echo $itemId ?>/item-type/template';
+	    })
+	    
+	    $('#btnBuildSite').click(function(){
+	    	$('#messageBoxBuild').modal({
+	    		keyboard: true
+		    });	
+	        $.ajax({
+	           	url : '<?php echo BASE_URL ?>/website/generate-website/order-id/<?php echo $this->order['OrderId'] ?>',
+	           	dataType : 'json',
+	           	type: 'GET',
+	           	timeout: 300000,
+	           	success: function(data){
+	               	if(data.result == true){
+	               		window.location.href = "<?php echo BASE_URL ?>/website/build-success";
+	               	}else{
+	               		$('#messageBoxBuild').modal('hide');
+	               		$('#messageBox .content-message').html(data.message);
+	               		$('#messageBox').modal('show');
+	               	}
+	           	},
+	           	error: function (xhr, ajaxOptions, thrownError) {
+	           		$('#messageBoxBuild').modal('hide');
+               		$('#messageBox .content-message').html("System is building, we will send email to you when system finished");
+               		$('#messageBox').modal('show');
+	           	}
+	        })
+	    })
+	});
 </script>
