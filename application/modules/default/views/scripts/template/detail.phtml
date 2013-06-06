@@ -109,6 +109,9 @@
     </div>
 </div>
 
+<!-- MESSAGEBOX -->
+<?php echo $this->partial('/template/block/dialog-website.phtml', 
+		array('websites' => $this->websites)) ?>
 
 <?php $this->placeholder('right')->captureStart() ?>
 <?php echo $this->partial('right-cate.phtml') ?>
@@ -119,7 +122,8 @@
         window.location.href = "<?php echo $this->rurl(array('controller' => 'order', 'action' => 'add', 'item-id' => $this->params['id'], 'item-type' => 'template', 'price-type' => 'unique'), null, true) ?>";
     })
     $('#btnFreeForMember').click(function () {
-        window.location.href = "<?php echo $this->rurl(array('controller' => 'order', 'action' => 'add', 'item-id' => $this->params['id'], 'item-type' => 'template', 'price-type' => 'normal'), null, true) ?>";
+        //window.location.href = "<?php echo $this->rurl(array('controller' => 'order', 'action' => 'add', 'item-id' => $this->params['id'], 'item-type' => 'template', 'price-type' => 'normal'), null, true) ?>";
+        $('#popWebsite').modal();
     })
     $('#btnNormalPrice').click(function () {
         window.location.href = "<?php echo $this->rurl(array('controller' => 'order', 'action' => 'add', 'item-id' => $this->params['id'], 'item-type' => 'template', 'price-type' => 'normal'), null, true) ?>";

@@ -8,6 +8,19 @@
  */
 class Default_Model_User {
 
+	/**
+	 * Get user login. We get it from session
+	 * @author tien.nguyen
+	 * @return NotORM Users|null
+	 */
+	public function getUserLogin(){
+		$default = new Zend_Session_Namespace('default');
+		if($default->userLogin)
+			return $default->userLogin;
+		else 
+			return null;
+	}
+	
     public function forgetPassword($email){
         $user = Coco_NotORM::getInstance()->Users[array('Email' => $email)];
         if($user){

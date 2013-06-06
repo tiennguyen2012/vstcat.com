@@ -1,0 +1,12 @@
+<div>
+	<?php if($this->websites):?>
+		<?php foreach ($this->websites as $website):?>
+		<div>
+			<input type="radio" name="website" value="<?php echo $website['Domain'] ?>"/> 
+			<?php echo $website['Domain']?>
+		</div>
+		<?php endforeach;?>
+	<?php else: ?>
+		<div><?php echo $this->lang('You do not have any websites.')?></div>
+	<?php endif; ?>
+</div>

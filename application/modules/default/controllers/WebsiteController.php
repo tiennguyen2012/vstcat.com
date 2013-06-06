@@ -96,6 +96,20 @@ class WebsiteController extends Coco_Controller_Action_Default {
     }
     
     /**
+     * Action choose site when you want chose domain to setup.
+     * This is function user for ajax. show in modal of twitter bootstrap.
+     * @author tien.nguyen
+     */
+    public function chooseSiteAction(){
+    	//no render template and layout.
+    	$this->_helper->layout->disableLayout();
+    	
+    	$modelWebsite = new Default_Model_Website();
+    	
+    	$this->view->websites = $modelWebsite->getSiteByLogin();
+    }
+    
+    /**
      * This is action build website success
      * Be used when order total price is 0, and customer click build website
      * @author tien.nguyen

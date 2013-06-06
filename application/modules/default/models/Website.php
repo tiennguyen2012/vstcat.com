@@ -125,4 +125,27 @@ class Default_Model_Website {
 		}
 		return FALSE;
 	}
+	
+	/**
+	 * Get site by login. Get from table Websites
+	 * @author tien.nguyen
+	 * @return Coco_NotORM|null
+	 */
+	public function getSiteByLogin(){
+		/** get session login **/
+		$modelUser = new Default_Model_User();
+		$user = $modelUser->getUserLogin();
+		
+		/** get website **/
+		$websites = Coco_NotORM::getInstance()->Websites()
+			->where('UserId', $user->UserId)
+			->where('IsActive', 1)
+			->where('IsDeleted', 0);
+
+		if($websites){
+			return $websites;
+		}else{
+			return null;
+		}
+	}
 }

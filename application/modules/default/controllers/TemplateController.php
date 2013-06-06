@@ -38,10 +38,12 @@ class TemplateController extends Coco_Controller_Action_Default
 
         $lMember = new Vts_Member();
         $lTemplate = new Vts_Template();
+        $modelWebsite = new Default_Model_Website();
 
         $this->view->isMember = $lMember->isMember();
         $this->view->template = $this->_model->detail($id);
         $this->view->photos = $lTemplate->photos($id, true);
+        $this->view->websites = $modelWebsite->getSiteByLogin();
     }
 
     public function downloadAction()
