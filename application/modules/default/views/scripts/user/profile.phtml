@@ -1,0 +1,36 @@
+<div id="user-profile">
+	<h4><?php echo $this->lang('Profile')?></h4>
+	<div class="content">
+		<div class="row-fluid">
+			<div class="span3"><?php echo $this->lang('Fullname')?></div>
+			<div class="span9">
+				<?php echo $this->user['Username'] ?>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span3"><?php echo $this->lang('Email')?></div>
+			<div class="span9">
+				<?php echo $this->user['Email'] ?>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span3"><?php echo $this->lang('Country')?></div>
+			<div class="span9">
+				<?php echo $this->user['CountryName'] ?>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span3"><?php echo $this->lang('Address')?></div>
+			<div class="span9">
+				<?php echo $this->user['Address'] ?>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span3"><?php echo $this->lang('Joined')?></div>
+			<div class="span9">
+				<?php $date = new Zend_Date($this->user['CreatedDate'], DATETIME_FORMAT_DATABASE) ?>
+				<?php echo $date->toString(DATE_FORMAT_VIEW)?>
+			</div>
+		</div>
+	</div>
+</div>

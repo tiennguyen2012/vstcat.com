@@ -112,10 +112,48 @@ class WebsiteController extends Coco_Controller_Action_Default {
     /**
      * Install theme for site is existed.
      * Use when customer want to install new theme for his/her website.
+     * Params need:
+     * - order-id
      * @author tien.nguyen
      */
-    public function installThemeAction(){
+    public function installThemeByOrderIdAction(){
+    	$orderId = $this->_getParam('order-id');
+    	if(empty($orderId)){
+    		throw new Zend_Exception('Order Id is empty.');
+    	}
     	
+    	$modelOrder = new Default_Model_Order();
+    	$sampleDomain = $oldDomain = $modelOrder->getSampleDomainByOrderId($orderId);
+    	$siteDomain = $newDomain = $modelOrder->getDomainByOrderId($orderId);
+    	
+    	// old domain and new domain
+    	if($oldDomain && $newDomain){
+    		$vtsApi = new Vts_Api();
+    		$res = $vtsApi->installTheme($oldDomain, $newDomain);
+    		if($res){
+    			$url = $this->view->url(array('controller' => 'website', 'action' => 'install-theme-success'));
+    			$this->_redirect($url);
+    		}else{
+    			throw new Zend_Exception('Have some error when install theme. Please contact with administrtor.');	
+    		}
+    	}else{
+    		throw new Zend_Exception('Old Domain and New Domain are empty.');
+    	}
+    }
+    
+    /**
+     * Action when system install new theme is success
+     * This is static page
+     * @author tien.nguyen
+     */
+    public function installThemeSuccessAction(){
+    	$orderId = $this->_getParam('order-id');
+    	if($orderId){
+    		$modelOrder = new Default_Model_Order();
+    		$domain = $modelOrder->getDomainByOrderId($orderId);
+    		
+    		$this->view->domain = $domain;
+    	}
     }
     
     /**

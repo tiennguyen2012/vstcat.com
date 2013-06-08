@@ -6,6 +6,7 @@ class Vts_Api {
      */
     const CREATE = 'create';
     const REMOVE = 'remove';
+    const INSTALL_THEME = 'install-theme';
 
     /**
      * Get api url
@@ -59,6 +60,26 @@ class Vts_Api {
         	}
         }
         return FALSE;
+    }
+    
+    /**
+     * Install new theme for website is existed. 
+     * We call API to install theme.
+     * @author tien.nguyen
+     * @param string $oldDomain
+     * @param string $newDomain
+     * @return boolean
+     */
+    public function installTheme($oldDomain, $newDomain){
+    	$content = file_get_contents($this->getApi(self::INSTALL_THEME,
+    			array('old-domain' => $oldDomain, 'new-domain' => $newDomain)));
+    	if($content){
+    		$json = json_decode($content);
+    		if($json->result){
+    			return TRUE;
+    		}
+    	}
+    	return FALSE;
     }
 
 }

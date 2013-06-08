@@ -26,10 +26,12 @@ class Default_Form_FormContact extends Zend_Form {
         $phone->setRequired(true);
         $this->addElement($phone);
 
-        $countryCode = new Zend_Form_Element_Select('CountryCode');
-        $countryCode->setRequired(true);
-        $countryCode->setMultiOptions(Coco_NotORM::getInstance()->Countrys()->fetchPairs('CountryCode', 'CountryName'));
-        $this->addElement($countryCode);
+        $countryName = new Zend_Form_Element_Select('CountryName');
+        $countryName->setRequired(true);
+        $options = Coco_NotORM::getInstance()->CountryAlls()->fetchPairs('CountryId', 'CountryName');
+        $options = array_merge(array('' => '-- Choose country --'), $options);
+        $countryName->setMultiOptions($options);
+        $this->addElement($countryName);
 
         $content = new Zend_Form_Element_Textarea('Content');
         $content->setRequired(true);

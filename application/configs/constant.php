@@ -9,6 +9,7 @@ define('CACHE_PATH', $_SERVER['DOCUMENT_ROOT'].'/caches');
 
 define('STDERR', $_SERVER['DOCUMENT_ROOT'].'/debug/sql-log.txt' );
 
+define('DATETIME_FORMAT_DATABASE', 'yyyy-MM-dd hh:mm:ss');
 define('DATE_FORMAT_DATABASE', 'yyyy-MM-dd');
 define('DATE_FORMAT_VIEW', 'yyyy-MM-dd');
 define('API_CMS', 'http://api.vtscat.com');

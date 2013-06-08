@@ -43,7 +43,7 @@ class UserController extends Coco_Controller_Action_Default {
                     //login system
                     $lUser = new Vts_Modules_User();
                     $lUser->login($user['Username'], $user['Password']);
-                    $this->_redirect( $this->href ? $this->href : '/website/create');
+                    $this->_redirect( $this->href ? $this->href : '/user/login');
                 }
             }
             $form->populate($data);
@@ -144,5 +144,54 @@ class UserController extends Coco_Controller_Action_Default {
      */
     public function forgetSuccessAction(){
         $this->render("forget-password-success");
+    }
+    
+    /**
+     * This is action to change password. It need you logined
+     * - Check login, if you do not login yet, system will redirect to login page
+     * - Show form to change password. 
+     * - Update data and change password.
+     * @author tien.nguyen
+     */
+    public function changePasswordAction(){
+    	// Check user login
+    	$modelUser = new Default_Model_User();
+    	if(is_null($modelUser->getUserLogin())){
+    		$this->_redirect($this->view->url(array('controller' => 'user', 'action' => 'login')));
+    	}
+    	
+    	// Create form and check is valid
+    	$form = new Default_Form_FormChangePass();
+    	
+    	// check form data and change password
+    	if($this->_request->isPost()){
+    		$data = $this->_request->getPost();
+    		if($form->isValid($data)){
+    			$res = $modelUser->changePassword($data);
+    			if($res){
+    				$url = $this->view->url(array('controller' => 'page', 
+    						'action' => 'notify', 'id' => 'change-pass-success'), null, true);
+    				$this->_redirect($url);
+    			}
+    		}
+    	}
+    	$this->view->form = $form;
+    }
+    
+    /**
+     * This is action show information of your profile
+     * - Get information of user login
+     * - Show information to view
+     * @author tien.nguyen
+     */
+    public function profileAction(){
+    	$modelUser = new Default_Model_User();
+    	$user = $modelUser->getUserLogin();
+    	if($user){
+    		$user = Coco_NotORM::getInstance()->Users[array('UserId' => $user->UserId)];
+    		$this->view->user = $user;
+    	}else{
+    		throw new Zend_Exception('You do not login.');
+    	}
     }
 }

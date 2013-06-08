@@ -1,8 +1,8 @@
 <div id="pcontact-index">
-    <div class="contact">
-        <h4><?php echo $this->lang('Contact') ?></h4>
+	<div class="contact">
+		<h4><?php echo $this->lang('Contact') ?></h4>
 
-        <?php $errors = $this->form->getMessages() ?>
+        <?php $errors = $this->form->getMessages()?>
         <?php if($errors): ?>
         <ul class="errors">
             <?php foreach($errors as $key => $error): ?>
@@ -14,73 +14,100 @@
         <?php endif; ?>
 
         <div class="content span4">
-            <form action="" method="post">
-                <div class="row-fluid">
-                    <div><?php echo $this->lang('Full name') ?> <span class="required">*</span></div>
-                    <div>
-                        <input type="text" value="<?php echo $this->form->getElement('Fullname')->getValue() ?>" name="Fullname" placeholder="<?php echo $this->lang('Fullname') ?>">
-                    </div>
-                </div>
-                <div class="row-fluid">
-                    <div><?php echo $this->lang('Email') ?> <span class="required">*</span></div>
-                    <div>
-                        <input type="text" value="<?php echo $this->form->getElement('Email')->getValue() ?>" name="Email" placeholder="<?php echo $this->lang('Email') ?>">
-                    </div>
-                </div>
-                <div class="row-fluid">
-                    <div><?php echo $this->lang('Phone') ?> <span class="required">*</span></div>
-                    <div>
-                        <input type="text" value="<?php echo $this->form->getElement('Phone')->getValue() ?>" name="Phone" placeholder="<?php echo $this->lang('Phone') ?>">
-                    </div>
-                </div>
-                <div class="row-fluid">
-                    <div><?php echo $this->lang('Country') ?> <span class="required">*</span></div>
-                    <div>
-                        <?php $countries = Coco_NotORM::getInstance()->Countrys()->order('CountryName ASC')->fetchPairs('CountryCode', 'CountryName') ?>
-                        <select name="CountryCode">
-                            <?php foreach ($countries as $key => $country): ?>
-                            <?php if ($key == $this->form->getElement('CountryCode')->getValue()): ?>
-                                <option selected="selected" value="<?php echo $key ?>"><?php echo $country ?></option>
-                                <?php else: ?>
-                                <option value="<?php echo $key ?>"><?php echo $country ?></option>
-                                <?php endif; ?>
-                            <?php endforeach ?>
-                        </select>
-                    </div>
-                </div>
+			<form action="" method="post">
+				<div class="row-fluid">
+					<div><?php echo $this->lang('Full name') ?> <span class="required">*</span>
+					</div>
+					<div>
+						<input type="text"
+							value="<?php echo $this->form->getElement('Fullname')->getValue() ?>"
+							name="Fullname"
+							placeholder="<?php echo $this->lang('Fullname') ?>">
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div><?php echo $this->lang('Email') ?> <span class="required">*</span>
+					</div>
+					<div>
+						<input type="text"
+							value="<?php echo $this->form->getElement('Email')->getValue() ?>"
+							name="Email" placeholder="<?php echo $this->lang('Email') ?>">
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div><?php echo $this->lang('Phone') ?> <span class="required">*</span>
+					</div>
+					<div>
+						<input type="text"
+							value="<?php echo $this->form->getElement('Phone')->getValue() ?>"
+							name="Phone" placeholder="<?php echo $this->lang('Phone') ?>">
+					</div>
+				</div>
 
-                <div class="row-fluid">
-                    <div><?php echo $this->lang('Content') ?> <span class="required">*</span></div>
-                    <div>
-                        <textarea name="Content" placeholder="<?php echo $this->lang('Content') ?>"><?php echo $this->form->getElement('Content')->getValue() ?></textarea>
-                    </div>
-                </div>
-                <div class="button-set">
-                    <input class="btn btn-primary" type="submit" value="<?php echo $this->lang('Send') ?>" title="<?php echo $this->lang('Send to Admin') ?>" alt="<?php echo $this->lang('Send to Admin') ?>">
-                    <input class="btn" type="reset" value="<?php echo $this->lang('Reset') ?>" title="<?php echo $this->lang('Reset info') ?>" alt="<?php echo $this->lang('Reset info') ?>">
-                </div>
-            </form>
-        </div>
-        <div class="span4">
-            <div class="content">
-                <h5><?php echo $this->lang('VTS Website Service') ?></h5>
+				<div class="row-fluid">
+					<div class="field-name"><?php echo $this->lang('Country') ?> <span
+							class="required">*</span>
+					</div>
+					<div class="field-value">
+	                    <?php $countries = Coco_NotORM::getInstance()->CountryAlls()->order('CountryName ASC')->fetchPairs('CountryId', 'CountryName')?>
+	                    <select name="CountryName">
+								<option value=""><?php echo $this->lang('-- Choose country --') ?></option>
+	                        <?php foreach ($countries as $key => $country): ?>
+	                        <?php if($country == $this->form->getElement('CountryName')->getValue()): ?>
+	                            <option selected="selected"
+									value="<?php echo $country ?>"><?php echo $country ?></option>
+	                        <?php else: ?>
+	                            <option value="<?php echo $country ?>"><?php echo $country ?></option>
+	                        <?php endif; ?>
+	                        <?php endforeach ?>
+	                    </select>
+					</div>
+				</div>
 
-                <div class="row-fluid">
-                    <div><?php echo $this->lang('175, Nguyen Thi Thap Street, District 7, Ho Chi Minh City, Viet Nam') ?></div>
-                </div>
-                <div class="row-fluid">
-                    <div><img width="16px" src="<?php echo BASE_URL ?>/images/system-email-icon.png" alt="Email" title="Email">
-                        vtscat@gmail.com
-                    </div>
-                </div>
-                <div class="row-fluid">
-                    <img width="16px" src="<?php echo BASE_URL ?>/images/phone-icon.png" alt="Phone" title="Phone"/> +84 0168 265
-                    2677
-                </div>
-                <div class="row-fluid">
-                    <?php echo $this->lang('Website') ?>: <a href="http://www.vtscat.com">http://www.vtscat.com</a>
-                </div>
-            </div>
-        </div>
-    </div>
+				<div class="row-fluid">
+					<div><?php echo $this->lang('Content') ?> <span class="required">*</span>
+					</div>
+					<div>
+						<textarea name="Content"
+							placeholder="<?php echo $this->lang('Content') ?>"><?php echo $this->form->getElement('Content')->getValue() ?></textarea>
+					</div>
+				</div>
+				<div class="button-set">
+					<input class="btn btn-primary" type="submit"
+						value="<?php echo $this->lang('Send') ?>"
+						title="<?php echo $this->lang('Send to Admin') ?>"
+						alt="<?php echo $this->lang('Send to Admin') ?>"> <input
+						class="btn" type="reset"
+						value="<?php echo $this->lang('Reset') ?>"
+						title="<?php echo $this->lang('Reset info') ?>"
+						alt="<?php echo $this->lang('Reset info') ?>">
+				</div>
+			</form>
+		</div>
+		<div class="span4">
+			<div class="content">
+				<h5><?php echo $this->lang('VTS Website Service') ?></h5>
+
+				<div class="row-fluid">
+					<div><?php echo $this->lang('175, Nguyen Thi Thap Street, District 7, Ho Chi Minh City, Viet Nam') ?></div>
+				</div>
+				<div class="row-fluid">
+					<div>
+						<img width="16px"
+							src="<?php echo BASE_URL ?>/images/system-email-icon.png"
+							alt="Email" title="Email"> vtscat@gmail.com
+					</div>
+				</div>
+				<div class="row-fluid">
+					<img width="16px"
+						src="<?php echo BASE_URL ?>/images/phone-icon.png" alt="Phone"
+						title="Phone" /> +84 0168 265 2677
+				</div>
+				<div class="row-fluid">
+                    <?php echo $this->lang('Website') ?>: <a
+						href="http://www.vtscat.com">http://www.vtscat.com</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

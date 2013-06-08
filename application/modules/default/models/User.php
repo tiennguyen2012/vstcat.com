@@ -109,4 +109,24 @@ class Default_Model_User {
         }
         return $pass;
     }
+    
+    /**
+     * Change password by data POST. Update Users table 
+     * - Check user is loged?
+     * - Change password
+     * @param array $data
+     * @return boolean
+     */
+    public function changePassword($data){
+    	$userLogin = $this->getUserLogin();
+    	// user is logined
+    	if($userLogin){
+    		$user = Coco_NotORM::getInstance()->Users[array('UserId' => $userLogin->UserId)];
+    		$res = $user->update(array('Password' => md5($data['NewPassword'])));
+    		if($res){
+    			return TRUE;
+    		}	
+    	}
+    	return FALSE;
+    }
 }

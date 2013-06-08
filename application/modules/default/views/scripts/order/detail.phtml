@@ -166,10 +166,29 @@ echo $this->partial ( "dialog_default.phtml", array (
 
 <script type="text/javascript">
 	$(document).ready(function(){
+		/**
+		* This is action of button download 
+		* @author tien.nguyen
+		*/
 		$('#btnDownload').click(function(){
 	        window.location.href = '<?php echo BASE_URL ?>/template/download/order-id/<?php echo $this->order['OrderId'] ?>/item-id/<?php echo $itemId ?>/item-type/template';
 	    })
 	    
+	    /**
+	    * Install theme when your have order domain that setup
+	    * @author tien.nguyen
+	    */
+	    $('#btnInstallTheme').click(function(){
+		    var url = "<?php echo $this->url(array('controller' => 'website', 'action' => 'install-theme-by-order-id', 
+		    		'order-id' => $this->order['OrderId']
+		     )); ?>";
+		     window.location.href = url;
+	    })
+	    
+	    /**
+	    * Build website when in your order have new domain
+	    * @author tien.nguyen
+	    */
 	    $('#btnBuildSite').click(function(){
 	    	$('#messageBoxBuild').modal({
 	    		keyboard: true

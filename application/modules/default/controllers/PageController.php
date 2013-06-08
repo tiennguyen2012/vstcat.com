@@ -17,4 +17,18 @@ class PageController extends Coco_Controller_Action_Default {
     public function priceAction(){
 
     }
+    
+    /**
+     * Show page with notify of key
+     * @param string $key
+     * @throws Zend_Exception
+     */
+    public function notifyAction(){
+    	$key = $this->_getParam('id');
+    	if($key){
+    		$this->view->key = $key;
+    	}else{
+    		throw new Zend_Exception('Page is not existed');
+    	}
+    }
 }

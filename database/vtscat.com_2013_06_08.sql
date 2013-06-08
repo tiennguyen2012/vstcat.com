@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50527
 File Encoding         : 65001
 
-Date: 2013-06-08 14:23:42
+Date: 2013-06-08 16:56:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -84,16 +84,17 @@ CREATE TABLE `Contacts` (
   `ContactId` int(11) NOT NULL AUTO_INCREMENT,
   `Fullname` varchar(250) DEFAULT NULL,
   `Email` varchar(50) DEFAULT NULL,
-  `CountryCode` varchar(2) DEFAULT NULL,
+  `CountryName` varchar(50) DEFAULT NULL,
   `Content` varchar(500) DEFAULT NULL,
   `CreatedDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Phone` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`ContactId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of Contacts
 -- ----------------------------
+INSERT INTO `Contacts` VALUES ('1', 'Nguyen Van Tien', 'nguyenvantien2009@gmail.com', 'Vietnam', 'I want contact with you', '2013-06-08 15:17:13', '841682652677');
 
 -- ----------------------------
 -- Table structure for `CountryAlls`
@@ -471,7 +472,7 @@ CREATE TABLE `OrderDetails` (
   `ItemCode` varchar(200) DEFAULT NULL,
   `Options` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`OrderDetailId`)
-) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of OrderDetails
@@ -577,6 +578,9 @@ INSERT INTO `OrderDetails` VALUES ('98', '79', 'tphochiminh.vtscat.com', '1', '0
 INSERT INTO `OrderDetails` VALUES ('99', '80', 'Theme 0406586', '1', '0', 'FREE', '4', 'TEMPLATE', '0406586', null);
 INSERT INTO `OrderDetails` VALUES ('100', '80', 'Trial', '1', '0', 'trial', '4', 'ACCOUNT_TYPE', 'TRIAL', 'NONE');
 INSERT INTO `OrderDetails` VALUES ('101', '80', 'testwwebs.com', '1', '0', '', '0', 'DOMAIN', '', null);
+INSERT INTO `OrderDetails` VALUES ('102', '81', 'Theme 0406586', '1', '0', 'FREE', '4', 'TEMPLATE', '0406586', null);
+INSERT INTO `OrderDetails` VALUES ('103', '81', 'Trial', '1', '0', 'trial', '4', 'ACCOUNT_TYPE', 'TRIAL', 'NONE');
+INSERT INTO `OrderDetails` VALUES ('104', '81', 'tinhcam.vtscat.com', '1', '0', '', '0', 'DOMAIN', '', null);
 
 -- ----------------------------
 -- Table structure for `Orders`
@@ -596,7 +600,7 @@ CREATE TABLE `Orders` (
   `CycleBilling` enum('TWO_YEARLY','YEARLY','SIX_MONTHLY','NONE','MONTHLY') DEFAULT 'SIX_MONTHLY',
   `IsBuilt` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`OrderId`)
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of Orders
@@ -675,6 +679,7 @@ INSERT INTO `Orders` VALUES ('77', '15', '2013-06-05 23:39:24', null, null, null
 INSERT INTO `Orders` VALUES ('78', '15', '2013-06-05 23:44:56', null, null, null, '0', 'NO_PURCHASED', '0', '35', 'NONE', '0');
 INSERT INTO `Orders` VALUES ('79', '15', '2013-06-05 23:49:23', null, null, null, '0', 'NO_PURCHASED', '0', '36', 'NONE', '0');
 INSERT INTO `Orders` VALUES ('80', '15', '2013-06-07 22:57:07', null, null, null, '0', 'NO_PURCHASED', '0', null, 'NONE', '0');
+INSERT INTO `Orders` VALUES ('81', '15', '2013-06-08 14:58:43', null, null, null, '0', 'NO_PURCHASED', '0', null, 'NONE', '0');
 
 -- ----------------------------
 -- Table structure for `PageLangs`
@@ -970,7 +975,7 @@ CREATE TABLE `Users` (
   `Token` varchar(255) DEFAULT NULL,
   `TokenExpireDate` datetime DEFAULT NULL,
   PRIMARY KEY (`UserId`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of Users
@@ -979,6 +984,7 @@ INSERT INTO `Users` VALUES ('15', 'nguyenvantien2009@gmail.com', 'Tiển Nguyễ
 INSERT INTO `Users` VALUES ('16', 'tien.nguyen@kiss-concept.com', 'Huynh Thi My Xuyen', '202cb962ac59075b964b07152d234b70', 'huynhthimyxuyen@gmail.com', 'Australia', '75 Nguyễn Thị Thập', '1', '0', '2013-03-19 22:31:22', null, null, null);
 INSERT INTO `Users` VALUES ('17', 'myxuyen', 'Huynh Thi My Xuyen', '202cb962ac59075b964b07152d234b70', 'huynhthimyxuyen123@gmail.com', 'Australia', '12 Nguyen Van Bao F4 Gò Vấp', '1', '0', '2013-03-24 01:02:07', null, null, null);
 INSERT INTO `Users` VALUES ('18', 'truongthanhsang@gmail.com', 'Truong Thanh Sang', 'e10adc3949ba59abbe56e057f20f883e', 'truongthanhsang@gmail.com', 'Australia', '12 Nguyen Van Bao F4 Gò Váp', '1', '0', '2013-05-26 09:40:20', null, null, null);
+INSERT INTO `Users` VALUES ('19', 'thanhnien', 'Trần Thanh Phong', '202cb962ac59075b964b07152d234b70', 'thanhnien@gmail.com', 'Vietnam', '12 Nguyen Van Bao F4 Gò Váp', '1', '0', '2013-06-08 15:24:05', null, null, null);
 
 -- ----------------------------
 -- Table structure for `Websites`
