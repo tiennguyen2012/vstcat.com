@@ -2,8 +2,8 @@
     <h4><?php echo $this->lang('My Orders') ?></h4>
 
     <div class="content">
-        <?php echo $this->lang('Orders were order by with created date.') ?>
         <?php if (count($this->orders)): ?>
+         <?php echo $this->lang('Orders were order by with created date.') ?>
         <?php echo $this->paginationControl($this->orders, 'Elastic', 'pagination.phtml'); ?>
         <table width="100%" class="table table-striped">
             <tr>

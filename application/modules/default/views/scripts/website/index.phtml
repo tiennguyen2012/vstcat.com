@@ -1,0 +1,28 @@
+<div id="page-website">
+	<h4><?php echo $this->lang('Websites')?></h4>
+	<div class="content">
+		<?php if(count($this->websites) > 0):?>
+			<?php  foreach($this->websites as $website):?>
+			<div class="item row-fluid">
+				<div class="span7">
+				<?php $date = new Zend_Date($website['CeatedDate'], DATETIME_FORMAT_DATABASE)?>
+					<div>
+						<?php if($website['WebsiteType'] == 'INSITE'):?>
+							<span class="label label-success"><?php echo $website['WebsiteType']?></span>
+						<?php else: ?>
+							<span class="label label-info"><?php echo $website['WebsiteType']?></span>
+						<?php endif;?>&nbsp;&nbsp;
+						<a href="http://<?php echo $website['Domain']?>"><?php echo $website['Domain']?></a>	
+					</div>
+					<div><?php echo $this->lang('Created') ?>: <?php echo $date->toString(DATE_FORMAT_VIEW)?></div>
+				</div>
+				<div class="span5">
+					<a href=""></a>
+				</div>
+			</div>
+			<?php endforeach;?>
+		<?php else:?>
+			<div><?php echo $this->lang('You do not have any websites.')?></div>
+		<?php endif;?>
+	</div>
+</div>

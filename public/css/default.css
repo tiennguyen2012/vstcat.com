@@ -174,3 +174,8 @@ ul.errors { color: red }
 #page-price .setup-vtscat .item.block-price { text-align: center; }
 #page-price .setup-vtscat .cyceBillingDescription { font-size: 12px; font-style: italic }
 #page-price .setup-vtscat .box-cyclebilling { border-bottom: 1px dotted #f0f0f0 }
+
+
+/** PAGE WEBSITE **/
+#page-website {  }
+#page-website .content .item { border-bottom:  1px dotted #f0f0f0; padding: 10px 0  }

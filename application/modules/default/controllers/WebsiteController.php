@@ -8,6 +8,21 @@
  */
 class WebsiteController extends Coco_Controller_Action_Default {
 
+	/**
+	 * Show list website of user login.
+	 * Get user login from session. This action required you login.
+	 * @author tien.nguyen
+	 */
+	public function indexAction(){
+		$this->checkLogin();
+		
+		// get list website by user login
+		$modelWebsite = new Default_Model_Website();
+		$websites = $modelWebsite->getSiteByLogin();
+		
+		$this->view->websites = $websites;
+	}
+	
     public function createAction(){
         $form = new Default_Form_FormDomain();
         if($this->_request->isPost()){
