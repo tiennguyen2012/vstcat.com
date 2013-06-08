@@ -25,6 +25,7 @@ class Vts_Modules_User
             $userLogin->Fullname = $user['Fullname'];
             $userLogin->Email = $user['Email'];
             $userLogin->UserId = $user['UserId'];
+            $userLogin->IsAdmin = $user['IsAdmin'];
             $default->userLogin = $userLogin;
             return true;
         } else {

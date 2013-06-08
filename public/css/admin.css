@@ -6,8 +6,11 @@ body {
 .form .button-set { float: right }
 .form .description { font-size: 11px; color: green; font-style: italic }
 .list .button-set { float: right; margin-bottom: 10px }
-.errors { background-color: yellow; padding: 5px; margin-bottom: 10px }
-.errors ul { padding: 0; margin: 0 0 0 20px}
+.errors { background-color: yellow; padding: 5px; margin-bottom: 10px;
+	list-style: none; color: red;
+	margin-left: 0
+}
+.errors ul { padding: 0; margin: 0 0 0 20px; }
 
 .file_delete { cursor: pointer }
 
