@@ -1,87 +1,96 @@
-<?php $paymentMethods = Coco_NotORM::getInstance()->PaymentMethods()->where('IsActive', 1)->where('IsDeleted', 0) ?>
+<?php $paymentMethods = Coco_NotORM::getInstance()->PaymentMethods()->where('IsActive', 1)->where('IsDeleted', 0)?>
 <div id="porder-detail">
-    <h4><?php echo $this->lang('Order Detail') ?></h4>
+	<h4><?php echo $this->lang('Order Detail') ?></h4>
 
-    <div class="warning">
+	<div class="warning">
         <?php if($this->order['TotalPrice']): ?>
-        <?php echo $this->lang('After pay success. System send email to notify.') ?>
+        <?php echo $this->lang('After pay success. System send email to notify.')?>
         <?php else: ?>
-        <?php echo $this->lang('This is free order, please click download button.') ?>
+        <?php echo $this->lang('This is free order, please click download button.')?>
         <?php endif; ?>
     </div>
 
-    <div class="content">
-        <!-- BLOCK USER INFO -->
-        <div class="user-block row-fluid">
-            <h5><?php echo $this->lang('Customer Information') ?></h5>
-            <?php $user = Coco_NotORM::getInstance()->Users[$this->order['UserId']] ?>
+	<div class="content">
+		<!-- BLOCK USER INFO -->
+		<div class="user-block row-fluid">
+			<h5><?php echo $this->lang('Customer Information') ?></h5>
+            <?php $user = Coco_NotORM::getInstance()->Users[$this->order['UserId']]?>
             <div>
-                <div class="row-fluid">
-                    <div class="span3"><?php echo $this->lang('Fullname') ?></div>
-                    <div class="span6"><b><?php echo $this->escape($user['Fullname']) ?></b></div>
-                </div>
-                <div class="row-fluid">
-                    <div class="span3"><?php echo $this->lang('Email') ?></div>
-                    <div class="span6"><i><?php echo $this->escape($user['Email']) ?></i></div>
-                </div>
-                <div class="row-fluid">
-                    <div class="span3"><?php echo $this->lang('Address') ?></div>
-                    <div class="span6"><?php echo $this->escape($user['Address']) ?></div>
-                </div>
-                <div class="row-fluid">
-                    <div class="span3"><?php echo $this->lang('Country') ?></div>
-                    <div class="span6">
-                       <?php echo $this->escape($user['CountryName']) ?>
+				<div class="row-fluid">
+					<div class="span3"><?php echo $this->lang('Fullname') ?></div>
+					<div class="span6">
+						<b><?php echo $this->escape($user['Fullname']) ?></b>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span3"><?php echo $this->lang('Email') ?></div>
+					<div class="span6">
+						<i><?php echo $this->escape($user['Email']) ?></i>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span3"><?php echo $this->lang('Address') ?></div>
+					<div class="span6"><?php echo $this->escape($user['Address']) ?></div>
+				</div>
+				<div class="row-fluid">
+					<div class="span3"><?php echo $this->lang('Country') ?></div>
+					<div class="span6">
+                       <?php echo $this->escape($user['CountryName'])?>
                     </div>
-                </div>
-            </div>
-        </div>
+				</div>
+			</div>
+		</div>
 
-        <!-- BLOCK ORDER INFO -->
-        <div class="order-block row-fluid">
-            <?php $domain = "" ?>
+		<!-- BLOCK ORDER INFO -->
+		<div class="order-block row-fluid">
+            <?php $domain = ""?>
             <h5><?php echo $this->lang('Order Information') ?></h5>
 
-            <div class="content">
-                <div class="row-fluid">
-                    <div class="span3"><?php echo $this->lang('Order Status') ?></div>
-                    <div class="span6 order-status"><b><?php echo $this->order['OrderStatus'] ?></b></div>
-                </div>
+			<div class="content">
+				<div class="row-fluid">
+					<div class="span3"><?php echo $this->lang('Order Status') ?></div>
+					<div class="span6 order-status">
+						<b><?php echo $this->order['OrderStatus'] ?></b>
+					</div>
+				</div>
 
-                <div class="row-fluid">
-                    <div class="span3"><?php echo $this->lang('Cycle Billing') ?></div>
-                    <div class="span6"><b><?php echo constant('CYCLE_'.$this->order['CycleBilling']) ?></b></div>
-                </div>
+				<div class="row-fluid">
+					<div class="span3"><?php echo $this->lang('Cycle Billing') ?></div>
+					<div class="span6">
+						<b><?php echo constant('CYCLE_'.$this->order['CycleBilling']) ?></b>
+					</div>
+				</div>
 
-                <!-- BLOCK ORDER DETAIL -->
-                <div class="row-fluid order-detail">
-                    <?php $orderDetails = Coco_NotORM::getInstance()->OrderDetails()->where('OrderId', $this->order['OrderId']) ?>
-                    <?php $itemId = 0 ?>
+				<!-- BLOCK ORDER DETAIL -->
+				<div class="row-fluid order-detail">
+                    <?php $orderDetails = Coco_NotORM::getInstance()->OrderDetails()->where('OrderId', $this->order['OrderId'])?>
+                    <?php $itemId = 0?>
                     <?php if ($orderDetails): ?>
                         <table class="table table-bordered">
-                            <tr>
-                                <th><?php echo $this->translate('No') ?></th>
-                                <th><?php echo $this->translate('Type') ?></th>
-                                <th><?php echo $this->translate('Item') ?></th>
-                                <th><?php echo $this->translate('Price') ?></th>
-                            </tr>
-                            <?php $index = 0 ?>
+						<tr>
+							<th><?php echo $this->translate('No') ?></th>
+							<th><?php echo $this->translate('Type') ?></th>
+							<th><?php echo $this->translate('Item') ?></th>
+							<th><?php echo $this->translate('Price') ?></th>
+						</tr>
+                            <?php $index = 0?>
                             <?php foreach ($orderDetails as $item): ?>
                                 <?php if($item['ItemType'] != 'DOMAIN'): ?>
                                 <tr>
-                                    <td><?php echo ++$index ?></td>
-                                    <td><?php echo constant('ORDER_TYPE_'. $item['ItemType']) ?></td>
-                                    <td><?php echo $item['ItemName'] ?></td>
-                                    <td style="text-align: right">
+							<td><?php echo ++$index ?></td>
+							<td><?php echo constant('ORDER_TYPE_'. $item['ItemType']) ?></td>
+							<td><?php echo $item['ItemName'] ?></td>
+							<td style="text-align: right">
                                         <?php if($item['Price'] == 0): ?>
-                                            <span class="label label-success"><?php echo $this->translate('Free') ?></span>
+                                            <span
+								class="label label-success"><?php echo $this->translate('Free') ?></span>
                                         <?php else: ?>
-                                            <?php echo "$".number_format($item['Price'], 2, ".", ",") ?>
+                                            <?php echo "$".number_format($item['Price'], 2, ".", ",")?>
                                         <?php endif; ?>
                                     </td>
-                                </tr>
+						</tr>
                                 <?php else: ?>
-                                    <?php $domain = $item['ItemName'] ?>
+                                    <?php $domain = $item['ItemName']?>
                                 <?php endif; ?>
                             <?php endforeach ?>
                         </table>
@@ -90,60 +99,70 @@
                     <?php endif; ?>
                 </div>
 
-                <div class="row-fluid">
-                    <div class="span3"><?php echo $this->lang('You setting with domain') ?></div>
-                    <div class="span6">
-                        <b><?php echo $domain ?></b>
-                        <div style="font-size: 12px;">(<?php echo $this->translate('This is your domain. we do not sale domain.') ?>)</div>
-                    </div>
-                </div>
+				<div class="row-fluid">
+					<div class="span3"><?php echo $this->lang('You setting with domain') ?></div>
+					<div class="span6">
+						<b><?php echo $domain ?></b>
+						<div style="font-size: 12px;">(<?php echo $this->translate('This is your domain. we do not sale domain.') ?>)</div>
+					</div>
+				</div>
 
-                <div class="block-order">
-                    <div class="row-fluid">
-                        <div class="span3"><?php echo $this->lang('Total') ?></div>
-                        <div class="span4  total-price">
-                            <b><?php echo '$'.number_format($this->order['TotalPrice'], 2, ".", ",") ;  ?></b>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+				<div class="block-order">
+					<div class="row-fluid">
+						<div class="span3"><?php echo $this->lang('Total') ?></div>
+						<div class="span4  total-price">
+							<b><?php echo '$'.number_format($this->order['TotalPrice'], 2, ".", ",") ;  ?></b>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <!-- DESCRIPTION -->
-        <div class="description">
-            <i>
-                <?php echo $this->translate('Note:') ?>
+		<!-- DESCRIPTION -->
+		<div class="description">
+			<i>
+                <?php echo $this->translate('Note:')?>
                 <ul>
-                    <li><?php echo $this->translate('We will not guarantee about your domain, if your order do not pay now.') ?></li>
-                    <li><?php echo $this->translate('With template is not free, you only pay only 1 time for "Template". Next bill, you only pay for "Type of Account".') ?></li>
-                </ul>
-                </i>
-        </div>
-        <br/>
+					<li><?php echo $this->translate('We will not guarantee about your domain, if your order do not pay now.') ?></li>
+					<li><?php echo $this->translate('With template is not free, you only pay only 1 time for "Template". Next bill, you only pay for "Type of Account".') ?></li>
+				</ul>
+			</i>
+		</div>
+		<br />
 
-        <!-- PAYMENT FOR ORDER -->
+		<!-- PAYMENT FOR ORDER -->
         <?php if($this->order['TotalPrice']): ?>
         <div class="row-fluid">
-            <div class="">
+			<div class="">
                 <?php foreach ($paymentMethods as $paymentMethod): ?>
-                <?php $classPayment = $paymentMethod['Class'] ?>
+                <?php $classPayment = $paymentMethod['Class']?>
                 <?php $lPayment = new $classPayment(); ?>
-                <?php echo $lPayment->render($this->order['OrderId']) ?>
+                <?php echo $lPayment->render($this->order['OrderId'])?>
                 <?php endforeach; ?>
             </div>
-        </div>
+		</div>
         <?php else: ?>
         <div class="row-fluid">
+        	<?php if($this->isExistWebsite):?>
+        	<button id="btnInstallTheme" class="btn btn-primary"><?php echo $this->lang('Install Theme') ?></button>
+        	<?php else: ?>
             <button id="btnBuildSite" class="btn btn-primary"><?php echo $this->lang('Build Site') ?></button>
+            <?php endif; ?>
         </div>
         <?php endif; ?>
     </div>
 </div>
 
 <!-- MESSAGEBOX -->
-<?php echo $this->partial("order/block/dialog_build.phtml") ?>
-<?php echo $this->partial("dialog_default.phtml", 
-		array('id' => "messageBox", 'message' => "Have error when build your website", 'title' => 'Warning')) ?>
+<?php echo $this->partial("order/block/dialog_build.phtml")?>
+<?php
+
+
+echo $this->partial ( "dialog_default.phtml", array (
+		'id' => "messageBox",
+		'message' => "Have error when build your website",
+		'title' => 'Warning' 
+) )?>
 
 <script type="text/javascript">
 	$(document).ready(function(){

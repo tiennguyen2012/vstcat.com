@@ -127,6 +127,25 @@ class Default_Model_Website {
 	}
 	
 	/**
+	 * Check exist website by domain. Required 
+	 * - IsActive = 1
+	 * - IsDeleted = 0
+	 * @author tien.nguyen
+	 * @param string $domain
+	 * @return boolean
+	 */
+	public function isExistWebsiteByDomain($domain){
+		$website = Coco_NotORM::getInstance()->Websites[array('Domain' => $domain, 
+				'IsActive' => 1, 'IsDeleted' => 0
+		)];
+		
+		if($website){
+			return TRUE;
+		}
+		return FALSE;
+	}
+	
+	/**
 	 * Get site by login. Get from table Websites
 	 * @author tien.nguyen
 	 * @return Coco_NotORM|null

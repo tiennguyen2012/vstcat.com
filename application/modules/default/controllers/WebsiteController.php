@@ -110,6 +110,15 @@ class WebsiteController extends Coco_Controller_Action_Default {
     }
     
     /**
+     * Install theme for site is existed.
+     * Use when customer want to install new theme for his/her website.
+     * @author tien.nguyen
+     */
+    public function installThemeAction(){
+    	
+    }
+    
+    /**
      * This is action build website success
      * Be used when order total price is 0, and customer click build website
      * @author tien.nguyen

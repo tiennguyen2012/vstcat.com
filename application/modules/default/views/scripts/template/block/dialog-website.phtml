@@ -25,13 +25,16 @@
     </button>
   </div>
 </div>
+<?php $urlSetup = $this->url(array('controller' => 'order', 'action' => 'set-template-and-domain', 
+		'template-id' => $this->template['TemplateId']
+))?>
 <script type="text/javascript">
 	$('#btnSetupWebsite').click(function(){
 		var website = document.forms[0].elements["website"].value;
 		if(website == ""){
 			alert("<?php echo $this->lang('Please choose website.') ?>");
 		}else{
-			
+			window.location.href = "<?php echo $urlSetup ?>/domain/" + website;
 		}
 	});
 </script>
