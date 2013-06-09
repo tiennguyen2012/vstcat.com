@@ -12,6 +12,8 @@ defined('APPLICATION_ENV')
 set_include_path(implode(PATH_SEPARATOR, array(
     realpath(APPLICATION_PATH . '/../library'),
     get_include_path(),
+    "D:\ZendFramework-1.11.7\library",
+    'E:\Framework\ZendFramework-1.12.1-minimal\library',
 )));
 
 require_once 'Zend/Loader/Autoloader.php';
