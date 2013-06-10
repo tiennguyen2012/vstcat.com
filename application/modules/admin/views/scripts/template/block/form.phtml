@@ -62,7 +62,7 @@
                             <?php if ($templatePhotos): ?>
                             <?php foreach ($templatePhotos as $photo): ?>
                                 <div class="item">
-                                    <img src="<?php echo BASE_URL ?>/uploads/templates/<?php echo $templateId ?>/<?php echo $photo ?>"/>
+                                    <img height="100px" width="70px" src="<?php echo BASE_URL ?>/uploads/templates/<?php echo $templateId ?>/<?php echo $photo ?>"/>
                                     <input <?php echo ($photo == $this->form->getElement('ImageDefault')->getValue() ? 'checked="checked"' : '') ?>
                                             type="radio" name="ImageDefault" value="<?php echo $photo ?>">
                                     <?php echo $this->lang('(default)') ?>
@@ -71,6 +71,7 @@
                                           title="Delete"></span>
                                     <?php endif; ?>
                                 </div>
+                                <p/>
                                 <?php endforeach; ?>
                             <?php endif; ?>
                         </div>
