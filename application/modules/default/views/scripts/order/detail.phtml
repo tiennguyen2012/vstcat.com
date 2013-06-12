@@ -6,7 +6,7 @@
         <?php if($this->order['TotalPrice']): ?>
         <?php echo $this->lang('After pay success. System send email to notify.')?>
         <?php else: ?>
-        <?php echo $this->lang('This is free order, please click download button.')?>
+        <?php echo $this->lang('This is free order, please click build site button.')?>
         <?php endif; ?>
     </div>
 
@@ -18,23 +18,23 @@
             <div>
 				<div class="row-fluid">
 					<div class="span3"><?php echo $this->lang('Fullname') ?></div>
-					<div class="span6">
+					<div class="span7">
 						<b><?php echo $this->escape($user['Fullname']) ?></b>
 					</div>
 				</div>
 				<div class="row-fluid">
 					<div class="span3"><?php echo $this->lang('Email') ?></div>
-					<div class="span6">
+					<div class="span7">
 						<i><?php echo $this->escape($user['Email']) ?></i>
 					</div>
 				</div>
 				<div class="row-fluid">
 					<div class="span3"><?php echo $this->lang('Address') ?></div>
-					<div class="span6"><?php echo $this->escape($user['Address']) ?></div>
+					<div class="span7"><?php echo $this->escape($user['Address']) ?></div>
 				</div>
 				<div class="row-fluid">
 					<div class="span3"><?php echo $this->lang('Country') ?></div>
-					<div class="span6">
+					<div class="span67">
                        <?php echo $this->escape($user['CountryName'])?>
                     </div>
 				</div>
@@ -49,14 +49,14 @@
 			<div class="content">
 				<div class="row-fluid">
 					<div class="span3"><?php echo $this->lang('Order Status') ?></div>
-					<div class="span6 order-status">
+					<div class="span7 order-status">
 						<b><?php echo $this->order['OrderStatus'] ?></b>
 					</div>
 				</div>
 
 				<div class="row-fluid">
 					<div class="span3"><?php echo $this->lang('Cycle Billing') ?></div>
-					<div class="span6">
+					<div class="span7">
 						<b><?php echo constant('CYCLE_'.$this->order['CycleBilling']) ?></b>
 					</div>
 				</div>
@@ -101,9 +101,9 @@
 
 				<div class="row-fluid">
 					<div class="span3"><?php echo $this->lang('You setting with domain') ?></div>
-					<div class="span6">
+					<div class="span7">
 						<b><?php echo $domain ?></b>
-						<div style="font-size: 12px;">(<?php echo $this->translate('This is your domain. we do not sale domain.') ?>)</div>
+						<div style="font-size: 12px;">(<?php echo $this->translate('This is your domain or our sub domain. we do not sale domain.') ?>)</div>
 					</div>
 				</div>
 

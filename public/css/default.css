@@ -54,7 +54,14 @@ ul.errors { color: red }
 #header .top-menu ul { margin: 0; padding: 0; list-style: none }
 #header .top-menu ul li { float: left; text-transform: uppercase; color: #ffffff; padding: 0 15px }
 #header .top-menu ul li:last-child { padding-right: 0 }
-#header .top-menu ul li a { text-decoration: none; color: #ffffff }
+#header .top-menu ul li a { text-decoration: none; color: #ffffff; padding: 5px; }
+#header .top-menu ul li a.active,
+#header .top-menu ul li a:hover { 
+	-moz-border-radius: 10px; 
+	-webkit-border-radius: 10px;
+	border-radius: 10px; 
+	background-color: #646464;
+}
 #header .logo { width: 200px; height: 95px; margin-top: 5px }
 #header .flag { margin-top: 10px; background-color: #ffffff; width: 50px; padding: 3px;  }
 #header .flag .box-flag {}

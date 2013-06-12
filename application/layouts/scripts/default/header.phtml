@@ -55,31 +55,38 @@
                 <div class="top-menu">
                     <ul>
                         <li>
-                            <a href="<?php echo $this->url(array('controller' => 'page', 'action' => 'detail', 'code' => 'about-us'), null, true) ?>"><?php echo $this->lang('About Us') ?></a>
+                            <a class="<?php echo Vts_App::isActive('default', 'page', 'detail', array('code' => 'about-us')) ? 'active' : '' ?>"
+                            	href="<?php echo $this->url(array('controller' => 'page', 'action' => 'detail', 'code' => 'about-us'), null, true) ?>"><?php echo $this->lang('About Us') ?></a>
                         </li>
                         <li>
-                            <a href="<?php echo $this->url(array('controller' => 'page', 'action' => 'detail', 'code' => 'affiliates'), null, true) ?>">
+                            <a class="<?php echo Vts_App::isActive('default', 'page', 'detail', array('code' => 'affiliates')) ? 'active' : '' ?>"
+                            	href="<?php echo $this->url(array('controller' => 'page', 'action' => 'detail', 'code' => 'affiliates'), null, true) ?>">
                                 <?php echo $this->lang('Affiliates') ?>
                             </a></li>
                         <li>
-                            <a href="<?php echo $this->url(array('controller' => 'page', 'action' => 'detail', 'code' => 'order'), null, true) ?>">
+                            <a class="<?php echo Vts_App::isActive('default', 'page', 'detail', array('code' => 'order')) ? 'active' : '' ?>"
+                            	href="<?php echo $this->url(array('controller' => 'page', 'action' => 'detail', 'code' => 'order'), null, true) ?>">
                                 <?php echo $this->lang('Orders') ?>
                             </a></li>
                         <li>
-                            <a href="<?php echo $this->url(array('controller' => 'page', 'action' => 'price'), null, true) ?>">
+                            <a class="<?php echo Vts_App::isActive('default', 'page', 'price') ? 'active' : '' ?>"
+                            	href="<?php echo $this->url(array('controller' => 'page', 'action' => 'price'), null, true) ?>">
                                 <?php echo $this->lang('Prices') ?>
                             </a></li>
                         <li>
-                            <a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'signup'), null, true) ?>">
+                            <a class="<?php echo Vts_App::isActive('default', 'user', 'signup') ? 'active' : '' ?>"
+                            	href="<?php echo $this->url(array('controller' => 'user', 'action' => 'signup'), null, true) ?>">
                                 <?php echo $this->lang('Sign Up') ?></a>
                         </li>
                         <?php if (!isset(Vts_App::getUserLogin()->UserId)): ?>
                         <li>
-                            <a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'signin'), null, true) ?>">
+                            <a class="<?php echo Vts_App::isActive('default', 'user', 'signin') ? 'active' : '' ?>"
+                            	href="<?php echo $this->url(array('controller' => 'user', 'action' => 'signin'), null, true) ?>">
                                 <?php echo $this->lang('Sign In') ?></a>
                         </li>
                         <?php endif; ?>
-                        <li><a href="<?php echo $this->url(array('controller' => 'contact'), null, true) ?>">
+                        <li><a class="<?php echo Vts_App::isActive('default', 'contact') ? 'active' : '' ?>"
+                        		href="<?php echo $this->url(array('controller' => 'contact'), null, true) ?>">
                             <?php echo $this->lang('Contact') ?></a>
                         </li>
                     </ul>
