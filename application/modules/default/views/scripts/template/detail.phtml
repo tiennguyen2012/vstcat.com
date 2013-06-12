@@ -130,7 +130,7 @@
         window.location.href = "<?php echo $this->rurl(array('controller' => 'order', 'action' => 'add', 'item-id' => $this->params['id'], 'item-type' => 'template', 'price-type' => 'normal'), null, true) ?>";
     })
     $('#btnDemon').click(function(){
-        window.open('<?php echo "http://demo". $this->template['TemplateCodeName'].'.'. HOST_NAME ?>', '_blank');
+        window.open('<?php echo "http://samplew". $this->template['TemplateCodeName'].'.'. HOST_NAME ?>', '_blank');
     })
     $('#btnCreateNewSite').click(function(){
         window.location.href = "<?php echo $this->rurl(array('controller' => 'order', 'action' => 'new-order', 'template-id' => $this->params['id']), null, true) ?>";
