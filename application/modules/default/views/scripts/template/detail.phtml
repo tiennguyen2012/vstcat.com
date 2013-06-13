@@ -32,34 +32,36 @@
                 <div class="description">
                     <div class="row-fluid">
                     <!-- SHOW BOX DOWNLOAD WHEN YOU LOGIN -->
-                        <?php if ($this->isMember): ?>
-                                <?php if ($this->template['UniqueCurrentPrice']): ?>
-                                    <div class="span5 btn-buy">
-                                        <div>
-                                            <?php echo $this->lang('Setup this template with <b>unique</b>') ?>
-                                            <b><span class="price">$<?php echo $this->template['UniqueCurrentPrice'] ?></span></b>
-                                            <?php echo $this->lang('for this template.') ?>
-                                        </div>
-                                        <button id="btnUniqueCurrentPrice" class="btn btn-primary">
-                                            <?php echo $this->lang('setup unique') ?>
-                                        </button>
-                                    </div>
-                                <?php elseif($this->template['IsFreeMember']): ?>
-                                    <div class="span5 btn-buy">
-                                        <div>
-                                            <?php echo $this->lang('Setup this template with <b>normal</b> for this template.') ?>
-                                        </div>
-                                        <button id="btnFreeForMember" class="btn btn-danger">Free for Members</button>
-                                    </div>
-                                <?php elseif ($this->template['NormalPrice']): ?>
-                                    <div class="span5 btn-buy">
-                                        <?php echo $this->lang('Setup this template with <b>normal</b> for this template only') ?><span class="price"> $<?php echo $this->template['NormalPrice'] ?></span>
-                                        <button id="btnNormalPrice" class="btn btn-danger"> setup normal</button>
-                                    </div>
-                                <?php endif; ?>
+                    	<?php if(Vts_App::getUserLogin()):?>
+	                        <?php if ($this->isMember): ?>
+	                                <?php if ($this->template['UniqueCurrentPrice']): ?>
+	                                    <div class="span5 btn-buy">
+	                                        <div>
+	                                            <?php echo $this->lang('Setup this template with <b>unique</b>') ?>
+	                                            <b><span class="price">$<?php echo $this->template['UniqueCurrentPrice'] ?></span></b>
+	                                            <?php echo $this->lang('for this template.') ?>
+	                                        </div>
+	                                        <button id="btnUniqueCurrentPrice" class="btn btn-primary">
+	                                            <?php echo $this->lang('setup unique') ?>
+	                                        </button>
+	                                    </div>
+	                                <?php elseif($this->template['IsFreeMember']): ?>
+	                                    <div class="span5 btn-buy">
+	                                        <div>
+	                                            <?php echo $this->lang('Setup this template with <b>normal</b> for this template.') ?>
+	                                        </div>
+	                                        <button id="btnFreeForMember" class="btn btn-danger">Free for Members</button>
+	                                    </div>
+	                                <?php elseif ($this->template['NormalPrice']): ?>
+	                                    <div class="span5 btn-buy">
+	                                        <?php echo $this->lang('Setup this template with <b>normal</b> for this template only') ?><span class="price"> $<?php echo $this->template['NormalPrice'] ?></span>
+	                                        <button id="btnNormalPrice" class="btn btn-danger"> setup normal</button>
+	                                    </div>
+	                                <?php endif; ?>
+	                         <?php endif;?>
                         <?php else: ?>
                             <div  class="row-fluid">
-                                <div class="warning"><?php echo $this->lang('Please login system, if your are member.') ?>
+                                <div class="warning"><?php echo $this->lang('Please login system, if you are member and have websites in vtscat.com. You will see price of this template for member') ?>
                                     <a href="<?php echo $this->rurl(array('controller' => 'user', 'action' => 'signin'), null, true) ?>"><?php echo $this->lang('Login') ?></a> </div>
                             </div>
                         <?php endif; ?>

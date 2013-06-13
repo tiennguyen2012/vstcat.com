@@ -1,6 +1,6 @@
 <?php
-define('BASE_URL', 'http://'.$_SERVER['HTTP_HOST']);
-define('HOST_NAME', $_SERVER['HTTP_HOST']);
+define('BASE_URL', 'http://vtscat.com');
+define('HOST_NAME', 'vtscat.com');
 /**
  * This defined used to test
  */

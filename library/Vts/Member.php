@@ -8,10 +8,19 @@
  */
 class Vts_Member {
 
+	/**
+	 * Check is member.
+	 * We do not use member table to check member. We only check is member
+	 * in Website table. If you have record in Website table. You are member
+	 * @author tien.nguyen
+	 * @return boolean
+	 */
     public function isMember(){
         $userLogin = Vts_App::getUserLogin();
         if($userLogin){
-            $member  = Coco_NotORM::getInstance()->Members[array('UserId' => $userLogin->UserId)];
+            $member  = Coco_NotORM::getInstance()->Websites[array('UserId' => $userLogin->UserId, 
+            		'IsActive' => 1, 'IsDeleted' => 0
+            )];
             if($member){
                 return true;
             }
