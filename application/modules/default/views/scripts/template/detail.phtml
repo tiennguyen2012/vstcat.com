@@ -1,124 +1,170 @@
 <?php $this->headTitle('Templates')?>
 <div id="ptemplate-detail" xmlns="http://www.w3.org/1999/html">
-    <div class="row-fluid">
-        <!-- PRODUCT IMAGE -->
-        <div class="span4">
-            <a rel="lightbox" href="<?php echo BASE_URL ?>/uploads/templates/<?php echo $this->template['TemplateId'] ?>/<?php echo $this->template['ImageDefault'] ?>">
-                <img border="0" src="<?php echo BASE_URL ?>/uploads/templates/<?php echo $this->template['TemplateId'] ?>/<?php echo $this->template['ImageDefault'] ?>"
-                    alt="<?php echo $this->template['TemplateName'] ?>" class="template-image"/>
-            </a>
+	<div class="row-fluid">
+		<!-- PRODUCT IMAGE -->
+		<div class="span4">
+			<a rel="lightbox"
+				href="<?php echo BASE_URL ?>/uploads/templates/<?php echo $this->template['TemplateId'] ?>/<?php echo $this->template['ImageDefault'] ?>">
+				<img border="0"
+				src="<?php echo BASE_URL ?>/uploads/templates/<?php echo $this->template['TemplateId'] ?>/<?php echo $this->template['ImageDefault'] ?>"
+				alt="<?php echo $this->template['TemplateName'] ?>"
+				class="template-image" />
+			</a>
 
-            <div class="row-fluid">
-                <img id="btnDemon" src="/images/view_demo_gray.png" alt="View Demo" title="View Demo"/>
-            </div>
+			<div class="row-fluid">
+				<img id="btnDemon" src="/images/view_demo_gray.png" alt="View Demo"
+					title="View Demo" />
+			</div>
 
-        </div>
-        <!-- PRODUCT DESCRIPTION -->
-        <div class="span8">
-            <h4><?php echo $this->escape($this->template['TemplateName']) ?></h4>
+		</div>
+		<!-- PRODUCT DESCRIPTION -->
+		<div class="span8">
+			<h4><?php echo $this->escape($this->template['TemplateName']) ?></h4>
 
-            <div class="category-name">
-                <span>Category: </span>
-                <a href=""> <?php echo Coco_NotORM::getInstance()->Categorys[$this->template['CategoryId']]['CategoryName'] ?></a>
-            </div>
-            <div class="template-type">
-                <span>Template Type: </span>
-                <a href=""> <?php echo Coco_NotORM::getInstance()->TemplateTypes[$this->template['TemplateTypeId']]['TemplateTypeName'] ?></a>
-            </div>
+			<div class="category-name">
+				<span>Category: </span> <a href=""> <?php echo Coco_NotORM::getInstance()->Categorys[$this->template['CategoryId']]['CategoryName'] ?></a>
+			</div>
+			<div class="template-type">
+				<span>Template Type: </span> <a href=""> <?php echo Coco_NotORM::getInstance()->TemplateTypes[$this->template['TemplateTypeId']]['TemplateTypeName'] ?></a>
+			</div>
 
-            <!-- BLOCK ONLY SET UP TEMPLATE -->
+			<!-- BLOCK ONLY SET UP TEMPLATE -->
 
-            <div class="block-download row-fluid">
-                <div class="description">
-                    <div class="row-fluid">
-                    <!-- SHOW BOX DOWNLOAD WHEN YOU LOGIN -->
+			<div class="block-download row-fluid">
+				<div class="description">
+					<div class="row-fluid">
+						<!-- SHOW BOX DOWNLOAD WHEN YOU LOGIN -->
                     	<?php if(Vts_App::getUserLogin()):?>
 	                        <?php if ($this->isMember): ?>
 	                                <?php if ($this->template['UniqueCurrentPrice']): ?>
 	                                    <div class="span5 btn-buy">
-	                                        <div>
-	                                            <?php echo $this->lang('Setup this template with <b>unique</b>') ?>
+							<div>
+	                                            <?php echo $this->lang('Setup this template with <b>unique</b>')?>
 	                                            <b><span class="price">$<?php echo $this->template['UniqueCurrentPrice'] ?></span></b>
-	                                            <?php echo $this->lang('for this template.') ?>
+	                                            <?php echo $this->lang('for this template.')?>
 	                                        </div>
-	                                        <button id="btnUniqueCurrentPrice" class="btn btn-primary">
-	                                            <?php echo $this->lang('setup unique') ?>
+							<button id="btnUniqueCurrentPrice" class="btn btn-primary">
+	                                            <?php echo $this->lang('setup unique')?>
 	                                        </button>
-	                                    </div>
+						</div>
 	                                <?php elseif($this->template['IsFreeMember']): ?>
 	                                    <div class="span5 btn-buy">
-	                                        <div>
-	                                            <?php echo $this->lang('Setup this template with <b>normal</b> for this template.') ?>
+							<div>
+	                                            <?php echo $this->lang('Setup this template with <b>normal</b> for this template.')?>
 	                                        </div>
-	                                        <button id="btnFreeForMember" class="btn btn-danger">Free for Members</button>
-	                                    </div>
+							<button id="btnFreeForMember" class="btn btn-danger">Free for
+								Members</button>
+						</div>
 	                                <?php elseif ($this->template['NormalPrice']): ?>
 	                                    <div class="span5 btn-buy">
-	                                        <?php echo $this->lang('Setup this template with <b>normal</b> for this template only') ?><span class="price"> $<?php echo $this->template['NormalPrice'] ?></span>
-	                                        <button id="btnNormalPrice" class="btn btn-danger"> setup normal</button>
-	                                    </div>
+	                                        <?php echo $this->lang('Setup this template with <b>normal</b> for this template only') ?><span
+								class="price"> $<?php echo $this->template['NormalPrice'] ?></span>
+							<button id="btnNormalPrice" class="btn btn-danger">setup normal</button>
+						</div>
 	                                <?php endif; ?>
 	                         <?php endif;?>
                         <?php else: ?>
-                            <div  class="row-fluid">
-                                <div class="warning"><?php echo $this->lang('Please login system, if you are member and have websites in vtscat.com. You will see price of this template for member') ?>
-                                    <a href="<?php echo $this->rurl(array('controller' => 'user', 'action' => 'signin'), null, true) ?>"><?php echo $this->lang('Login') ?></a> </div>
-                            </div>
+                            <div class="row-fluid">
+							<div class="warning"><?php echo $this->lang('Please login system, if you are member and have websites in vtscat.com. You will see price of this template for member')?>
+                                    <a
+									href="<?php echo $this->rurl(array('controller' => 'user', 'action' => 'signin'), null, true) ?>"><?php echo $this->lang('Login') ?></a>
+							</div>
+						</div>
                         <?php endif; ?>
 
                         <!-- BOX NEW SITE -->
-                        <div class="span5 btn-buy">
-                            <div>
-                                <?php echo $this->translate('If you do not have account, yet or ceate new site') ?>
+						<div class="span5 btn-buy">
+							<div>
+                                <?php echo $this->translate('If you do not have account, yet or ceate new site')?>
                             </div>
-                            <button class="btn btn-primary" id="btnCreateNewSite"><?php echo $this->translate('Create new site') ?></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+							<button class="btn btn-primary" id="btnCreateNewSite"><?php echo $this->translate('Create new site') ?></button>
+						</div>
+					</div>
+				</div>
+			</div>
 
-        </div>
-    </div>
+		</div>
+	</div>
 
-    <!-- PRODUCT DETAIL -->
+	<!-- PRODUCT DETAIL -->
     <?php if (count($this->photos) > 0): ?>
     <div class="photos row-fluid">
-        <h4>Photos</h4>
+		<h4>Photos</h4>
 
-        <div class="content">
+		<div class="content">
             <?php foreach ($this->photos as $photo): ?>
             <div class="item">
-                <a rel="lightbox[roadtrip]" href="<?php echo BASE_URL ?>/uploads/templates/<?php echo $this->template['TemplateId'] ?>/<?php echo $photo ?>">
-                <img src="<?php echo BASE_URL ?>/uploads/templates/<?php echo $this->template['TemplateId'] ?>/<?php echo $photo ?>"
-                     alt="<?php echo $this->template['TemplatePhotoName'] ?>"/>
-                </a>
-            </div>
+				<a rel="lightbox[roadtrip]"
+					href="<?php echo BASE_URL ?>/uploads/templates/<?php echo $this->template['TemplateId'] ?>/<?php echo $photo ?>">
+					<img
+					src="<?php echo BASE_URL ?>/uploads/templates/<?php echo $this->template['TemplateId'] ?>/<?php echo $photo ?>"
+					alt="<?php echo $this->template['TemplatePhotoName'] ?>" />
+				</a>
+			</div>
             <?php endforeach; ?>
         </div>
-    </div>
+	</div>
     <?php endif; ?>
 
-    <!-- PRODUCT DESCRIPTION -->
-    <div class="product-description">
-        <h4>Description</h4>
+    <!-- TAB SHOW SOME PROPERTIES OF THEMES -->
+	<div class="row-fluid">
+		<ul class="nav nav-tabs" id="template-tab">
+			<li class="active"><a href="#description"><?php echo $this->lang('Description')?></a></li>
+			<li><a href="#guide"><?php echo $this->lang('Guide')?></a></li>
+		</ul>
 
-        <div class="content">
-            <?php if (empty($this->template['TemplateDescription'])): ?>
-            <div>We are updating</div>
-            <?php else: ?>
-            <?php echo $this->template['TemplateDescription'] ?>
-            <?php endif; ?>
-        </div>
-    </div>
+		<div class="tab-content">
+			<div class="tab-pane active" id="description">
+				<!-- PRODUCT DESCRIPTION -->
+				<div class="product-description">
+					<h4><?php echo $this->lang('Description')?></h4>
+
+					<div class="content">
+		            <?php if (empty($this->template['TemplateDescription'])): ?>
+		            <div>We are updating</div>
+		            <?php else: ?>
+		            <?php echo $this->template['TemplateDescription']?>
+		            <?php endif; ?>
+		        </div>
+				</div>
+			</div>
+			<div class="tab-pane" id="guide">
+				<div class="accordion" id="accordion2">
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse"
+								data-parent="#accordion2" href="#collapseOne">Change your Logo</a>
+						</div>
+						<div id="collapseOne" class="accordion-body collapse in">
+							<div class="accordion-inner">Pending...</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse"
+								data-parent="#accordion2" href="#collapseTwo">Change menu of website</a>
+						</div>
+						<div id="collapseTwo" class="accordion-body collapse">
+							<div class="accordion-inner">Pending...</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!-- MESSAGEBOX -->
-<?php echo $this->partial('/template/block/dialog-website.phtml', 
-		array('websites' => $this->websites, 'template' => $this->template)) ?>
+<?php
 
-<?php $this->placeholder('right')->captureStart() ?>
-<?php echo $this->partial('right-cate.phtml') ?>
-<?php $this->placeholder('right')->captureEnd() ?>
+echo $this->partial ( '/template/block/dialog-website.phtml', array (
+		'websites' => $this->websites,
+		'template' => $this->template 
+) )?>
+
+<?php $this->placeholder('right')->captureStart()?>
+<?php echo $this->partial('right-cate.phtml')?>
+<?php $this->placeholder('right')->captureEnd()?>
 
 <script type="text/javascript">
     $('#btnUniqueCurrentPrice').click(function () {
@@ -137,4 +183,14 @@
     $('#btnCreateNewSite').click(function(){
         window.location.href = "<?php echo $this->rurl(array('controller' => 'order', 'action' => 'new-order', 'template-id' => $this->params['id']), null, true) ?>";
     })
+    
+    /**
+    * function show tab in twitter bootstrap
+    */
+    $('#template-tab a').click(function (e) {
+		  e.preventDefault();
+		  $(this).tab('show');
+		})
+		
+		
 </script>

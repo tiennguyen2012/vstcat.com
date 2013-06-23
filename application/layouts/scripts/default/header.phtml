@@ -59,11 +59,6 @@
                             	href="<?php echo $this->url(array('controller' => 'page', 'action' => 'detail', 'code' => 'about-us'), null, true) ?>"><?php echo $this->lang('About Us') ?></a>
                         </li>
                         <li>
-                            <a class="<?php echo Vts_App::isActive('default', 'page', 'detail', array('code' => 'affiliates')) ? 'active' : '' ?>"
-                            	href="<?php echo $this->url(array('controller' => 'page', 'action' => 'detail', 'code' => 'affiliates'), null, true) ?>">
-                                <?php echo $this->lang('Affiliates') ?>
-                            </a></li>
-                        <li>
                             <a class="<?php echo Vts_App::isActive('default', 'page', 'detail', array('code' => 'order')) ? 'active' : '' ?>"
                             	href="<?php echo $this->url(array('controller' => 'page', 'action' => 'detail', 'code' => 'order'), null, true) ?>">
                                 <?php echo $this->lang('Orders') ?>

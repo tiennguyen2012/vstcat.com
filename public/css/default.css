@@ -15,7 +15,7 @@ ul.errors { color: red }
 .box .title { border-bottom: 1px dotted #e6e6e6; padding-bottom: 10px  }
 .box .content  { margin-bottom: 10px }
 .box .content .item { float: left; padding: 10px; }
-.box .content .item img { border: 1px solid #e6e6e6; cursor: pointer; width:145px; height: 170px }
+.box .content .item img { border: 1px solid #e6e6e6; cursor: pointer; width:135px; height: 170px; padding: 5px }
 .box .content .item img:hover {   box-shadow: 5px 5px 5px #888888;}
 .box .content .item .template-name { font-weight: bold }
 .box .content .item .template-price { font-size: 12px }
@@ -139,6 +139,9 @@ ul.errors { color: red }
 }
 #ptemplate-detail .btnbuy-download { margin-top: 7px }
 #ptemplate-detail #btnDemon { margin-top: 10px; cursor: pointer }
+#ptemplate-detail .accordion-group { border: 0 }
+#ptemplate-detail .accordion-inner { border-top: 0; margin-left: 15px }
+#ptemplate-detail .accordion-heading .accordion-toggle { padding: 0 }
 
 /** PAGE SIGN UP **/
 #puser-signup .account-info { width: 300px }

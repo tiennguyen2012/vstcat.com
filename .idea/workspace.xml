@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9753b0d7-5e88-4473-9527-19b25c2698d2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.buildpath" afterPath="$PROJECT_DIR$/.buildpath" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.php.core.prefs" afterPath="$PROJECT_DIR$/.settings/org.eclipse.php.core.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/application/controllers/IndexControllerTest.php" afterPath="$PROJECT_DIR$/tests/application/controllers/IndexControllerTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/bootstrap.php" afterPath="$PROJECT_DIR$/tests/bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/phpunit.xml" afterPath="$PROJECT_DIR$/tests/phpunit.xml" />
-    </list>
+    <list default="true" id="9753b0d7-5e88-4473-9527-19b25c2698d2" name="Default" comment="" />
     <list id="3dc984f0-60ea-4513-941e-2b4ab02a7c38" name="New changelist" comment="New changelist" />
     <ignored path="vtsweb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +25,7 @@
       <file leaf-file-name="constant.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/configs/constant.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="45" selection-start="241" selection-end="241" vertical-scroll-proportion="0.0">
+            <state line="7" column="45" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -120,7 +114,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -271,6 +264,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -278,8 +272,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -346,7 +340,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3121212" sideWeight="0.6728499" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31742424" sideWeight="0.6728499" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32715008" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -417,6 +411,13 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="876" selection-end="876" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/default/views/scripts/order/detail.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="39" selection-start="821" selection-end="821" vertical-scroll-proportion="-5.8846154" />
@@ -479,7 +480,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/configs/constant.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="45" selection-start="241" selection-end="241" vertical-scroll-proportion="0.0">
+        <state line="7" column="45" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
